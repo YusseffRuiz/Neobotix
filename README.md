@@ -18,13 +18,13 @@ High stability and payload
 Compact, easily integrated drive units
 This makes the MPO-700 a premium alternative for applications that require omnidirectional movements without the limitations of traditional kinematics.
 
-Contact information
-For more information please visit our website at www.neobotix-robots.com. If you have any questions, just get in touch with us:
 
 General information: http://www.neobotix-robots.com/company-contact.html
+
 ROS related questions: ros@neobotix.de
 
 ------------Installation----------------------------
+
 Create a catkin workspace (tutorial)
 
 Download all packages 
