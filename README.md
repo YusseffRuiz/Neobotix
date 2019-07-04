@@ -2,8 +2,9 @@
 MSc Dissertation Project
 
 ROS configuration and launch files for Neobotix MPO-700
+
 ![GitHub Logo](/Pictures/mpo_700.jpeg)
-Format: ![Alt Text](url)
+
 
 This package contains configuration and launch files for Neobotix MPO-700.
 
