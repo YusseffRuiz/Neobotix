@@ -1,0 +1,26 @@
+
+(cl:in-package :asdf)
+
+(defsystem "cob_msgs-msg"
+  :depends-on (:roslisp-msg-protocol :roslisp-utils :std_msgs-msg
+)
+  :components ((:file "_package")
+    (:file "AccessPoint" :depends-on ("_package_AccessPoint"))
+    (:file "_package_AccessPoint" :depends-on ("_package"))
+    (:file "BatteryServer" :depends-on ("_package_BatteryServer"))
+    (:file "_package_BatteryServer" :depends-on ("_package"))
+    (:file "BatteryServer2" :depends-on ("_package_BatteryServer2"))
+    (:file "_package_BatteryServer2" :depends-on ("_package"))
+    (:file "BatteryState" :depends-on ("_package_BatteryState"))
+    (:file "_package_BatteryState" :depends-on ("_package"))
+    (:file "BatteryState2" :depends-on ("_package_BatteryState2"))
+    (:file "_package_BatteryState2" :depends-on ("_package"))
+    (:file "DashboardState" :depends-on ("_package_DashboardState"))
+    (:file "_package_DashboardState" :depends-on ("_package"))
+    (:file "EmergencyStopState" :depends-on ("_package_EmergencyStopState"))
+    (:file "_package_EmergencyStopState" :depends-on ("_package"))
+    (:file "PowerBoardState" :depends-on ("_package_PowerBoardState"))
+    (:file "_package_PowerBoardState" :depends-on ("_package"))
+    (:file "PowerState" :depends-on ("_package_PowerState"))
+    (:file "_package_PowerState" :depends-on ("_package"))
+  ))

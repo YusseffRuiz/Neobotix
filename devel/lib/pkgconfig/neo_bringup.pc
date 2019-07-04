@@ -1,0 +1,8 @@
+prefix=/home/yusseff/Neobotix/devel
+
+Name: neo_bringup
+Description: Description of neo_bringup
+Version: 1.2.4
+Cflags: 
+Libs: -L/home/yusseff/Neobotix/devel/lib 
+Requires: 

@@ -1,0 +1,8 @@
+prefix=/home/yusseff/Neobotix/install
+
+Name: cob_msgs
+Description: Description of cob_msgs
+Version: 0.5.4
+Cflags: -I/home/yusseff/Neobotix/install/include
+Libs: -L/home/yusseff/Neobotix/install/lib 
+Requires: std_msgs geometry_msgs message_runtime

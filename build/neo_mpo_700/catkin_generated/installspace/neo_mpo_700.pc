@@ -1,0 +1,8 @@
+prefix=/home/yusseff/Neobotix/install
+
+Name: neo_mpo_700
+Description: Description of neo_mpo_700
+Version: 0.1.0
+Cflags: 
+Libs: -L/home/yusseff/Neobotix/install/lib 
+Requires: 

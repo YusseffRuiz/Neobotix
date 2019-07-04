@@ -1,0 +1,8 @@
+prefix=/home/yusseff/Neobotix/install
+
+Name: neo_relayboard_v2
+Description: Description of neo_relayboard_v2
+Version: 0.1.2
+Cflags: 
+Libs: -L/home/yusseff/Neobotix/install/lib 
+Requires: 
