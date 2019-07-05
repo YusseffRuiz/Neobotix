@@ -2,11 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="77466e0b-a72e-4865-b448-a9bf00d7a28f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/neo_simulation/scripts/calibratePosition.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/neo_simulation/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/neo_simulation/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/neo_simulation/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/neo_simulation/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/neo_simulation/launch/mpo_700/mpo_700_calibrate.launch" beforeDir="false" afterPath="$PROJECT_DIR$/src/neo_simulation/launch/mpo_700/mpo_700_calibrate.launch" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/neo_simulation/launch/mpo_700/mpo_700_spawn.launch" beforeDir="false" afterPath="$PROJECT_DIR$/src/neo_simulation/launch/mpo_700/mpo_700_spawn.launch" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/neo_simulation/scripts/calibratePosition.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/neo_simulation/scripts/calibratePosition.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -19,8 +18,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/neo_simulation/scripts/get_position.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="435">
-              <caret line="33" column="16" lean-forward="true" selection-start-line="27" selection-end-line="33" selection-end-column="16" />
+            <state relative-caret-position="60">
+              <caret line="4" column="31" lean-forward="true" selection-start-line="4" selection-end-line="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/neo_simulation/scripts/goToPosition.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="375">
+              <caret line="29" lean-forward="true" selection-start-line="29" selection-end-line="29" />
             </state>
           </provider>
         </entry>
@@ -28,8 +36,11 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/neo_simulation/scripts/calibratePosition.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="646">
-              <caret line="49" column="30" selection-start-line="49" selection-start-column="30" selection-end-line="49" selection-end-column="30" />
+            <state relative-caret-position="210">
+              <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+              <folding>
+                <element signature="e#24#36#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -44,11 +55,18 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="YusseffRuiz &lt;zeiverking@gmail.com&gt;" />
+      </list>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+        <option value="$PROJECT_DIR$/src/neo_simulation/launch/mpo_700/mpo_700_spawn.launch" />
+        <option value="$PROJECT_DIR$/src/neo_simulation/launch/mpo_700/mpo_700_calibrate.launch" />
         <option value="$PROJECT_DIR$/src/neo_simulation/scripts/calibratePosition.py" />
       </list>
     </option>
@@ -82,6 +100,45 @@
               <item name="Neobotix" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="neo_simulation" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Neobotix" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Neobotix" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="neo_simulation" type="462c0819:PsiDirectoryNode" />
+              <item name="config" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Neobotix" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Neobotix" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="neo_simulation" type="462c0819:PsiDirectoryNode" />
+              <item name="config" type="462c0819:PsiDirectoryNode" />
+              <item name="mpo_700" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Neobotix" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Neobotix" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="neo_simulation" type="462c0819:PsiDirectoryNode" />
+              <item name="config" type="462c0819:PsiDirectoryNode" />
+              <item name="mpo_700" type="462c0819:PsiDirectoryNode" />
+              <item name="scan_unifier" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Neobotix" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Neobotix" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="neo_simulation" type="462c0819:PsiDirectoryNode" />
+              <item name="launch" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Neobotix" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Neobotix" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="neo_simulation" type="462c0819:PsiDirectoryNode" />
+              <item name="launch" type="462c0819:PsiDirectoryNode" />
+              <item name="mpo_700" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Neobotix" type="b2602c69:ProjectViewProjectNode" />
@@ -125,13 +182,28 @@
       <option name="presentableId" value="Default" />
       <updated>1562319657819</updated>
     </task>
+    <task id="LOCAL-00001" summary="adding calibration python File">
+      <created>1562333968600</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1562333968600</updated>
+    </task>
+    <task id="LOCAL-00002" summary="adding calibration Launch file">
+      <created>1562334077289</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1562334077289</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="3000" y="-2" width="1680" height="1052" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1967411" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24321063" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -154,26 +226,63 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/src/neo_simulation" />
     </ignored-roots>
+    <MESSAGE value="adding calibration python File" />
+    <MESSAGE value="adding calibration Launch file" />
+    <option name="LAST_COMMIT_MESSAGE" value="adding calibration Launch file" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/neo_simulation/scripts/goToPosition.py">
+    <entry file="file://$PROJECT_DIR$/src/neo_simulation/config/mpo_700/scan_unifier/mpo_700_scan_unifier.launch">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/neo_simulation/launch/mpo_700/mpo_700_simulation_basic.launch">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="23" column="12" lean-forward="true" selection-end-line="66" />
+        <state relative-caret-position="255">
+          <caret line="17" column="26" lean-forward="true" selection-start-line="17" selection-start-column="2" selection-end-line="17" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/neo_simulation/launch/mpo_700/mpo_700_spawn.launch">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="525">
+          <caret line="35" lean-forward="true" selection-start-line="35" selection-end-line="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/neo_simulation/launch/mpo_700/mpo_700_get_position.launch">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/neo_simulation/launch/mpo_700/mpo_700_calibrate.launch">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/neo_simulation/scripts/get_position.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="33" column="16" lean-forward="true" selection-start-line="27" selection-end-line="33" selection-end-column="16" />
+        <state relative-caret-position="60">
+          <caret line="4" column="31" lean-forward="true" selection-start-line="4" selection-end-line="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/neo_simulation/scripts/goToPosition.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="29" lean-forward="true" selection-start-line="29" selection-end-line="29" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/neo_simulation/scripts/calibratePosition.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="646">
-          <caret line="49" column="30" selection-start-line="49" selection-start-column="30" selection-end-line="49" selection-end-column="30" />
+        <state relative-caret-position="210">
+          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+          <folding>
+            <element signature="e#24#36#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

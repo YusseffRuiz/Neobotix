@@ -5,6 +5,8 @@
     <arg name="x_pos" default="0.0"/>
     <arg name="y_pos" default="0.0"/>
     <arg name="z_pos" default="0.0"/>
+    <!--To launch scan unifier set the value to true-->
+    <arg name="scanunifier" value="true"/>
 
 
 
@@ -22,6 +24,15 @@
   <node name="robot_state_publisher" pkg="robot_state_publisher" type="state_publisher">
 	<param name="publish_frequency" value="20.0"/>
   </node>
+
+<!---=================================================================================================================================================================-->
+
+  <!--if arg scan-unifier is set to true-->
+
+ <group if="$(arg scanunifier)">
+ 	<include file="$(find neo_simulation)/config/mpo_700/scan_unifier/mpo_700_scan_unifier.launch"/>
+ </group>
+
 
 <!---=================================================================================================================================================================-->
 
