@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="77466e0b-a72e-4865-b448-a9bf00d7a28f" name="Default Changelist" comment="">
+    <list default="true" id="77466e0b-a72e-4865-b448-a9bf00d7a28f" name="Default Changelist" comment="adding calibration Launch file">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/neo_simulation/launch/mpo_700/mpo_700_calibrate.launch" beforeDir="false" afterPath="$PROJECT_DIR$/src/neo_simulation/launch/mpo_700/mpo_700_calibrate.launch" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/neo_simulation/launch/mpo_700/mpo_700_spawn.launch" beforeDir="false" afterPath="$PROJECT_DIR$/src/neo_simulation/launch/mpo_700/mpo_700_spawn.launch" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/neo_simulation/scripts/calibratePosition.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/neo_simulation/scripts/calibratePosition.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -15,32 +13,23 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/neo_simulation/scripts/get_position.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="4" column="31" lean-forward="true" selection-start-line="4" selection-end-line="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/neo_simulation/scripts/goToPosition.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="29" lean-forward="true" selection-start-line="29" selection-end-line="29" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/neo_simulation/scripts/calibratePosition.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+            <state relative-caret-position="360">
+              <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
               <folding>
                 <element signature="e#24#36#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/neo_simulation/scripts/calibratePosition.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="22" column="28" selection-start-line="22" selection-start-column="28" selection-end-line="22" selection-end-column="28" />
             </state>
           </provider>
         </entry>
@@ -68,6 +57,7 @@
         <option value="$PROJECT_DIR$/src/neo_simulation/launch/mpo_700/mpo_700_spawn.launch" />
         <option value="$PROJECT_DIR$/src/neo_simulation/launch/mpo_700/mpo_700_calibrate.launch" />
         <option value="$PROJECT_DIR$/src/neo_simulation/scripts/calibratePosition.py" />
+        <option value="$PROJECT_DIR$/src/neo_simulation/scripts/get_position.py" />
       </list>
     </option>
   </component>
@@ -196,7 +186,14 @@
       <option name="project" value="LOCAL" />
       <updated>1562334077289</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="adding calibration Launch file">
+      <created>1562339633744</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1562339633744</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -206,6 +203,7 @@
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24321063" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Messages" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" />
@@ -262,13 +260,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/neo_simulation/scripts/get_position.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="31" lean-forward="true" selection-start-line="4" selection-end-line="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/neo_simulation/scripts/goToPosition.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="375">
@@ -278,8 +269,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/neo_simulation/scripts/calibratePosition.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+        <state relative-caret-position="255">
+          <caret line="22" column="28" selection-start-line="22" selection-start-column="28" selection-end-line="22" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/neo_simulation/scripts/get_position.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
           <folding>
             <element signature="e#24#36#0" expanded="true" />
           </folding>

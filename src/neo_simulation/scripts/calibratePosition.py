@@ -15,14 +15,14 @@ class Calibration:
 
     def __init__(self):
 
-        # Creates a node with name 'turtlebot_controller' and make sure it is a
+        # Creates a node with name 'speed_controller' and make sure it is a
         # unique node (using anonymous=True).
         rospy.init_node("speed_controller", anonymous=True)
-        # Publisher which will publish to the topic '/turtle1/cmd_vel'.
+        # Publisher which will publish to the topic '/cmd_vel'.
 
         self.pose_subscriber = rospy.Subscriber("/amcl_pose", PoseWithCovarianceStamped, self.newPosition)
         self.velocity_publisher = rospy.Publisher("/cmd_vel", Twist, queue_size=1)
-        # A subscriber to the topic '/turtle1/pose'. self.update_pose is called
+        # A subscriber to the topic '/amcl_pose'. self.update_pose is called
         # when a message of type Pose is received.
         self.pose = PoseWithCovarianceStamped()
         self.r = rospy.Rate(4)
