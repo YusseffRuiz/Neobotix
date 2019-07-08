@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch>
+    <node pkg="neo_simulation" type="mpo_700_actions.py" name="mpo_700_actions" output="screen" />
+</launch>

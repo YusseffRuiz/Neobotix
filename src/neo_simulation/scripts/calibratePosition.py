@@ -25,7 +25,8 @@ class Calibration:
         # A subscriber to the topic '/amcl_pose'. self.update_pose is called
         # when a message of type Pose is received.
         self.pose = PoseWithCovarianceStamped()
-        self.r = rospy.Rate(4)
+        self.r = rospy.Rate(2)
+        self.speed = Twist()  ### Speed has to be more than 0.5 in order for the robot to move
 
     def newPosition(self, msg):
         # Add these lines if required to use x and y
@@ -43,7 +44,6 @@ class Calibration:
 
 
     def calibration(self):
-        speed = Twist()  ### Speed has to be more than 0.5 in order for the robot to move
 
         angle_to_goal_pos = math.pi
         angle_to_goal_neg = 0
@@ -52,9 +52,10 @@ class Calibration:
 
         while not end_flag:
 
-            speed.angular.z = 0.7
-            self.velocity_publisher.publish(speed)
+            self.speed.angular.z = 0.7
+            self.velocity_publisher.publish(self.speed)
             self.r.sleep()
+            # print(theta*360/(2*math.pi))
             if positive_flag:
                 if not (abs(angle_to_goal_pos - theta) > 0.2):
                     positive_flag = False
@@ -63,18 +64,30 @@ class Calibration:
                     end_flag = True
 
 
-        speed.angular.z = 0.0
-        self.velocity_publisher.publish(speed)
+        self.speed.angular.z = 0.0
+        self.velocity_publisher.publish(self.speed)
         print("Calibrated!")
         rospy.spin
 
 
 
+    def stop(self):
+        self.speed.linear.x = 0.0
+        self.speed.linear.y = 0.0
+        self.speed.angular.z = 0.0
+        while not rospy.is_shutdown():
+            self.velocity_publisher.publish(self.speed)
+            self.r.sleep()
+        rospy.spin
+        print("Forced Stop!")
+
+
 if __name__ == "__main__":
+    x = Calibration()
     try:
-        x = Calibration()
         x.calibration()
     except rospy.ROSInterruptException:
+        x.stop()
         pass
 
 
