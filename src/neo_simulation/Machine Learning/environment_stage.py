@@ -23,10 +23,10 @@ import math
 from math import pi
 from geometry_msgs.msg import Twist, Point, Pose
 from sensor_msgs.msg import LaserScan
-from nav_msgs.msg import Odometry
+from geometry_msgs.msg import PoseWithCovarianceStamped
 from std_srvs.srv import Empty
 from tf.transformations import euler_from_quaternion, quaternion_from_euler
-from respawnGoal import Respawn
+from respawnGoal import Respawn  ### Done maybe check
 
 class Env():
     def __init__(self, action_size):
@@ -38,11 +38,14 @@ class Env():
         self.get_goalbox = False
         self.position = Pose()
         self.pub_cmd_vel = rospy.Publisher('cmd_vel', Twist, queue_size=5)
-        self.sub_odom = rospy.Subscriber('odom', Odometry, self.getOdometry)
+
+        # self.sub_odom = rospy.Subscriber('odom', Odometry, self.getOdometry)
+        self.sub_odom = rospy.Subscriber("/amcl_pose", PoseWithCovarianceStamped, self.getOdometry)
+
         self.reset_proxy = rospy.ServiceProxy('gazebo/reset_simulation', Empty)
         self.unpause_proxy = rospy.ServiceProxy('gazebo/unpause_physics', Empty)
         self.pause_proxy = rospy.ServiceProxy('gazebo/pause_physics', Empty)
-        self.respawn_goal = Respawn()
+        self.respawn_goal = Respawn() ## substitute
 
     def getGoalDistace(self):
         goal_distance = round(math.hypot(self.goal_x - self.position.x, self.goal_y - self.position.y), 2)
@@ -66,7 +69,7 @@ class Env():
 
         self.heading = round(heading, 2)
 
-    def getState(self, scan):
+    def getState(self, scan): ### needs to modify it
         scan_range = []
         heading = self.heading
         min_range = 0.13
@@ -131,7 +134,7 @@ class Env():
         data = None
         while data is None:
             try:
-                data = rospy.wait_for_message('scan', LaserScan, timeout=5)
+                data = rospy.wait_for_message('cob_scan_unifier/scan_unified', LaserScan, timeout=5)
             except:
                 pass
 
@@ -150,7 +153,7 @@ class Env():
         data = None
         while data is None:
             try:
-                data = rospy.wait_for_message('scan', LaserScan, timeout=5)
+                data = rospy.wait_for_message('cob_scan_unifier/scan_unified', LaserScan, timeout=5)
             except:
                 pass
 

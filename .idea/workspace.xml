@@ -2,11 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="77466e0b-a72e-4865-b448-a9bf00d7a28f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/neo_simulation/Machine Learning/arsMovement.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/neo_simulation/Machine Learning/ars_stage.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/neo_simulation/Machine Learning/environment_stage.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/neo_simulation/Machine Learning/RespawnGoal.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/CMakeCache.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/Makefile.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/build/CMakeFiles/Makefile.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/Makefile2" beforeDir="false" afterPath="$PROJECT_DIR$/build/CMakeFiles/Makefile2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/TargetDirectories.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/CMakeFiles/TargetDirectories.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/build/Makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/cob_scan_unifier/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/build/cob_scan_unifier/Makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/gtest/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/build/gtest/Makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/gtest/googlemock/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/build/gtest/googlemock/Makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/gtest/googlemock/gtest/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/build/gtest/googlemock/gtest/Makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/neo_simulation/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/build/neo_simulation/Makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/neo_simulation/Machine Learning/ars_stage.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/neo_simulation/Machine Learning/ars_stage.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/neo_simulation/Machine Learning/environment_stage.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/neo_simulation/Machine Learning/environment_stage.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -17,10 +27,25 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/neo_simulation/scripts/mpo_700_actions.py">
+        <entry file="file://$PROJECT_DIR$/src/neo_simulation/Machine Learning/mpo_700_actions.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="5" column="48" selection-start-line="5" selection-start-column="48" selection-end-line="5" selection-end-column="48" />
+            <state relative-caret-position="555">
+              <caret line="55" column="22" selection-start-line="55" selection-start-column="22" selection-end-line="55" selection-end-column="22" />
+              <folding>
+                <element signature="e#24#36#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/neo_simulation/Machine Learning/environment_stage.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="208">
+              <caret line="28" column="53" selection-start-line="28" selection-start-column="53" selection-end-line="28" selection-end-column="53" />
+              <folding>
+                <element signature="e#790#802#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -28,8 +53,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/neo_simulation/Machine Learning/arsMovement.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="11" column="23" selection-start-line="11" selection-start-column="23" selection-end-line="11" selection-end-column="23" />
+            <state relative-caret-position="180">
+              <caret line="12" column="71" lean-forward="true" selection-start-line="12" selection-start-column="71" selection-end-line="12" selection-end-column="71" />
               <folding>
                 <element signature="e#47#56#0" expanded="true" />
               </folding>
@@ -37,36 +62,25 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../catkin_ws/src/turtlebot3_machine_learning/turtlebot3_dqn/nodes/turtlebot3_dqn_stage_2">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret selection-end-line="213" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/neo_simulation/Machine Learning/ars_stage.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="763">
-              <caret line="213" selection-start-line="213" selection-end-line="213" />
+            <state relative-caret-position="178">
+              <caret line="150" column="19" selection-start-line="150" selection-start-column="19" selection-end-line="150" selection-end-column="19" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../catkin_ws/src/turtlebot3_machine_learning/turtlebot3_dqn/src/turtlebot3_dqn/environment_stage_2.py">
+        <entry file="file://$PROJECT_DIR$/src/neo_simulation/Machine Learning/RespawnGoal.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="11" column="67" lean-forward="true" selection-end-line="163" selection-end-column="32" />
+            <state relative-caret-position="450">
+              <caret line="30" column="80" selection-start-line="30" selection-start-column="80" selection-end-line="30" selection-end-column="80" />
+              <folding>
+                <element signature="e#790#802#0" expanded="true" />
+              </folding>
             </state>
           </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../catkin_ws/src/turtlebot3_machine_learning/turtlebot3_dqn/src/turtlebot3_dqn/respawnGoal.py">
-          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
     </leaf>
@@ -83,6 +97,8 @@
       <find>env</find>
       <find>env.</find>
       <find>wrappers</find>
+      <find>getState</find>
+      <find>getPosition</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -105,6 +121,7 @@
         <option value="$PROJECT_DIR$/src/neo_simulation/scripts/mpo_700_actions.py" />
         <option value="$PROJECT_DIR$/../Documents/Augmented Random Search/OwnCode/ars.py" />
         <option value="$PROJECT_DIR$/src/neo_simulation/scripts/arsMovement.py" />
+        <option value="$PROJECT_DIR$/src/neo_simulation/Machine Learning/RespawnGoal.py" />
         <option value="$PROJECT_DIR$/src/neo_simulation/Machine Learning/environment_stage.py" />
         <option value="$PROJECT_DIR$/src/neo_simulation/Machine Learning/ars_stage.py" />
       </list>
@@ -236,7 +253,14 @@
       <option name="project" value="LOCAL" />
       <updated>1562622221140</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Creating machine Learning python Files">
+      <created>1562953912724</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1562953912724</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -254,7 +278,7 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info anchor="bottom" id="Terminal" order="8" />
+      <window_info anchor="bottom" id="Terminal" order="8" weight="0.3289941" />
       <window_info anchor="bottom" id="Python Console" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="bottom" id="Messages" order="11" />
@@ -272,7 +296,8 @@
     <MESSAGE value="Getting the Launch file to Launch:&#10;Map&#10;Spawn of the Robot&#10;Lidar Unified&#10;AMCL" />
     <MESSAGE value="Adding Robot Actions, Actions Tested and Reset the world.&#10;We need to add a distance vector." />
     <MESSAGE value="Define different Actions Based on the coordinates.&#10;&#10;Change variables:&#10;moveDistance = to modify meters to move&#10;moveAngle = 10 degrees aprox&#10;&#10;They move and then stop after moving the desired distance.&#10;&#10;These actions will be for the NN training." />
-    <option name="LAST_COMMIT_MESSAGE" value="Define different Actions Based on the coordinates.&#10;&#10;Change variables:&#10;moveDistance = to modify meters to move&#10;moveAngle = 10 degrees aprox&#10;&#10;They move and then stop after moving the desired distance.&#10;&#10;These actions will be for the NN training." />
+    <MESSAGE value="Creating machine Learning python Files" />
+    <option name="LAST_COMMIT_MESSAGE" value="Creating machine Learning python Files" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -375,51 +400,74 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/neo_simulation/scripts/mpo_700_actions.py">
+    <entry file="file://$PROJECT_DIR$/../catkin_ws/src/turtlebot3_machine_learning/turtlebot3_dqn/nodes/turtlebot3_dqn_stage_2">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="48" selection-start-line="5" selection-start-column="48" selection-end-line="5" selection-end-column="48" />
+        <state relative-caret-position="-1500">
+          <caret line="29" column="54" selection-start-line="29" selection-start-column="51" selection-end-line="29" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../catkin_ws/src/turtlebot3_machine_learning/turtlebot3_dqn/src/turtlebot3_dqn/environment_stage_2.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="25" column="33" lean-forward="true" selection-start-line="25" selection-start-column="33" selection-end-line="25" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/neo_simulation/Machine Learning/mpo_700_actions.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="555">
+          <caret line="55" column="22" selection-start-line="55" selection-start-column="22" selection-end-line="55" selection-end-column="22" />
+          <folding>
+            <element signature="e#24#36#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../catkin_ws/src/turtlebot3_machine_learning/turtlebot3_dqn/src/turtlebot3_dqn/respawnGoal.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="377">
+          <caret line="55" column="39" lean-forward="true" selection-end-line="130" />
+          <folding>
+            <element signature="e#790#802#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/neo_simulation/Machine Learning/RespawnGoal.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="30" column="80" selection-start-line="30" selection-start-column="80" selection-end-line="30" selection-end-column="80" />
+          <folding>
+            <element signature="e#790#802#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/neo_simulation/Machine Learning/environment_stage.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="208">
+          <caret line="28" column="53" selection-start-line="28" selection-start-column="53" selection-end-line="28" selection-end-column="53" />
+          <folding>
+            <element signature="e#790#802#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/neo_simulation/Machine Learning/arsMovement.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="11" column="23" selection-start-line="11" selection-start-column="23" selection-end-line="11" selection-end-column="23" />
+        <state relative-caret-position="180">
+          <caret line="12" column="71" lean-forward="true" selection-start-line="12" selection-start-column="71" selection-end-line="12" selection-end-column="71" />
           <folding>
             <element signature="e#47#56#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../catkin_ws/src/turtlebot3_machine_learning/turtlebot3_dqn/src/turtlebot3_dqn/respawnGoal.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../catkin_ws/src/turtlebot3_machine_learning/turtlebot3_dqn/src/turtlebot3_dqn/environment_stage_2.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="67" lean-forward="true" selection-end-line="163" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/neo_simulation/Machine Learning/environment_stage.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="763">
-          <caret line="163" column="32" selection-start-line="163" selection-start-column="32" selection-end-line="163" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../catkin_ws/src/turtlebot3_machine_learning/turtlebot3_dqn/nodes/turtlebot3_dqn_stage_2">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="213" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/neo_simulation/Machine Learning/ars_stage.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="763">
-          <caret line="213" selection-start-line="213" selection-end-line="213" />
+        <state relative-caret-position="178">
+          <caret line="150" column="19" selection-start-line="150" selection-start-column="19" selection-end-line="150" selection-end-column="19" />
         </state>
       </provider>
     </entry>

@@ -27,7 +27,7 @@ import sys
 sys.path.append(os.path.dirname(os.path.abspath(os.path.dirname(__file__))))
 from collections import deque
 from std_msgs.msg import Float32MultiArray
-from src.turtlebot3_dqn.environment_stage_2 import Env
+from environment_stage import Env
 from keras.models import Sequential, load_model
 from keras.optimizers import RMSprop
 from keras.layers.core import Dense, Dropout, Activation
@@ -39,7 +39,7 @@ class ReinforceAgent():
     def __init__(self, state_size, action_size):
         self.pub_result = rospy.Publisher('result', Float32MultiArray, queue_size=5)
         self.dirPath = os.path.dirname(os.path.realpath(__file__))
-        self.dirPath = self.dirPath.replace('turtlebot3_dqn/nodes', 'turtlebot3_dqn/save_model/stage_2_')
+        self.dirPath = self.dirPath.replace('neo_simulation/Machine Learning', 'neo_simulation/save_model/stageTest_')
         self.result = Float32MultiArray()
 
         self.load_model = False
@@ -142,7 +142,7 @@ class ReinforceAgent():
         self.model.fit(X_batch, Y_batch, batch_size=self.batch_size, epochs=1, verbose=0)
 
 if __name__ == '__main__':
-    rospy.init_node('turtlebot3_dqn_stage_1')
+    rospy.init_node('mpo_700_dqn_stage_1')
     pub_result = rospy.Publisher('result', Float32MultiArray, queue_size=5)
     pub_get_action = rospy.Publisher('get_action', Float32MultiArray, queue_size=5)
     result = Float32MultiArray()
