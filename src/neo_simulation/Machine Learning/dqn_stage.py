@@ -31,6 +31,9 @@ from environment_stage import Env
 from keras.models import Sequential, load_model
 from keras.optimizers import RMSprop
 from keras.layers.core import Dense, Dropout, Activation
+from scripts.calibratePosition import Calibration
+from scripts.mpo_700_actions import RobotActions
+
 
 
 EPISODES = 3000
@@ -39,7 +42,7 @@ class ReinforceAgent():
     def __init__(self, state_size, action_size):
         self.pub_result = rospy.Publisher('result', Float32MultiArray, queue_size=5)
         self.dirPath = os.path.dirname(os.path.realpath(__file__))
-        self.dirPath = self.dirPath.replace('neo_simulation/Machine Learning', 'neo_simulation/save_model/stageTest_')
+        self.dirPath = self.dirPath.replace('neo_simulation/Machine Learning', 'neo_simulation/save_model/stageTest_1_')
         self.result = Float32MultiArray()
 
         self.load_model = False
@@ -142,25 +145,32 @@ class ReinforceAgent():
         self.model.fit(X_batch, Y_batch, batch_size=self.batch_size, epochs=1, verbose=0)
 
 if __name__ == '__main__':
-    rospy.init_node('mpo_700_dqn_stage_1')
+    rospy.init_node('mpo_700_dqn_stage_1', anonymous=True)
     pub_result = rospy.Publisher('result', Float32MultiArray, queue_size=5)
     pub_get_action = rospy.Publisher('get_action', Float32MultiArray, queue_size=5)
     result = Float32MultiArray()
     get_action = Float32MultiArray()
 
-    state_size = 28
+    state_size = 32
     action_size = 5
 
+    # robotActions = RobotActions()
+    calibrate = Calibration()
     env = Env(action_size)
+    env.reset()
+
+    # robotActions.resetWorld()
 
     agent = ReinforceAgent(state_size, action_size)
     scores, episodes = [], []
     global_step = 0
+    calibrate.calibration()
     start_time = time.time()
 
     for e in range(agent.load_episode + 1, EPISODES):
         done = False
         state = env.reset()
+        # calibrate.calibration() not required, only used for troubleshooting
         score = 0
         for t in range(agent.episode_step):
             action = agent.getAction(state)

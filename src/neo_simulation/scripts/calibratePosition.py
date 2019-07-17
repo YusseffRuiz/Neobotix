@@ -17,7 +17,7 @@ class Calibration:
 
         # Creates a node with name 'speed_controller' and make sure it is a
         # unique node (using anonymous=True).
-        rospy.init_node("speed_controller", anonymous=True)
+        # rospy.init_node("speed_controller", anonymous=True)
         # Publisher which will publish to the topic '/cmd_vel'.
 
         self.pose_subscriber = rospy.Subscriber("/amcl_pose", PoseWithCovarianceStamped, self.newPosition)
@@ -52,13 +52,14 @@ class Calibration:
 
         while not end_flag:
 
-            self.speed.angular.z = 0.7
+            self.speed.angular.z = 0.9
             self.velocity_publisher.publish(self.speed)
             self.r.sleep()
             # print(theta*360/(2*math.pi))
             if positive_flag:
                 if not (abs(angle_to_goal_pos - theta) > 0.2):
                     positive_flag = False
+                    # print("Negative")
             else:
                 if not (abs(angle_to_goal_neg - theta) > 0.2):
                     end_flag = True

@@ -21,12 +21,13 @@ import rospy
 import numpy as np
 import math
 from math import pi
-from geometry_msgs.msg import Twist, Point, Pose
+from geometry_msgs.msg import Twist #, Point, Pose
 from sensor_msgs.msg import LaserScan
 from geometry_msgs.msg import PoseWithCovarianceStamped
+from nav_msgs.msg import Odometry
 from std_srvs.srv import Empty
 from tf.transformations import euler_from_quaternion, quaternion_from_euler
-from respawnGoal import Respawn  ### Done maybe check
+from RespawnGoal import Respawn  ### Done maybe check
 
 class Env():
     def __init__(self, action_size):
@@ -36,30 +37,51 @@ class Env():
         self.action_size = action_size
         self.initGoal = True
         self.get_goalbox = False
-        self.position = Pose()
+        self.position = PoseWithCovarianceStamped().pose.pose  ##Pose()
         self.pub_cmd_vel = rospy.Publisher('cmd_vel', Twist, queue_size=5)
 
-        # self.sub_odom = rospy.Subscriber('odom', Odometry, self.getOdometry)
-        self.sub_odom = rospy.Subscriber("/amcl_pose", PoseWithCovarianceStamped, self.getOdometry)
+        self.sub_odom = rospy.Subscriber('odom', Odometry, self.getOdometry)
+        # self.sub_odom = rospy.Subscriber("/amcl_pose", PoseWithCovarianceStamped, self.getOdometry)
 
-        self.reset_proxy = rospy.ServiceProxy('gazebo/reset_simulation', Empty)
-        self.unpause_proxy = rospy.ServiceProxy('gazebo/unpause_physics', Empty)
-        self.pause_proxy = rospy.ServiceProxy('gazebo/pause_physics', Empty)
+        self.reset_proxy = rospy.ServiceProxy('/gazebo/reset_world', Empty)#rospy.ServiceProxy('gazebo/reset_simulation', Empty)
+        # self.unpause_proxy = rospy.ServiceProxy('gazebo/unpause_physics', Empty)
+        # self.pause_proxy = rospy.ServiceProxy('gazebo/pause_physics', Empty)
         self.respawn_goal = Respawn() ## substitute
+        self.vel_cmd = Twist()
+
 
     def getGoalDistace(self):
         goal_distance = round(math.hypot(self.goal_x - self.position.x, self.goal_y - self.position.y), 2)
-
         return goal_distance
 
     def getOdometry(self, odom):
+        # x = odom.pose.pose.position.x
+        # y = odom.pose.pose.position.y
+        # rot_q = odom.pose.pose.orientation
+        # (roll, pitch, yaw) = euler_from_quaternion([rot_q.x, rot_q.y, rot_q.z, rot_q.w])
+
         self.position = odom.pose.pose.position
         orientation = odom.pose.pose.orientation
         orientation_list = [orientation.x, orientation.y, orientation.z, orientation.w]
         _, _, yaw = euler_from_quaternion(orientation_list)
 
+
+
+        # goal_angle = math.atan2(self.goal_y - y, self.goal_x - x)
         goal_angle = math.atan2(self.goal_y - self.position.y, self.goal_x - self.position.x)
 
+        # self.position.x = x
+        # self.position.y = y
+        #
+        # heading = goal_angle - yaw
+        # if heading > pi:
+        #     heading -= 2 * pi
+        #
+        # elif heading < -pi:
+        #     heading += 2 * pi
+        #
+        # self.heading = round(heading, 2)
+        # rospy.loginfo('pose x: %d, y: %d', x, y)
         heading = goal_angle - yaw
         if heading > pi:
             heading -= 2 * pi
@@ -68,31 +90,54 @@ class Env():
             heading += 2 * pi
 
         self.heading = round(heading, 2)
+        # rospy.loginfo('pose x: %d, y: %d', self.position.x, self.position.y)
 
-    def getState(self, scan): ### needs to modify it
-        scan_range = []
+    def getState(self, scanF, scanB): ### needs to modify it
+        scanF_range = []
+        scanB_range = []
         heading = self.heading
-        min_range = 0.13
+        min_range = 0.25 #### change to detect collision
         done = False
 
-        for i in range(len(scan.ranges)):
-            if scan.ranges[i] == float('Inf'):
-                scan_range.append(3.5)
-            elif np.isnan(scan.ranges[i]):
-                scan_range.append(0)
+        for i in range(len(scanF.ranges)):
+            if scanF.ranges[i] == float('Inf'):
+                scanF_range.append(3.5)
+            elif np.isnan(scanF.ranges[i]):
+                scanF_range.append(0)
             else:
-                scan_range.append(scan.ranges[i])
+                scanF_range.append(scanF.ranges[i])
 
-        obstacle_min_range = round(min(scan_range), 2)
-        obstacle_angle = np.argmin(scan_range)
-        if min_range > min(scan_range) > 0:
+        for i in range(len(scanB.ranges)):
+            if scanB.ranges[i] == float('Inf'):
+                scanB_range.append(3.5)
+            elif np.isnan(scanB.ranges[i]):
+                scanB_range.append(0)
+            else:
+                scanB_range.append(scanB.ranges[i])
+
+        obstacle_min_range = round(min(scanF_range), 2)
+        obstacle_angle = np.argmin(scanF_range)
+
+        vel_temp = self.vel_cmd
+
+        if (min_range+0.2) > min(scanF_range) > 0:
+            vel_temp.linear.x = vel_temp.linear.x - 0.3
+            self.pub_cmd_vel.publish(vel_temp)
+        else:
+            vel_temp = self.calculateVelocity()
+            self.pub_cmd_vel.publish(vel_temp)
+
+        if min_range > min(scanF_range) > 0 or (min_range-0.1) > min(scanB_range) > 0:
             done = True
-
+            # print("X: ", self.position.x, "Y: ", self.position.y)
+            # rospy.loginfo('x: %d, y: %d', self.position.x, self.position.y)
+        # rospy.loginfo('Goal x: %d, y: %d', self.goal_x, self.goal_y)
+        # rospy.loginfo('pose x: %d, y: %d', self.position.x, self.position.y)
         current_distance = round(math.hypot(self.goal_x - self.position.x, self.goal_y - self.position.y), 2)
-        if current_distance < 0.2:
+        if current_distance < 1:
             self.get_goalbox = True
-
-        return scan_range + [heading, current_distance, obstacle_min_range, obstacle_angle], done
+        # rospy.loginfo('Goal Distance: %d', current_distance)
+        return scanF_range + [heading, current_distance, obstacle_min_range, obstacle_angle], done
 
     def setReward(self, state, done, action):
         yaw_reward = []
@@ -122,38 +167,63 @@ class Env():
 
         return reward
 
+    def calculateVelocity(self):
+        dist_temp = (round(math.hypot(self.goal_x - self.position.x, self.goal_y - self.position.y), 2))
+        if (dist_temp > 5):
+            dist_temp = 1.0
+        vel_temp = dist_temp * 1.0 / 5
+        return vel_temp
+
     def step(self, action):
         max_angular_vel = 1.5
         ang_vel = ((self.action_size - 1)/2 - action) * max_angular_vel * 0.5
+        vel_temp = self.calculateVelocity()
 
-        vel_cmd = Twist()
-        vel_cmd.linear.x = 0.15
-        vel_cmd.angular.z = ang_vel
-        self.pub_cmd_vel.publish(vel_cmd)
 
-        data = None
-        while data is None:
+        # vel_cmd = Twist()
+        self.vel_cmd.linear.x = vel_temp
+        self.vel_cmd.angular.z = ang_vel
+        self.pub_cmd_vel.publish(self.vel_cmd)
+
+        dataF = None
+        dataB = None
+        while dataF is None:
             try:
-                data = rospy.wait_for_message('cob_scan_unifier/scan_unified', LaserScan, timeout=5)
+                dataF = rospy.wait_for_message('/sick_front/scan', LaserScan, timeout=5)
             except:
                 pass
 
-        state, done = self.getState(data)
+        while dataB is None:
+            try:
+                dataB = rospy.wait_for_message('/sick_back/scan', LaserScan, timeout=5)
+            except:
+                pass
+
+        state, done = self.getState(dataF, dataB)
         reward = self.setReward(state, done, action)
 
         return np.asarray(state), reward, done
 
     def reset(self):
-        rospy.wait_for_service('gazebo/reset_simulation')
+        # rospy.wait_for_service('gazebo/reset_simulation')
+        rospy.wait_for_service('/gazebo/reset_world')
         try:
             self.reset_proxy()
         except (rospy.ServiceException) as e:
             print("gazebo/reset_simulation service call failed")
 
-        data = None
-        while data is None:
+        dataF = None
+        dataB = None
+
+        while dataF is None:
             try:
-                data = rospy.wait_for_message('cob_scan_unifier/scan_unified', LaserScan, timeout=5)
+                dataF = rospy.wait_for_message('/sick_front/scan', LaserScan, timeout=5)
+            except:
+                pass
+
+        while dataB is None:
+            try:
+                dataB = rospy.wait_for_message('/sick_back/scan', LaserScan, timeout=5)
             except:
                 pass
 
@@ -162,6 +232,6 @@ class Env():
             self.initGoal = False
 
         self.goal_distance = self.getGoalDistace()
-        state, done = self.getState(data)
+        state, done = self.getState(dataF, dataB)
 
         return np.asarray(state)

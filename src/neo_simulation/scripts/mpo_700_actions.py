@@ -18,7 +18,7 @@ class RobotActions:
 
         # Creates a node with name 'speed_controller' and make sure it is a
         # unique node (using anonymous=True).
-        rospy.init_node("robotActions", anonymous=True)
+        # rospy.init_node("robotActions", anonymous=True)
         # Publisher which will publish to the topic '/cmd_vel'.
         self.pose_subscriber = rospy.Subscriber("/amcl_pose", PoseWithCovarianceStamped, self.getPosition)
         self.velocity_publisher = rospy.Publisher("/cmd_vel", Twist, queue_size=1)
@@ -33,7 +33,6 @@ class RobotActions:
 
 
     def getPosition(self, msg):
-        # Add these lines if required to use x and y
         x = msg.pose.pose.position.x
         y = msg.pose.pose.position.y
 

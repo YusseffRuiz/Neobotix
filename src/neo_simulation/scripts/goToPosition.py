@@ -41,7 +41,7 @@ pub = rospy.Publisher("/cmd_vel", Twist, queue_size=1)
 speed = Twist()
 r = rospy.Rate(4)
 
-goal = Point()
+
 goal.x = 10
 goal.y = 10
 
