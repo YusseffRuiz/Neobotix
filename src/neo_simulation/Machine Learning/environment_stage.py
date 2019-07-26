@@ -40,8 +40,8 @@ class Env():
         self.position = PoseWithCovarianceStamped().pose.pose  ##Pose()
         self.pub_cmd_vel = rospy.Publisher('cmd_vel', Twist, queue_size=5)
 
-        self.sub_odom = rospy.Subscriber('odom', Odometry, self.getOdometry)
-        # self.sub_odom = rospy.Subscriber("/amcl_pose", PoseWithCovarianceStamped, self.getOdometry)
+        # self.sub_odom = rospy.Subscriber('odom', Odometry, self.getOdometry)
+        self.sub_odom = rospy.Subscriber("/amcl_pose", PoseWithCovarianceStamped, self.getOdometry)
 
         self.reset_proxy = rospy.ServiceProxy('/gazebo/reset_world', Empty)#rospy.ServiceProxy('gazebo/reset_simulation', Empty)
         # self.unpause_proxy = rospy.ServiceProxy('gazebo/unpause_physics', Empty)
@@ -120,11 +120,12 @@ class Env():
 
         vel_temp = self.vel_cmd
 
+
         if (min_range+0.2) > min(scanF_range) > 0:
             vel_temp.linear.x = vel_temp.linear.x - 0.3
             self.pub_cmd_vel.publish(vel_temp)
         else:
-            vel_temp = self.calculateVelocity()
+            vel_temp.linear.x = self.calculateVelocity()
             self.pub_cmd_vel.publish(vel_temp)
 
         if min_range > min(scanF_range) > 0 or (min_range-0.1) > min(scanB_range) > 0:
