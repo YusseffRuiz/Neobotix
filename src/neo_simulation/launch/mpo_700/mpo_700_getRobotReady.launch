@@ -3,7 +3,7 @@
 <!--Load Map-->
 
   <include file="$(find gazebo_ros)/launch/empty_world.launch">
-    <arg name="world_name" value="$(find neo_simulation)/worlds/neo_track2.world"/>
+    <arg name="world_name" value="$(find neo_simulation)/worlds/BRL_track.world"/>
     <arg name="paused" value="false"/>
     <arg name="use_sim_time" value="true"/>
     <arg name="gui" value="true"/>
@@ -15,13 +15,13 @@
 
 
 <!--Initial Position-->
-    <arg name="x_pos" default="0.0"/>
-    <arg name="y_pos" default="0.0"/>
+    <arg name="x_pos" default="7.0"/>
+    <arg name="y_pos" default="-9.0"/>
     <arg name="z_pos" default="0.0"/>
     <!--To launch scan unifier set the value to true-->
     <arg name="scanunifier" value="true"/>
     <!--Modify depending on the Map-->
-    <arg name="env_map" default="$(find neo_simulation)/maps/neo_track2.yaml" />
+    <!--<arg name="env_map" default="$(find neo_simulation)/maps/neo_track2.yaml" />-->
 
 
 
@@ -51,14 +51,13 @@
 
 <!---=================================================================================================================================================================-->
 
-  <!-- MAP SERVER -->
+  <!-- MAP SERVER 
   <node name="map_server" pkg="map_server" type="map_server" args="$(arg env_map)">
   </node>
 
   <node pkg="amcl" type="amcl" name="amcl">
-	<!--<remap from="scan" to="/sick_front/scan"/>-->
   	<remap from="scan" to="/cob_scan_unifier/scan_unified"/>
   	<rosparam file="$(find neo_simulation)/config/mpo_700/amcl/amcl_config.yaml" command="load" />
   </node>
-
+-->
 </launch>
