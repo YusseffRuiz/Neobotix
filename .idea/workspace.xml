@@ -2,12 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="77466e0b-a72e-4865-b448-a9bf00d7a28f" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/neo_simulation/save_model/No_Obstacles/stage_1_490.h5" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/neo_simulation/save_model/No_Obstacles/stage_1_490.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/neo_simulation/save_model/No_Obstacles/stage_1_500.h5" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/neo_simulation/save_model/No_Obstacles/stage_1_500.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/neo_simulation/Machine Learning/RespawnGoal.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/neo_simulation/Machine Learning/RespawnGoal.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/neo_simulation/Machine Learning/Training_Stage.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/neo_simulation/Machine Learning/Training_Stage.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/neo_simulation/Machine Learning/dqn_stage.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/neo_simulation/Machine Learning/dqn_stage.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/neo_simulation/Machine Learning/environment_stage.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/neo_simulation/Machine Learning/environment_stage.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/neo_simulation/launch/mpo_700/mpo_700_getRobotReady.launch" beforeDir="false" afterPath="$PROJECT_DIR$/src/neo_simulation/launch/mpo_700/mpo_700_getRobotReady.launch" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/neo_simulation/save_model/No_Obstacles/stage_1_450.h5" beforeDir="false" afterPath="$PROJECT_DIR$/src/neo_simulation/save_model/No_Obstacles/stage_1_450.h5" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/neo_simulation/save_model/No_Obstacles/stage_1_450.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/neo_simulation/save_model/No_Obstacles/stage_1_450.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/neo_simulation/save_model/No_Obstacles/stage_1_460.h5" beforeDir="false" afterPath="$PROJECT_DIR$/src/neo_simulation/save_model/No_Obstacles/stage_1_460.h5" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/neo_simulation/save_model/No_Obstacles/stage_1_460.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/neo_simulation/save_model/No_Obstacles/stage_1_460.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/neo_simulation/save_model/No_Obstacles/stage_1_470.h5" beforeDir="false" afterPath="$PROJECT_DIR$/src/neo_simulation/save_model/No_Obstacles/stage_1_470.h5" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/neo_simulation/save_model/No_Obstacles/stage_1_470.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/neo_simulation/save_model/No_Obstacles/stage_1_470.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/neo_simulation/save_model/No_Obstacles/stage_1_480.h5" beforeDir="false" afterPath="$PROJECT_DIR$/src/neo_simulation/save_model/No_Obstacles/stage_1_480.h5" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/neo_simulation/save_model/No_Obstacles/stage_1_480.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/neo_simulation/save_model/No_Obstacles/stage_1_480.json" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -185,7 +194,14 @@
       <option name="project" value="LOCAL" />
       <updated>1565229914486</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Defining Limits on the Goals of the map.&#10;Changing rewards&#10;Modified DQN to load a trained model to keep training.">
+      <created>1565268734229</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1565268734229</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -218,7 +234,8 @@
     <MESSAGE value="Updating Files" />
     <MESSAGE value="Changing comments" />
     <MESSAGE value="Adding Running File for testing the DQN Network.&#10;Separating the Training Python File from the DQN training algorithm" />
-    <option name="LAST_COMMIT_MESSAGE" value="Adding Running File for testing the DQN Network.&#10;Separating the Training Python File from the DQN training algorithm" />
+    <MESSAGE value="Defining Limits on the Goals of the map.&#10;Changing rewards&#10;Modified DQN to load a trained model to keep training." />
+    <option name="LAST_COMMIT_MESSAGE" value="Defining Limits on the Goals of the map.&#10;Changing rewards&#10;Modified DQN to load a trained model to keep training." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -39,7 +39,9 @@ class Env():
         self.get_goalbox = False
         self.position = PoseWithCovarianceStamped().pose.pose  ##Pose()
         self.pub_cmd_vel = rospy.Publisher('cmd_vel', Twist, queue_size=5)
-        self.sub_odom = rospy.Subscriber("/amcl_pose", PoseWithCovarianceStamped, self.getOdometry)
+
+        self.sub_odom = rospy.Subscriber("/odom", Odometry, self.getOdometry) ##Training Stage
+        # self.sub_odom = rospy.Subscriber("/amcl_pose", PoseWithCovarianceStamped, self.getOdometry) ## Running Stage
 
         self.reset_proxy = rospy.ServiceProxy('/gazebo/reset_world', Empty)#rospy.ServiceProxy('gazebo/reset_simulation', Empty)
         # self.unpause_proxy = rospy.ServiceProxy('gazebo/unpause_physics', Empty)
@@ -147,8 +149,10 @@ class Env():
     def calculateVelocity(self):
         dist_temp = (round(math.hypot(self.goal_x - self.position.x, self.goal_y - self.position.y), 2))
         if (dist_temp > 5):
-            dist_temp = 1.0
-        vel_temp = dist_temp * 1.0 / 5
+            dist_temp = 5
+        vel_temp = dist_temp * 1.5 / 5
+        if vel_temp<=0.4:
+            vel_temp = 0.5
         return vel_temp
 
     def step(self, action):
