@@ -22,27 +22,23 @@ import os
 import json
 import numpy as np
 import random
-import time
 import sys
 sys.path.append(os.path.dirname(os.path.abspath(os.path.dirname(__file__))))
 from collections import deque
 from std_msgs.msg import Float32MultiArray
-from environment_stage import Env
-from keras.models import Sequential, load_model
+from keras.models import Sequential, load_model, model_from_json
 from keras.optimizers import RMSprop
 from keras.layers.core import Dense, Dropout, Activation
-from scripts.calibratePosition import Calibration
-from scripts.mpo_700_actions import RobotActions
 
 
 
-EPISODES = 3000
+
 
 class ReinforceAgent():
     def __init__(self, state_size, action_size):
         self.pub_result = rospy.Publisher('result', Float32MultiArray, queue_size=5)
         self.dirPath = os.path.dirname(os.path.realpath(__file__))
-        self.dirPath = self.dirPath.replace('neo_simulation/Machine Learning', 'neo_simulation/save_model/stageTest_2_')
+        self.dirPath = self.dirPath.replace('neo_simulation/Machine Learning', 'neo_simulation/save_model/No_Obstacles/stage_1_')
         self.result = Float32MultiArray()
 
         self.load_model = False
@@ -71,6 +67,8 @@ class ReinforceAgent():
             with open(self.dirPath + str(self.load_episode) + '.json') as outfile:
                 param = json.load(outfile)
                 self.epsilon = param.get('epsilon')
+
+
 
     def buildModel(self):
         model = Sequential()
@@ -144,80 +142,3 @@ class ReinforceAgent():
 
         self.model.fit(X_batch, Y_batch, batch_size=self.batch_size, epochs=1, verbose=0)
 
-if __name__ == '__main__':
-    rospy.init_node('mpo_700_dqn_stage_1', anonymous=True)
-    pub_result = rospy.Publisher('result', Float32MultiArray, queue_size=5)
-    pub_get_action = rospy.Publisher('get_action', Float32MultiArray, queue_size=5)
-    result = Float32MultiArray()
-    get_action = Float32MultiArray()
-
-    state_size = 32
-    action_size = 5
-
-    # robotActions = RobotActions()
-    calibrate = Calibration()
-    env = Env(action_size)
-    env.reset()
-
-    # robotActions.resetWorld()
-
-    agent = ReinforceAgent(state_size, action_size)
-    scores, episodes = [], []
-    global_step = 0
-    calibrate.calibration()
-    start_time = time.time()
-
-    for e in range(agent.load_episode + 1, EPISODES):
-        done = False
-        state = env.reset()
-        # calibrate.calibration() not required, only used for troubleshooting
-        score = 0
-        for t in range(agent.episode_step):
-            action = agent.getAction(state)
-
-            next_state, reward, done = env.step(action)
-
-            agent.appendMemory(state, action, reward, next_state, done)
-
-            if len(agent.memory) >= agent.train_start:
-                if global_step <= agent.target_update:
-                    agent.trainModel()
-                else:
-                    agent.trainModel(True)
-
-            score += reward
-            state = next_state
-            get_action.data = [action, score, reward]
-            pub_get_action.publish(get_action)
-
-            if t > 500:
-                rospy.loginfo("Time out.")
-                done = True
-
-            if e % 10 == 0:
-                agent.model.save(agent.dirPath + str(e) + '.h5')
-                with open(agent.dirPath + str(e) + '.json', 'w') as outfile:
-                    json.dump(param_dictionary, outfile)
-
-            if done:
-                result.data = [score, np.max(agent.q_value)]
-                pub_result.publish(result)
-                agent.updateTargetModel()
-                scores.append(score)
-                episodes.append(e)
-                m, s = divmod(int(time.time() - start_time), 60)
-                h, m = divmod(m, 60)
-
-                rospy.loginfo('Ep: %d score: %.2f memory: %d epsilon: %.2f time: %d:%02d:%02d',
-                              e, score, len(agent.memory), agent.epsilon, h, m, s)
-                param_keys = ['epsilon']
-                param_values = [agent.epsilon]
-                param_dictionary = dict(zip(param_keys, param_values))
-                break
-
-            global_step += 1
-            if global_step % agent.target_update == 0:
-                rospy.loginfo("UPDATE TARGET NETWORK")
-
-        if agent.epsilon > agent.epsilon_min:
-            agent.epsilon *= agent.epsilon_decay

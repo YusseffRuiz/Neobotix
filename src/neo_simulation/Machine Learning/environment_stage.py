@@ -46,7 +46,7 @@ class Env():
         self.reset_proxy = rospy.ServiceProxy('/gazebo/reset_world', Empty)#rospy.ServiceProxy('gazebo/reset_simulation', Empty)
         # self.unpause_proxy = rospy.ServiceProxy('gazebo/unpause_physics', Empty)
         # self.pause_proxy = rospy.ServiceProxy('gazebo/pause_physics', Empty)
-        self.respawn_goal = Respawn() ## substitute
+        self.respawn_goal = Respawn()
         self.vel_cmd = Twist()
 
 
@@ -92,7 +92,7 @@ class Env():
         self.heading = round(heading, 2)
         # rospy.loginfo('pose x: %d, y: %d', self.position.x, self.position.y)
 
-    def getState(self, scanF, scanB): ### needs to modify it
+    def getState(self, scanF, scanB):
         scanF_range = []
         scanB_range = []
         heading = self.heading
@@ -155,12 +155,12 @@ class Env():
 
         if done:
             rospy.loginfo("Collision!!")
-            reward = -150
+            reward = -250
             self.pub_cmd_vel.publish(Twist())
 
         if self.get_goalbox:
             rospy.loginfo("Goal!!")
-            reward = 200
+            reward = 400
             self.pub_cmd_vel.publish(Twist())
             self.goal_x, self.goal_y = self.respawn_goal.getPosition(True, delete=True)
             self.goal_distance = self.getGoalDistace()
@@ -168,7 +168,7 @@ class Env():
 
         return reward
 
-    def calculateVelocity(self):
+    def calculateVelocity(self):  ## this function makes the velocity calculation dynamic [0 - 1]
         dist_temp = (round(math.hypot(self.goal_x - self.position.x, self.goal_y - self.position.y), 2))
         if (dist_temp > 5):
             dist_temp = 1.0

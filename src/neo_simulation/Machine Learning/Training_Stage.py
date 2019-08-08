@@ -15,7 +15,11 @@ from scripts.mpo_700_actions import RobotActions
 from environment_stage import Env
 
 
+<<<<<<< HEAD
 EPISODES = 5000
+=======
+EPISODES = 3000
+>>>>>>> 32e71049c1a7fa433224598cb147e0931ce3c6ae
 
 
 if __name__ == '__main__':
@@ -35,13 +39,20 @@ if __name__ == '__main__':
 
     # robotActions.resetWorld()
 
+<<<<<<< HEAD
     agent = ReinforceAgent(state_size, action_size, True, 540)
+=======
+    agent = ReinforceAgent(state_size, action_size)
+>>>>>>> 32e71049c1a7fa433224598cb147e0931ce3c6ae
     scores, episodes = [], []
     global_step = 0
     calibrate.calibration()
     start_time = time.time()
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 32e71049c1a7fa433224598cb147e0931ce3c6ae
     for e in range(agent.load_episode + 1, EPISODES):
         done = False
         state = env.reset()
