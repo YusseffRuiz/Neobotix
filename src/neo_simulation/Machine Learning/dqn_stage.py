@@ -22,27 +22,28 @@ import os
 import json
 import numpy as np
 import random
+import time
 import sys
 sys.path.append(os.path.dirname(os.path.abspath(os.path.dirname(__file__))))
 from collections import deque
 from std_msgs.msg import Float32MultiArray
-from keras.models import Sequential, load_model, model_from_json
+from keras.models import Sequential, load_model
 from keras.optimizers import RMSprop
 from keras.layers.core import Dense, Dropout, Activation
 
 
 
-
+EPISODES = 3000
 
 class ReinforceAgent():
-    def __init__(self, state_size, action_size):
+    def __init__(self, state_size, action_size, load_model, load_episode):
         self.pub_result = rospy.Publisher('result', Float32MultiArray, queue_size=5)
         self.dirPath = os.path.dirname(os.path.realpath(__file__))
-        self.dirPath = self.dirPath.replace('neo_simulation/Machine Learning', 'neo_simulation/save_model/No_Obstacles/stage_1_')
+        self.dirPath = self.dirPath.replace('neo_simulation/Machine Learning', 'neo_simulation/save_model/stageTest_2_')
         self.result = Float32MultiArray()
 
-        self.load_model = False
-        self.load_episode = 0
+        self.load_model = load_model
+        self.load_episode = load_episode
         self.state_size = state_size
         self.action_size = action_size
         self.episode_step = 6000
@@ -67,8 +68,6 @@ class ReinforceAgent():
             with open(self.dirPath + str(self.load_episode) + '.json') as outfile:
                 param = json.load(outfile)
                 self.epsilon = param.get('epsilon')
-
-
 
     def buildModel(self):
         model = Sequential()
@@ -141,4 +140,3 @@ class ReinforceAgent():
                 Y_batch = np.append(Y_batch, np.array([[rewards] * self.action_size]), axis=0)
 
         self.model.fit(X_batch, Y_batch, batch_size=self.batch_size, epochs=1, verbose=0)
-

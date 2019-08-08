@@ -94,8 +94,16 @@ class Respawn():
 
         if self.stage != 4:
             while position_check:
-                goal_x = random.randrange(-9, 9) / 1.0
-                goal_y = random.randrange(-9, 9) / 1.0
+                goal_x_list = [2.0, 5.0, -4.0, 8.0, 8.0, 0.0, -6.0, -6.5, 0.5, -10.0, -11.0, 0.0, 10.0, -2.0]
+                goal_y_list = [0.0, -1.0, 2.0, -4.0, -5.5, 2.0, 1.0, -1.1, 1.5, -5.0, -5.8, 1.0, -12.0, 0.8]
+
+                goal_index = random.randrange(0, 14)
+
+                variance_dist = random.randrange(-1, 1)
+
+                goal_x = goal_x_list[goal_index] + variance_dist
+                goal_y = goal_y_list[goal_index] + variance_dist
+
                 if abs(goal_x - self.obstacle_1[0]) <= 0.4 and abs(goal_y - self.obstacle_1[1]) <= 0.4:
                     position_check = True
                 elif abs(goal_x - self.obstacle_2[0]) <= 0.4 and abs(goal_y - self.obstacle_2[1]) <= 0.4:
@@ -114,36 +122,6 @@ class Respawn():
 
                 self.goal_position.pose.position.x = goal_x
                 self.goal_position.pose.position.y = goal_y
-
-            # while position_check:   #Specific Goal points
-            #     goal_x_list = [2.0, 5.0, -4.0, 8.0, 8.0, 0.0, -6.0, -6.5, 0.5, -10.0, -11.0, 0.0, 10.0, -2.0]
-            #     goal_y_list = [0.0, -1.0, 2.0, -4.0, -5.5, 2.0, 1.0, -1.1, 1.5, -5.0, -5.8, 1.0, -12.0, 0.8]
-            #
-            #     goal_index = random.randrange(0, 14)
-            #
-            #     variance_dist = random.randrange(-1, 1)
-            #
-            #     goal_x = goal_x_list[goal_index] + variance_dist
-            #     goal_y = goal_y_list[goal_index] + variance_dist
-            #
-            #     if abs(goal_x - self.obstacle_1[0]) <= 0.4 and abs(goal_y - self.obstacle_1[1]) <= 0.4:
-            #         position_check = True
-            #     elif abs(goal_x - self.obstacle_2[0]) <= 0.4 and abs(goal_y - self.obstacle_2[1]) <= 0.4:
-            #         position_check = True
-            #     elif abs(goal_x - self.obstacle_3[0]) <= 0.4 and abs(goal_y - self.obstacle_3[1]) <= 0.4:
-            #         position_check = True
-            #     elif abs(goal_x - self.obstacle_4[0]) <= 0.4 and abs(goal_y - self.obstacle_4[1]) <= 0.4:
-            #         position_check = True
-            #     elif abs(goal_x - 0.0) <= 0.4 and abs(goal_y - 0.0) <= 0.4:
-            #         position_check = True
-            #     else:
-            #         position_check = False
-            #
-            #     if abs(goal_x - self.last_goal_x) < 1 and abs(goal_y - self.last_goal_y) < 1:
-            #         position_check = True
-            #
-            #     self.goal_position.pose.position.x = goal_x
-            #     self.goal_position.pose.position.y = goal_y
 
         else:
             while position_check:
