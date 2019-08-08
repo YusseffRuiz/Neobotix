@@ -24,7 +24,7 @@ import os
 from gazebo_msgs.srv import SpawnModel, DeleteModel
 from std_srvs.srv import Empty
 from gazebo_msgs.msg import ModelStates
-from geometry_msgs.msg import PoseStamped #, Pose
+from geometry_msgs.msg import PoseStamped
 
 
 class Respawn():
@@ -94,15 +94,12 @@ class Respawn():
 
         if self.stage != 4:
             while position_check:
-                goal_x_list = [2.0, 5.0, -4.0, 8.0, 8.0, 0.0, -6.0, -6.5, 0.5, -10.0, -11.0, 0.0, 10.0, -2.0]
-                goal_y_list = [0.0, -1.0, 2.0, -4.0, -5.5, 2.0, 1.0, -1.1, 1.5, -5.0, -5.8, 1.0, -12.0, 0.8]
+                goal_x = random.randrange(-9, 9) / 1.0
+                goal_y = random.randrange(-9, 9) / 1.0
 
-                goal_index = random.randrange(0, 14)
-
-                variance_dist = random.randrange(-1, 1)
-
-                goal_x = goal_x_list[goal_index] + variance_dist
-                goal_y = goal_y_list[goal_index] + variance_dist
+                if((goal_y == 9 and (goal_x>=4 or goal_x<=-4)) or (goal_y == 8 and (goal_x>=5 or goal_x<=-5)) or (goal_y == 7 and (goal_x>=6 or goal_x<=-6)) or (goal_y == 6 and (goal_x>=7 or goal_x<=-7)) or (goal_y == 5 and (goal_x>=8 or goal_x<=-8))) or ((goal_y == -9 and (goal_x>=4 or goal_x<=-4)) or (goal_y == -8 and (goal_x>=5 or goal_x<=-5)) or (goal_y == -7 and (goal_x>=6 or goal_x<=-6)) or (goal_y == -6 and (goal_x>=7 or goal_x<=-7)) or (goal_y == -5 and (goal_x>=8 or goal_x<=-8))):
+                    goal_x = random.randrange(-3, 3) / 1.0
+                    goal_y = random.randrange(-3, 3) / 1.0
 
                 if abs(goal_x - self.obstacle_1[0]) <= 0.4 and abs(goal_y - self.obstacle_1[1]) <= 0.4:
                     position_check = True

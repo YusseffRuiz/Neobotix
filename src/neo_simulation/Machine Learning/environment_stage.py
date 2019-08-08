@@ -39,8 +39,6 @@ class Env():
         self.get_goalbox = False
         self.position = PoseWithCovarianceStamped().pose.pose  ##Pose()
         self.pub_cmd_vel = rospy.Publisher('cmd_vel', Twist, queue_size=5)
-
-        # self.sub_odom = rospy.Subscriber('odom', Odometry, self.getOdometry)
         self.sub_odom = rospy.Subscriber("/amcl_pose", PoseWithCovarianceStamped, self.getOdometry)
 
         self.reset_proxy = rospy.ServiceProxy('/gazebo/reset_world', Empty)#rospy.ServiceProxy('gazebo/reset_simulation', Empty)
@@ -55,11 +53,6 @@ class Env():
         return goal_distance
 
     def getOdometry(self, odom):
-        # x = odom.pose.pose.position.x
-        # y = odom.pose.pose.position.y
-        # rot_q = odom.pose.pose.orientation
-        # (roll, pitch, yaw) = euler_from_quaternion([rot_q.x, rot_q.y, rot_q.z, rot_q.w])
-
         self.position = odom.pose.pose.position
         orientation = odom.pose.pose.orientation
         orientation_list = [orientation.x, orientation.y, orientation.z, orientation.w]
@@ -67,21 +60,8 @@ class Env():
 
 
 
-        # goal_angle = math.atan2(self.goal_y - y, self.goal_x - x)
         goal_angle = math.atan2(self.goal_y - self.position.y, self.goal_x - self.position.x)
 
-        # self.position.x = x
-        # self.position.y = y
-        #
-        # heading = goal_angle - yaw
-        # if heading > pi:
-        #     heading -= 2 * pi
-        #
-        # elif heading < -pi:
-        #     heading += 2 * pi
-        #
-        # self.heading = round(heading, 2)
-        # rospy.loginfo('pose x: %d, y: %d', x, y)
         heading = goal_angle - yaw
         if heading > pi:
             heading -= 2 * pi
@@ -130,10 +110,6 @@ class Env():
 
         if min_range > min(scanF_range) > 0 or (min_range-0.1) > min(scanB_range) > 0:
             done = True
-            # print("X: ", self.position.x, "Y: ", self.position.y)
-            # rospy.loginfo('x: %d, y: %d', self.position.x, self.position.y)
-        # rospy.loginfo('Goal x: %d, y: %d', self.goal_x, self.goal_y)
-        # rospy.loginfo('pose x: %d, y: %d', self.position.x, self.position.y)
         current_distance = round(math.hypot(self.goal_x - self.position.x, self.goal_y - self.position.y), 2)
         if current_distance < 1:
             self.get_goalbox = True
@@ -155,12 +131,12 @@ class Env():
 
         if done:
             rospy.loginfo("Collision!!")
-            reward = -150
+            reward = -1000
             self.pub_cmd_vel.publish(Twist())
 
         if self.get_goalbox:
             rospy.loginfo("Goal!!")
-            reward = 200
+            reward = 400
             self.pub_cmd_vel.publish(Twist())
             self.goal_x, self.goal_y = self.respawn_goal.getPosition(True, delete=True)
             self.goal_distance = self.getGoalDistace()

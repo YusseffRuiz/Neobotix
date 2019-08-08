@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="77466e0b-a72e-4865-b448-a9bf00d7a28f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/neo_simulation/launch/mpo_700/mpo_700_dqnStage.launch" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/neo_simulation/Machine Learning/RespawnGoal.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/neo_simulation/Machine Learning/RespawnGoal.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/neo_simulation/Machine Learning/Training_Stage.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/neo_simulation/Machine Learning/Training_Stage.py" afterDir="false" />
@@ -53,12 +52,7 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="3000" />
-    <option name="y" value="-2" />
-    <option name="width" value="1680" />
-    <option name="height" value="1052" />
-  </component>
+  <component name="ProjectId" id="1P8phLYdO5m95rg7HufwpUdqmEI" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
@@ -199,7 +193,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>

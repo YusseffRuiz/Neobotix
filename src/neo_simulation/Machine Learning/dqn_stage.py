@@ -36,13 +36,13 @@ from keras.layers.core import Dense, Dropout, Activation
 EPISODES = 3000
 
 class ReinforceAgent():
-    def __init__(self, state_size, action_size, load_model, load_episode):
+    def __init__(self, state_size, action_size, loadModel, load_episode):
         self.pub_result = rospy.Publisher('result', Float32MultiArray, queue_size=5)
         self.dirPath = os.path.dirname(os.path.realpath(__file__))
-        self.dirPath = self.dirPath.replace('neo_simulation/Machine Learning', 'neo_simulation/save_model/stageTest_2_')
+        self.dirPath = self.dirPath.replace('neo_simulation/Machine Learning', 'neo_simulation/save_model/No_Obstacles/stage_1_')
         self.result = Float32MultiArray()
 
-        self.load_model = load_model
+        self.load_model = loadModel
         self.load_episode = load_episode
         self.state_size = state_size
         self.action_size = action_size
@@ -68,6 +68,8 @@ class ReinforceAgent():
             with open(self.dirPath + str(self.load_episode) + '.json') as outfile:
                 param = json.load(outfile)
                 self.epsilon = param.get('epsilon')
+
+            rospy.loginfo("Loaded from disk")
 
     def buildModel(self):
         model = Sequential()

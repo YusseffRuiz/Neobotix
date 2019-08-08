@@ -35,7 +35,7 @@ if __name__ == '__main__':
 
     # robotActions.resetWorld()
 
-    agent = ReinforceAgent(state_size, action_size, True, 540)
+    agent = ReinforceAgent(state_size, action_size, True, 440)
     scores, episodes = [], []
     global_step = 0
     calibrate.calibration()
