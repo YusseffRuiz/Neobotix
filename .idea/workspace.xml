@@ -1,22 +1,110 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="77466e0b-a72e-4865-b448-a9bf00d7a28f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/neo_simulation/save_model/No_Obstacles/stage_1_490.h5" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/neo_simulation/save_model/No_Obstacles/stage_1_490.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/neo_simulation/save_model/No_Obstacles/stage_1_500.h5" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/neo_simulation/save_model/No_Obstacles/stage_1_500.json" afterDir="false" />
+    <list default="true" id="77466e0b-a72e-4865-b448-a9bf00d7a28f" name="Default Changelist" comment="New keras models">
+      <change afterPath="$PROJECT_DIR$/src/neo_simulation/save_model/No_Obstacles/stage_1_1000.h5" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/neo_simulation/save_model/No_Obstacles/stage_1_1000.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/neo_simulation/save_model/No_Obstacles/stage_1_1010.h5" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/neo_simulation/save_model/No_Obstacles/stage_1_1010.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/neo_simulation/save_model/No_Obstacles/stage_1_1020.h5" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/neo_simulation/save_model/No_Obstacles/stage_1_1020.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/neo_simulation/save_model/No_Obstacles/stage_1_1030.h5" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/neo_simulation/save_model/No_Obstacles/stage_1_1030.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/neo_simulation/save_model/No_Obstacles/stage_1_540.h5" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/neo_simulation/save_model/No_Obstacles/stage_1_540.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/neo_simulation/save_model/No_Obstacles/stage_1_550.h5" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/neo_simulation/save_model/No_Obstacles/stage_1_550.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/neo_simulation/save_model/No_Obstacles/stage_1_560.h5" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/neo_simulation/save_model/No_Obstacles/stage_1_560.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/neo_simulation/save_model/No_Obstacles/stage_1_570.h5" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/neo_simulation/save_model/No_Obstacles/stage_1_570.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/neo_simulation/save_model/No_Obstacles/stage_1_580.h5" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/neo_simulation/save_model/No_Obstacles/stage_1_580.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/neo_simulation/save_model/No_Obstacles/stage_1_590.h5" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/neo_simulation/save_model/No_Obstacles/stage_1_590.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/neo_simulation/save_model/No_Obstacles/stage_1_600.h5" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/neo_simulation/save_model/No_Obstacles/stage_1_600.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/neo_simulation/save_model/No_Obstacles/stage_1_610.h5" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/neo_simulation/save_model/No_Obstacles/stage_1_610.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/neo_simulation/save_model/No_Obstacles/stage_1_620.h5" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/neo_simulation/save_model/No_Obstacles/stage_1_620.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/neo_simulation/save_model/No_Obstacles/stage_1_630.h5" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/neo_simulation/save_model/No_Obstacles/stage_1_630.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/neo_simulation/save_model/No_Obstacles/stage_1_640.h5" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/neo_simulation/save_model/No_Obstacles/stage_1_640.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/neo_simulation/save_model/No_Obstacles/stage_1_650.h5" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/neo_simulation/save_model/No_Obstacles/stage_1_650.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/neo_simulation/save_model/No_Obstacles/stage_1_660.h5" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/neo_simulation/save_model/No_Obstacles/stage_1_660.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/neo_simulation/save_model/No_Obstacles/stage_1_670.h5" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/neo_simulation/save_model/No_Obstacles/stage_1_670.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/neo_simulation/save_model/No_Obstacles/stage_1_680.h5" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/neo_simulation/save_model/No_Obstacles/stage_1_680.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/neo_simulation/save_model/No_Obstacles/stage_1_690.h5" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/neo_simulation/save_model/No_Obstacles/stage_1_690.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/neo_simulation/save_model/No_Obstacles/stage_1_700.h5" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/neo_simulation/save_model/No_Obstacles/stage_1_700.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/neo_simulation/save_model/No_Obstacles/stage_1_710.h5" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/neo_simulation/save_model/No_Obstacles/stage_1_710.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/neo_simulation/save_model/No_Obstacles/stage_1_720.h5" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/neo_simulation/save_model/No_Obstacles/stage_1_720.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/neo_simulation/save_model/No_Obstacles/stage_1_730.h5" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/neo_simulation/save_model/No_Obstacles/stage_1_730.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/neo_simulation/save_model/No_Obstacles/stage_1_740.h5" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/neo_simulation/save_model/No_Obstacles/stage_1_740.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/neo_simulation/save_model/No_Obstacles/stage_1_750.h5" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/neo_simulation/save_model/No_Obstacles/stage_1_750.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/neo_simulation/save_model/No_Obstacles/stage_1_760.h5" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/neo_simulation/save_model/No_Obstacles/stage_1_760.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/neo_simulation/save_model/No_Obstacles/stage_1_770.h5" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/neo_simulation/save_model/No_Obstacles/stage_1_770.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/neo_simulation/save_model/No_Obstacles/stage_1_780.h5" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/neo_simulation/save_model/No_Obstacles/stage_1_780.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/neo_simulation/save_model/No_Obstacles/stage_1_790.h5" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/neo_simulation/save_model/No_Obstacles/stage_1_790.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/neo_simulation/save_model/No_Obstacles/stage_1_800.h5" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/neo_simulation/save_model/No_Obstacles/stage_1_800.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/neo_simulation/save_model/No_Obstacles/stage_1_810.h5" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/neo_simulation/save_model/No_Obstacles/stage_1_810.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/neo_simulation/save_model/No_Obstacles/stage_1_820.h5" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/neo_simulation/save_model/No_Obstacles/stage_1_820.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/neo_simulation/save_model/No_Obstacles/stage_1_830.h5" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/neo_simulation/save_model/No_Obstacles/stage_1_830.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/neo_simulation/save_model/No_Obstacles/stage_1_840.h5" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/neo_simulation/save_model/No_Obstacles/stage_1_840.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/neo_simulation/save_model/No_Obstacles/stage_1_850.h5" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/neo_simulation/save_model/No_Obstacles/stage_1_850.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/neo_simulation/save_model/No_Obstacles/stage_1_860.h5" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/neo_simulation/save_model/No_Obstacles/stage_1_860.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/neo_simulation/save_model/No_Obstacles/stage_1_870.h5" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/neo_simulation/save_model/No_Obstacles/stage_1_870.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/neo_simulation/save_model/No_Obstacles/stage_1_880.h5" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/neo_simulation/save_model/No_Obstacles/stage_1_880.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/neo_simulation/save_model/No_Obstacles/stage_1_890.h5" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/neo_simulation/save_model/No_Obstacles/stage_1_890.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/neo_simulation/save_model/No_Obstacles/stage_1_900.h5" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/neo_simulation/save_model/No_Obstacles/stage_1_900.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/neo_simulation/save_model/No_Obstacles/stage_1_910.h5" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/neo_simulation/save_model/No_Obstacles/stage_1_910.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/neo_simulation/save_model/No_Obstacles/stage_1_920.h5" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/neo_simulation/save_model/No_Obstacles/stage_1_920.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/neo_simulation/save_model/No_Obstacles/stage_1_930.h5" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/neo_simulation/save_model/No_Obstacles/stage_1_930.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/neo_simulation/save_model/No_Obstacles/stage_1_940.h5" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/neo_simulation/save_model/No_Obstacles/stage_1_940.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/neo_simulation/save_model/No_Obstacles/stage_1_950.h5" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/neo_simulation/save_model/No_Obstacles/stage_1_950.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/neo_simulation/save_model/No_Obstacles/stage_1_960.h5" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/neo_simulation/save_model/No_Obstacles/stage_1_960.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/neo_simulation/save_model/No_Obstacles/stage_1_970.h5" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/neo_simulation/save_model/No_Obstacles/stage_1_970.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/neo_simulation/save_model/No_Obstacles/stage_1_980.h5" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/neo_simulation/save_model/No_Obstacles/stage_1_980.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/neo_simulation/save_model/No_Obstacles/stage_1_990.h5" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/neo_simulation/save_model/No_Obstacles/stage_1_990.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/neo_simulation/Machine Learning/Training_Stage.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/neo_simulation/Machine Learning/Training_Stage.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/neo_simulation/Machine Learning/Run_Stage.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/neo_simulation/Machine Learning/Run_Stage.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/neo_simulation/Machine Learning/environment_stage.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/neo_simulation/Machine Learning/environment_stage.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/neo_simulation/save_model/No_Obstacles/stage_1_450.h5" beforeDir="false" afterPath="$PROJECT_DIR$/src/neo_simulation/save_model/No_Obstacles/stage_1_450.h5" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/neo_simulation/save_model/No_Obstacles/stage_1_450.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/neo_simulation/save_model/No_Obstacles/stage_1_450.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/neo_simulation/save_model/No_Obstacles/stage_1_460.h5" beforeDir="false" afterPath="$PROJECT_DIR$/src/neo_simulation/save_model/No_Obstacles/stage_1_460.h5" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/neo_simulation/save_model/No_Obstacles/stage_1_460.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/neo_simulation/save_model/No_Obstacles/stage_1_460.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/neo_simulation/save_model/No_Obstacles/stage_1_470.h5" beforeDir="false" afterPath="$PROJECT_DIR$/src/neo_simulation/save_model/No_Obstacles/stage_1_470.h5" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/neo_simulation/save_model/No_Obstacles/stage_1_470.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/neo_simulation/save_model/No_Obstacles/stage_1_470.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/neo_simulation/save_model/No_Obstacles/stage_1_480.h5" beforeDir="false" afterPath="$PROJECT_DIR$/src/neo_simulation/save_model/No_Obstacles/stage_1_480.h5" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/neo_simulation/save_model/No_Obstacles/stage_1_480.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/neo_simulation/save_model/No_Obstacles/stage_1_480.json" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -201,7 +289,14 @@
       <option name="project" value="LOCAL" />
       <updated>1565268734229</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="New keras models">
+      <created>1565280334520</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1565280334520</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -235,7 +330,8 @@
     <MESSAGE value="Changing comments" />
     <MESSAGE value="Adding Running File for testing the DQN Network.&#10;Separating the Training Python File from the DQN training algorithm" />
     <MESSAGE value="Defining Limits on the Goals of the map.&#10;Changing rewards&#10;Modified DQN to load a trained model to keep training." />
-    <option name="LAST_COMMIT_MESSAGE" value="Defining Limits on the Goals of the map.&#10;Changing rewards&#10;Modified DQN to load a trained model to keep training." />
+    <MESSAGE value="New keras models" />
+    <option name="LAST_COMMIT_MESSAGE" value="New keras models" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
