@@ -2,5 +2,5 @@
 <launch>
   <arg name="stage" default="1"/>
   <param name="stage_number"  value="$(arg stage)"/>
-  <node pkg="neo_simulation" type="Training_Stage.py" name="Training_Stage" output="screen" />
+  <node pkg="neo_simulation" type="Training_Stage_Walls.py" name="Training_Stage_Walls" output="screen" />
 </launch>

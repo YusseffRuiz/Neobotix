@@ -1,21 +1,4 @@
 #!/usr/bin/env python
-#################################################################################
-# Copyright 2018 ROBOTIS CO., LTD.
-#
-# Licensed under the Apache License, Version 2.0 (the "License");
-# you may not use this file except in compliance with the License.
-# You may obtain a copy of the License at
-#
-#     http://www.apache.org/licenses/LICENSE-2.0
-#
-# Unless required by applicable law or agreed to in writing, software
-# distributed under the License is distributed on an "AS IS" BASIS,
-# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-# See the License for the specific language governing permissions and
-# limitations under the License.
-#################################################################################
-
-# Authors: Gilbert #
 
 import rospy
 import os
@@ -39,7 +22,7 @@ class ReinforceAgent():
     def __init__(self, state_size, action_size, loadModel, load_episode):
         self.pub_result = rospy.Publisher('result', Float32MultiArray, queue_size=5)
         self.dirPath = os.path.dirname(os.path.realpath(__file__))
-        self.dirPath = self.dirPath.replace('neo_simulation/Machine Learning', 'neo_simulation/save_model/No_Obstacles/stage_1_')
+        self.dirPath = self.dirPath.replace('neo_simulation/Machine Learning', 'neo_simulation/save_model/Walls/stage_1_')
         self.result = Float32MultiArray()
 
         self.load_model = loadModel
