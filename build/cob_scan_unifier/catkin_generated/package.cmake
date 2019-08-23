@@ -10,7 +10,4 @@ set(cob_scan_unifier_EXEC_DEPENDS "laser_geometry" "roscpp" "rospy" "sensor_msgs
 set(cob_scan_unifier_RUN_DEPENDS "laser_geometry" "roscpp" "rospy" "sensor_msgs" "tf")
 set(cob_scan_unifier_TEST_DEPENDS )
 set(cob_scan_unifier_DOC_DEPENDS )
-set(cob_scan_unifier_URL_WEBSITE "")
-set(cob_scan_unifier_URL_BUGTRACKER "")
-set(cob_scan_unifier_URL_REPOSITORY "")
 set(cob_scan_unifier_DEPRECATED "")

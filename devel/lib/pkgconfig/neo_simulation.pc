@@ -1,8 +1,8 @@
-prefix=/home/yusseff/Neobotix/devel
+prefix=/home/nvidia/Neobotix/devel
 
 Name: neo_simulation
 Description: Description of neo_simulation
 Version: 0.1.0
 Cflags: 
-Libs: -L/home/yusseff/Neobotix/devel/lib 
+Libs: -L/home/nvidia/Neobotix/devel/lib 
 Requires: 

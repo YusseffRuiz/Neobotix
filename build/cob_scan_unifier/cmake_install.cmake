@@ -1,8 +1,8 @@
-# Install script for directory: /home/yusseff/Neobotix/src/cob_scan_unifier
+# Install script for directory: /home/nvidia/Neobotix/src/cob_scan_unifier
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/yusseff/Neobotix/install")
+  set(CMAKE_INSTALL_PREFIX "/home/nvidia/Neobotix/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -32,39 +32,34 @@ if(NOT DEFINED CMAKE_INSTALL_SO_NO_EXE)
   set(CMAKE_INSTALL_SO_NO_EXE "1")
 endif()
 
-# Is this installation the result of a crosscompile?
-if(NOT DEFINED CMAKE_CROSSCOMPILING)
-  set(CMAKE_CROSSCOMPILING "FALSE")
+if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/nvidia/Neobotix/build/cob_scan_unifier/catkin_generated/installspace/cob_scan_unifier.pc")
 endif()
 
-if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/yusseff/Neobotix/build/cob_scan_unifier/catkin_generated/installspace/cob_scan_unifier.pc")
-endif()
-
-if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/cob_scan_unifier/cmake" TYPE FILE FILES
-    "/home/yusseff/Neobotix/build/cob_scan_unifier/catkin_generated/installspace/cob_scan_unifierConfig.cmake"
-    "/home/yusseff/Neobotix/build/cob_scan_unifier/catkin_generated/installspace/cob_scan_unifierConfig-version.cmake"
+    "/home/nvidia/Neobotix/build/cob_scan_unifier/catkin_generated/installspace/cob_scan_unifierConfig.cmake"
+    "/home/nvidia/Neobotix/build/cob_scan_unifier/catkin_generated/installspace/cob_scan_unifierConfig-version.cmake"
     )
 endif()
 
-if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/cob_scan_unifier" TYPE FILE FILES "/home/yusseff/Neobotix/src/cob_scan_unifier/package.xml")
+if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/cob_scan_unifier" TYPE FILE FILES "/home/nvidia/Neobotix/src/cob_scan_unifier/package.xml")
 endif()
 
-if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
   if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/cob_scan_unifier/scan_unifier_node" AND
      NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/cob_scan_unifier/scan_unifier_node")
     file(RPATH_CHECK
          FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/cob_scan_unifier/scan_unifier_node"
          RPATH "")
   endif()
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/cob_scan_unifier" TYPE EXECUTABLE FILES "/home/yusseff/Neobotix/devel/lib/cob_scan_unifier/scan_unifier_node")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/cob_scan_unifier" TYPE EXECUTABLE FILES "/home/nvidia/Neobotix/devel/lib/cob_scan_unifier/scan_unifier_node")
   if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/cob_scan_unifier/scan_unifier_node" AND
      NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/cob_scan_unifier/scan_unifier_node")
     file(RPATH_CHANGE
          FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/cob_scan_unifier/scan_unifier_node"
-         OLD_RPATH "/opt/ros/melodic/lib:"
+         OLD_RPATH "/opt/ros/kinetic/lib:"
          NEW_RPATH "")
     if(CMAKE_INSTALL_DO_STRIP)
       execute_process(COMMAND "/usr/bin/strip" "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/cob_scan_unifier/scan_unifier_node")

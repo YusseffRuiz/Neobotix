@@ -1,8 +1,0 @@
-prefix=/home/yusseff/Neobotix/devel
-
-Name: cob_srvs
-Description: Description of cob_srvs
-Version: 0.5.4
-Cflags: -I/home/yusseff/Neobotix/devel/include
-Libs: -L/home/yusseff/Neobotix/devel/lib 
-Requires: message_runtime std_msgs trajectory_msgs geometry_msgs

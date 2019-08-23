@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch>
+<!--Load Map-->
+
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="world_name" value="$(find neo_simulation)/worlds/mazeTrial.world"/>
+    <arg name="paused" value="false"/>
+    <arg name="use_sim_time" value="true"/>
+    <arg name="gui" value="true"/>
+    <arg name="headless" value="false"/>
+    <arg name="debug" value="false"/>
+  </include>
+
+<!--Load Map-->
+
+
+<!--Initial Position-->
+    <arg name="x_pos" default="-9.0"/>
+    <arg name="y_pos" default="9.0"/>
+    <arg name="z_pos" default="0.0"/>
+    <arg name="roll" default="0.0"/>
+    <arg name="pitch" default="0.0"/>
+    <arg name="yaw" default="0.0"/> <!-- 1.578 for PI // in BRL | 3.1416 for Obstacle World | non for regular -->
+
+<!--Initial Position in Neo tracks
+    <arg name="x_pos" default="0.0"/>
+    <arg name="y_pos" default="0.0"/>
+    <arg name="z_pos" default="0.0"/>-->
+    <!--To launch scan unifier set the value to true-->
+    <arg name="scanunifier" value="true"/>
+
+
+
+
+
+</launch>
+
+

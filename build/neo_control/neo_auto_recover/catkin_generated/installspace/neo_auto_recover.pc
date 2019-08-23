@@ -1,8 +1,0 @@
-prefix=/home/yusseff/Neobotix/install
-
-Name: neo_auto_recover
-Description: Description of neo_auto_recover
-Version: 1.2.4
-Cflags: 
-Libs: -L/home/yusseff/Neobotix/install/lib 
-Requires: roscpp sensor_msgs neo_msgs cob_srvs

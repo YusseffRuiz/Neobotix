@@ -1,8 +1,0 @@
-prefix=/home/yusseff/Neobotix/devel
-
-Name: neo_teleop
-Description: Description of neo_teleop
-Version: 0.0.0
-Cflags: 
-Libs: -L/home/yusseff/Neobotix/devel/lib 
-Requires: geometry_msgs roscpp trajectory_msgs sensor_msgs

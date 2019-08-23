@@ -1,8 +1,8 @@
-# Install script for directory: /home/yusseff/Neobotix/src/neo_simulation
+# Install script for directory: /home/nvidia/Neobotix/src/neo_simulation
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/yusseff/Neobotix/install")
+  set(CMAKE_INSTALL_PREFIX "/home/nvidia/Neobotix/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -32,23 +32,18 @@ if(NOT DEFINED CMAKE_INSTALL_SO_NO_EXE)
   set(CMAKE_INSTALL_SO_NO_EXE "1")
 endif()
 
-# Is this installation the result of a crosscompile?
-if(NOT DEFINED CMAKE_CROSSCOMPILING)
-  set(CMAKE_CROSSCOMPILING "FALSE")
+if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/nvidia/Neobotix/build/neo_simulation/catkin_generated/installspace/neo_simulation.pc")
 endif()
 
-if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/yusseff/Neobotix/build/neo_simulation/catkin_generated/installspace/neo_simulation.pc")
-endif()
-
-if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/neo_simulation/cmake" TYPE FILE FILES
-    "/home/yusseff/Neobotix/build/neo_simulation/catkin_generated/installspace/neo_simulationConfig.cmake"
-    "/home/yusseff/Neobotix/build/neo_simulation/catkin_generated/installspace/neo_simulationConfig-version.cmake"
+    "/home/nvidia/Neobotix/build/neo_simulation/catkin_generated/installspace/neo_simulationConfig.cmake"
+    "/home/nvidia/Neobotix/build/neo_simulation/catkin_generated/installspace/neo_simulationConfig-version.cmake"
     )
 endif()
 
-if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/neo_simulation" TYPE FILE FILES "/home/yusseff/Neobotix/src/neo_simulation/package.xml")
+if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/neo_simulation" TYPE FILE FILES "/home/nvidia/Neobotix/src/neo_simulation/package.xml")
 endif()
 

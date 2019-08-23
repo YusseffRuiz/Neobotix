@@ -1,2 +1,2 @@
-cob_scan_unifier:neo_simulation
--DCATKIN_DEVEL_PREFIX=/home/yusseff/Neobotix/devel -DCMAKE_INSTALL_PREFIX=/home/yusseff/Neobotix/install -G Unix Makefiles
+cob_scan_unifier:my_mapping_launcher:neo_simulation
+-DCATKIN_DEVEL_PREFIX=/home/nvidia/Neobotix/devel -DCMAKE_INSTALL_PREFIX=/home/nvidia/Neobotix/install -G Unix Makefiles

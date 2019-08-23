@@ -1,8 +1,0 @@
-prefix=/home/yusseff/Neobotix/install
-
-Name: cob_sick_s300
-Description: Description of cob_sick_s300
-Version: 0.6.2
-Cflags: 
-Libs: -L/home/yusseff/Neobotix/install/lib 
-Requires: roscpp sensor_msgs diagnostic_msgs

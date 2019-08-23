@@ -1,8 +1,0 @@
-prefix=/home/yusseff/Neobotix/devel
-
-Name: cob_msgs
-Description: Description of cob_msgs
-Version: 0.5.4
-Cflags: -I/home/yusseff/Neobotix/devel/include
-Libs: -L/home/yusseff/Neobotix/devel/lib 
-Requires: std_msgs geometry_msgs message_runtime

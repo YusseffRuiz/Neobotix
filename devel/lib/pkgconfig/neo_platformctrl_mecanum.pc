@@ -1,8 +1,0 @@
-prefix=/home/yusseff/Neobotix/devel
-
-Name: neo_platformctrl_mecanum
-Description: Description of neo_platformctrl_mecanum
-Version: 0.1.2
-Cflags: -I/home/yusseff/Neobotix/src/neo_driver/neo_platformctrl_mecanum/common/include
-Libs: -L/home/yusseff/Neobotix/devel/lib -lneo_platformctrl_mecanum
-Requires: std_msgs tf nav_msgs sensor_msgs

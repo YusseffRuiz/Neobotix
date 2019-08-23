@@ -1,8 +1,0 @@
-prefix=/home/yusseff/Neobotix/install
-
-Name: neo_msgs
-Description: Description of neo_msgs
-Version: 0.1.2
-Cflags: -I/home/yusseff/Neobotix/install/include
-Libs: -L/home/yusseff/Neobotix/install/lib 
-Requires: message_runtime

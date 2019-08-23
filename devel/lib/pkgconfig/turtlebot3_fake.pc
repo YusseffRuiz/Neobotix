@@ -1,8 +1,0 @@
-prefix=/home/yusseff/Neobotix/devel
-
-Name: turtlebot3_fake
-Description: Description of turtlebot3_fake
-Version: 1.2.0
-Cflags: -I/home/yusseff/Neobotix/src/neobotix_simulations/neobotix_fake/include
-Libs: -L/home/yusseff/Neobotix/devel/lib 
-Requires: roscpp std_msgs sensor_msgs geometry_msgs nav_msgs tf turtlebot3_msgs

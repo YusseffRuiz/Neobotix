@@ -1,5 +1,5 @@
 # generated from catkin/cmake/template/order_packages.context.py.in
-source_root_dir = "/home/yusseff/Neobotix/src"
+source_root_dir = "/home/nvidia/Neobotix/src"
 whitelisted_packages = "".split(';') if "" != "" else []
 blacklisted_packages = "".split(';') if "" != "" else []
-underlay_workspaces = "/home/yusseff/Neobotix/devel;/home/yusseff/catkin_ws/devel;/opt/ros/melodic".split(';') if "/home/yusseff/Neobotix/devel;/home/yusseff/catkin_ws/devel;/opt/ros/melodic" != "" else []
+underlay_workspaces = "/home/nvidia/Neobotix/devel;/opt/ros/kinetic".split(';') if "/home/nvidia/Neobotix/devel;/opt/ros/kinetic" != "" else []

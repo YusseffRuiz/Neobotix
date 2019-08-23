@@ -1,24 +1,25 @@
 Determining if the pthread_create exist failed with the following output:
-Change Dir: /home/yusseff/Neobotix/build/CMakeFiles/CMakeTmp
+Change Dir: /home/nvidia/Neobotix/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_c501e/fast"
-/usr/bin/make -f CMakeFiles/cmTC_c501e.dir/build.make CMakeFiles/cmTC_c501e.dir/build
-make[1]: Entering directory '/home/yusseff/Neobotix/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_c501e.dir/CheckSymbolExists.c.o
-/usr/bin/cc    -o CMakeFiles/cmTC_c501e.dir/CheckSymbolExists.c.o   -c /home/yusseff/Neobotix/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
-Linking C executable cmTC_c501e
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_c501e.dir/link.txt --verbose=1
-/usr/bin/cc      -rdynamic CMakeFiles/cmTC_c501e.dir/CheckSymbolExists.c.o  -o cmTC_c501e 
-CMakeFiles/cmTC_c501e.dir/CheckSymbolExists.c.o: In function `main':
-CheckSymbolExists.c:(.text+0x1b): undefined reference to `pthread_create'
+Run Build Command:"/usr/bin/make" "cmTC_edbd6/fast"
+/usr/bin/make -f CMakeFiles/cmTC_edbd6.dir/build.make CMakeFiles/cmTC_edbd6.dir/build
+make[1]: Entering directory '/home/nvidia/Neobotix/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_edbd6.dir/CheckSymbolExists.c.o
+/usr/bin/cc     -o CMakeFiles/cmTC_edbd6.dir/CheckSymbolExists.c.o   -c /home/nvidia/Neobotix/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTC_edbd6
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_edbd6.dir/link.txt --verbose=1
+/usr/bin/cc       CMakeFiles/cmTC_edbd6.dir/CheckSymbolExists.c.o  -o cmTC_edbd6 -rdynamic 
+CMakeFiles/cmTC_edbd6.dir/CheckSymbolExists.c.o: In function `main':
+CheckSymbolExists.c:(.text+0x14): undefined reference to `pthread_create'
+CheckSymbolExists.c:(.text+0x18): undefined reference to `pthread_create'
 collect2: error: ld returned 1 exit status
-CMakeFiles/cmTC_c501e.dir/build.make:97: recipe for target 'cmTC_c501e' failed
-make[1]: *** [cmTC_c501e] Error 1
-make[1]: Leaving directory '/home/yusseff/Neobotix/build/CMakeFiles/CMakeTmp'
-Makefile:126: recipe for target 'cmTC_c501e/fast' failed
-make: *** [cmTC_c501e/fast] Error 2
+CMakeFiles/cmTC_edbd6.dir/build.make:97: recipe for target 'cmTC_edbd6' failed
+make[1]: *** [cmTC_edbd6] Error 1
+make[1]: Leaving directory '/home/nvidia/Neobotix/build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_edbd6/fast' failed
+make: *** [cmTC_edbd6/fast] Error 2
 
-File /home/yusseff/Neobotix/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+File /home/nvidia/Neobotix/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
 /* */
 #include <pthread.h>
 
@@ -34,22 +35,22 @@ int main(int argc, char** argv)
 }
 
 Determining if the function pthread_create exists in the pthreads failed with the following output:
-Change Dir: /home/yusseff/Neobotix/build/CMakeFiles/CMakeTmp
+Change Dir: /home/nvidia/Neobotix/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_f69a5/fast"
-/usr/bin/make -f CMakeFiles/cmTC_f69a5.dir/build.make CMakeFiles/cmTC_f69a5.dir/build
-make[1]: Entering directory '/home/yusseff/Neobotix/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_f69a5.dir/CheckFunctionExists.c.o
-/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_f69a5.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.10/Modules/CheckFunctionExists.c
-Linking C executable cmTC_f69a5
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_f69a5.dir/link.txt --verbose=1
-/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=pthread_create    -rdynamic CMakeFiles/cmTC_f69a5.dir/CheckFunctionExists.c.o  -o cmTC_f69a5 -lpthreads 
+Run Build Command:"/usr/bin/make" "cmTC_8038f/fast"
+/usr/bin/make -f CMakeFiles/cmTC_8038f.dir/build.make CMakeFiles/cmTC_8038f.dir/build
+make[1]: Entering directory '/home/nvidia/Neobotix/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_8038f.dir/CheckFunctionExists.c.o
+/usr/bin/cc    -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_8038f.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.5/Modules/CheckFunctionExists.c
+Linking C executable cmTC_8038f
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_8038f.dir/link.txt --verbose=1
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTC_8038f.dir/CheckFunctionExists.c.o  -o cmTC_8038f -rdynamic -lpthreads 
 /usr/bin/ld: cannot find -lpthreads
 collect2: error: ld returned 1 exit status
-CMakeFiles/cmTC_f69a5.dir/build.make:97: recipe for target 'cmTC_f69a5' failed
-make[1]: *** [cmTC_f69a5] Error 1
-make[1]: Leaving directory '/home/yusseff/Neobotix/build/CMakeFiles/CMakeTmp'
-Makefile:126: recipe for target 'cmTC_f69a5/fast' failed
-make: *** [cmTC_f69a5/fast] Error 2
+CMakeFiles/cmTC_8038f.dir/build.make:97: recipe for target 'cmTC_8038f' failed
+make[1]: *** [cmTC_8038f] Error 1
+make[1]: Leaving directory '/home/nvidia/Neobotix/build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_8038f/fast' failed
+make: *** [cmTC_8038f/fast] Error 2
 
 

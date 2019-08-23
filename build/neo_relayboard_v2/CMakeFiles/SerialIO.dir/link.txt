@@ -1,1 +1,0 @@
-/usr/bin/c++ -fPIC   -shared -Wl,-soname,libSerialIO.so -o /home/yusseff/Neobotix/devel/lib/libSerialIO.so CMakeFiles/SerialIO.dir/common/src/SerialIO.cpp.o 

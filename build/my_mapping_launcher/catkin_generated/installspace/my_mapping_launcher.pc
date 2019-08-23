@@ -1,0 +1,8 @@
+prefix=/home/nvidia/Neobotix/install
+
+Name: my_mapping_launcher
+Description: Description of my_mapping_launcher
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/nvidia/Neobotix/install/lib 
+Requires: 
