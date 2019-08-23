@@ -111,7 +111,7 @@ if __name__ == '__main__':
     state_size = 32
     action_size = 4
 
-    newDQN = DQNSolver(state_size,action_size, 'stage_1_1030')
+    newDQN = DQNSolver(state_size,action_size, 'stage_1_4500')
     env = Env(action_size)
     calibrate = Calibration()
 

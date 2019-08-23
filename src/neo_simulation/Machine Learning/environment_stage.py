@@ -40,8 +40,8 @@ class Env():
         self.position = PoseWithCovarianceStamped().pose.pose  ##Pose()
         self.pub_cmd_vel = rospy.Publisher('cmd_vel', Twist, queue_size=5)
 
-        # self.sub_odom = rospy.Subscriber("/odom", Odometry, self.getOdometry) ##Training Stage
-        self.sub_odom = rospy.Subscriber("/amcl_pose", PoseWithCovarianceStamped, self.getOdometry) ## Running Stage
+        self.sub_odom = rospy.Subscriber("/odom", Odometry, self.getOdometry) ##Training Stage
+        #self.sub_odom = rospy.Subscriber("/amcl_pose", PoseWithCovarianceStamped, self.getOdometry) ## Running Stage
 
         self.reset_proxy = rospy.ServiceProxy('/gazebo/reset_world', Empty)#rospy.ServiceProxy('gazebo/reset_simulation', Empty)
         # self.unpause_proxy = rospy.ServiceProxy('gazebo/unpause_physics', Empty)
@@ -113,7 +113,7 @@ class Env():
         if min_range > min(scanF_range) > 0 or (min_range-0.1) > min(scanB_range) > 0:
             done = True
         current_distance = round(math.hypot(self.goal_x - self.position.x, self.goal_y - self.position.y), 2)
-        if current_distance < 1:
+        if current_distance < 0.5:
             self.get_goalbox = True
         # rospy.loginfo('Goal Distance: %d', current_distance)
         return scanF_range + [heading, current_distance, obstacle_min_range, obstacle_angle], done
