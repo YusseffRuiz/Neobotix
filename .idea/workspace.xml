@@ -2,12 +2,54 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="77466e0b-a72e-4865-b448-a9bf00d7a28f" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/my_mapping_launcher/CMakeLists.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/my_mapping_launcher/launch/my_gmapping.launch" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/my_mapping_launcher/package.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/neo_simulation/maps/BRL_track1.pgm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/neo_simulation/maps/BRL_track1.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/neo_simulation/maps/mazeTrial.pgm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/neo_simulation/maps/mazeTrial.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/neo_simulation/maps/obstacle_map.pgm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/neo_simulation/maps/obstacle_map.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/neo_simulation/save_model/Walls/stage_1_1.h5" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/neo_simulation/save_model/Walls/stage_1_1.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/neo_simulation/save_model/Walls/stage_1_10.h5" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/neo_simulation/save_model/Walls/stage_1_10.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/neo_simulation/save_model/Walls/stage_1_100.h5" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/neo_simulation/save_model/Walls/stage_1_100.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/neo_simulation/save_model/Walls/stage_1_110.h5" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/neo_simulation/save_model/Walls/stage_1_110.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/neo_simulation/save_model/Walls/stage_1_120.h5" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/neo_simulation/save_model/Walls/stage_1_120.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/neo_simulation/save_model/Walls/stage_1_130.h5" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/neo_simulation/save_model/Walls/stage_1_130.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/neo_simulation/save_model/Walls/stage_1_140.h5" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/neo_simulation/save_model/Walls/stage_1_140.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/neo_simulation/save_model/Walls/stage_1_20.h5" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/neo_simulation/save_model/Walls/stage_1_20.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/neo_simulation/save_model/Walls/stage_1_30.h5" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/neo_simulation/save_model/Walls/stage_1_30.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/neo_simulation/save_model/Walls/stage_1_40.h5" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/neo_simulation/save_model/Walls/stage_1_40.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/neo_simulation/save_model/Walls/stage_1_50.h5" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/neo_simulation/save_model/Walls/stage_1_50.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/neo_simulation/save_model/Walls/stage_1_60.h5" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/neo_simulation/save_model/Walls/stage_1_60.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/neo_simulation/save_model/Walls/stage_1_70.h5" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/neo_simulation/save_model/Walls/stage_1_70.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/neo_simulation/save_model/Walls/stage_1_80.h5" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/neo_simulation/save_model/Walls/stage_1_80.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/neo_simulation/save_model/Walls/stage_1_90.h5" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/neo_simulation/save_model/Walls/stage_1_90.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/neo_simulation/worlds/mazeTrial.world" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/neo_simulation/worlds/obstacle_world.world" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/neo_simulation/worlds/obstacle_world1.world" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/neo_simulation/Machine Learning/RespawnGoal.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/neo_simulation/Machine Learning/RespawnGoal.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/neo_simulation/Machine Learning/Training_Stage.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/neo_simulation/Machine Learning/Training_Stage_Walls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/neo_simulation/Machine Learning/dqn_stage.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/neo_simulation/Machine Learning/dqn_stage.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/neo_simulation/Machine Learning/Training_Stage_Walls.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/neo_simulation/Machine Learning/Training_Stage_Walls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/neo_simulation/Machine Learning/environment_stage.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/neo_simulation/Machine Learning/environment_stage.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/neo_simulation/launch/mpo_700/mpo_700_TrainingStage.launch" beforeDir="false" afterPath="$PROJECT_DIR$/src/neo_simulation/launch/mpo_700/mpo_700_TrainingStage.launch" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/neo_simulation/config/mpo_700/gmapping/gmapping_config.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/neo_simulation/config/mpo_700/gmapping/mpo_700_gmapping.launch" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/neo_simulation/launch/mpo_700/mpo_700_getRobotReady.launch" beforeDir="false" afterPath="$PROJECT_DIR$/src/neo_simulation/launch/mpo_700/mpo_700_getRobotReady.launch" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -22,28 +64,6 @@
         <option value="Python Script" />
       </list>
     </option>
-  </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>env</find>
-      <find>env.</find>
-      <find>wrappers</find>
-      <find>getState</find>
-      <find>getPosition</find>
-      <find>getAction</find>
-      <find>trainModel</find>
-      <find>obstacle_1</find>
-      <find>yaw</find>
-      <find>position</find>
-      <find>unpause_proxy</find>
-      <find>pause_proxy</find>
-      <find>action_size</find>
-      <find>step</find>
-      <find>deq</find>
-      <find>build</find>
-      <find>load_model</find>
-      <find>rospy.login</find>
-    </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="PREVIOUS_COMMIT_AUTHORS">

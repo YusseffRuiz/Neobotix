@@ -7,15 +7,26 @@ import json
 import numpy as np
 import time
 import sys
+# from gym import wrappers
 sys.path.append(os.path.dirname(os.path.abspath(os.path.dirname(__file__))))
 from std_msgs.msg import Float32MultiArray
 from dqn_stage import ReinforceAgent
 from scripts.calibratePosition import Calibration
-from scripts.mpo_700_actions import RobotActions
 from environment_stage import Env
+# from liveplot import LivePlot
 
 
-EPISODES = 5000
+EPISODES = 4000
+
+def render(x):
+    render_skip = 0
+    render_interval = 50 #Show render Every Y episodes.
+    render_episodes = 10 #Show Z episodes every rendering.
+
+    if (x%render_interval == 0) and (x != 0) and (x > render_skip):
+        env.render()
+    elif ((x-render_episodes)%render_interval == 0) and (x != 0) and (x > render_skip) and (render_episodes < x):
+        env.render(close=True)
 
 
 if __name__ == '__main__':
@@ -32,10 +43,14 @@ if __name__ == '__main__':
     calibrate = Calibration()
     env = Env(action_size)
     env.reset()
+    # outdir = '/tmp/gazebo_gym_experiments'
+
+    # env = wrappers.Monitor(env, outdir, force=True)
+    # print "Monitor Wrapper started"
 
     # robotActions.resetWorld()
 
-    agent = ReinforceAgent(state_size, action_size, True, 1500)
+    agent = ReinforceAgent(state_size, action_size, True, 1)
     scores, episodes = [], []
     global_step = 0
     calibrate.calibration()
@@ -47,6 +62,8 @@ if __name__ == '__main__':
         state = env.reset()
         # calibrate.calibration() not required, only used for troubleshooting
         score = 0
+
+        # env.render(e)
         for t in range(agent.episode_step):
             action = agent.getAction(state)
 
@@ -65,7 +82,7 @@ if __name__ == '__main__':
             get_action.data = [action, score, reward]
             pub_get_action.publish(get_action)
 
-            if t > 100:
+            if t > 500:
                 rospy.loginfo("Time out.")
                 done = True
 

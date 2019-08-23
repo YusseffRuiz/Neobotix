@@ -24,14 +24,24 @@ class Env():
         self.position = PoseWithCovarianceStamped().pose.pose  ##Pose()
         self.pub_cmd_vel = rospy.Publisher('cmd_vel', Twist, queue_size=5)
 
-        self.sub_odom = rospy.Subscriber("/odom", Odometry, self.getOdometry) ##Training Stage
-        #self.sub_odom = rospy.Subscriber("/amcl_pose", PoseWithCovarianceStamped, self.getOdometry) ## Running Stage
+        # self.sub_odom = rospy.Subscriber("/odom", Odometry, self.getOdometry) ##Training Stage
+        self.pub_init = rospy.Publisher("/initialpose", PoseWithCovarianceStamped, queue_size = 10)
+        self.sub_odom = rospy.Subscriber("/amcl_pose", PoseWithCovarianceStamped, self.getOdometry) ## Running Stage
+        self.initPoint = PoseWithCovarianceStamped()
 
         self.reset_proxy = rospy.ServiceProxy('/gazebo/reset_world', Empty)#rospy.ServiceProxy('gazebo/reset_simulation', Empty)
         # self.unpause_proxy = rospy.ServiceProxy('gazebo/unpause_physics', Empty)
         # self.pause_proxy = rospy.ServiceProxy('gazebo/pause_physics', Empty)
         self.respawn_goal = Respawn() ## substitute
         self.vel_cmd = Twist()
+
+        self.initPoint.pose.pose.position.x = -9
+        self.initPoint.pose.pose.position.y = 9
+        [x, y, z, w] = quaternion_from_euler(0.0, 0.0, 0.0)
+        self.initPoint.pose.pose.orientation.x = x
+        self.initPoint.pose.pose.orientation.y = y
+        self.initPoint.pose.pose.orientation.z = z
+        self.initPoint.pose.pose.orientation.w = w
 
 
     def getGoalDistace(self):
@@ -191,7 +201,7 @@ class Env():
                 dataB = rospy.wait_for_message('/sick_back/scan', LaserScan, timeout=5)
             except:
                 pass
-
+        self.pub_init.publish(self.initPoint)
         if self.initGoal:
             self.goal_x, self.goal_y = self.respawn_goal.getPosition()
             self.initGoal = False

@@ -19,8 +19,8 @@ class Respawn():
         self.model = self.f.read()
         self.stage = rospy.get_param('/stage_number')
         self.goal_position = PoseStamped()
-        self.init_goal_x = 2.0
-        self.init_goal_y = 0.0
+        self.init_goal_x = 0.0
+        self.init_goal_y = 9.0
         self.goal_position.pose.position.x = self.init_goal_x
         self.goal_position.pose.position.y = self.init_goal_y
         self.modelName = 'goal'
@@ -77,8 +77,8 @@ class Respawn():
 
         if self.stage != 4:
             while position_check:
-                goal_x = random.randrange(-9, 9) / 1.0
-                goal_y = random.randrange(-9, 9) / 1.0
+                goal_x = random.randrange(-8, 8) / 1.0
+                goal_y = random.randrange(-8, 8) / 1.0
 
 
                 if abs(goal_x - self.obstacle_1[0]) <= 0.4 and abs(goal_y - self.obstacle_1[1]) <= 0.4:
@@ -102,8 +102,8 @@ class Respawn():
 
         else:
             while position_check:
-                goal_x_list = [2.0, 5.0, -4.0, 8.0, 8.0, 0.0, -6.0, -6.5, 0.5, -10.0, -11.0, 0.0, 10.0, -2.0]
-                goal_y_list = [0.0, 1.0, -2.0, 4.0, 5.5, -2.0, -1.0, 1.1, -1.5, 5.0, 5.8, -1.0, 12.0, -0.8]
+                goal_x_list = [2.0, 5.0, -4.0, 8.0, 8.0, 0.0, -6.0, -6.5, 0.5, -8.0, -8.0, 0.0, 8.0, -2.0]
+                goal_y_list = [0.0, 1.0, -2.0, 4.0, 5.5, -2.0, -1.0, 1.1, -1.5, 5.0, 5.8, -1.0, 8.0, -0.8]
 
                 self.index = random.randrange(0, 14)
                 print(self.index, self.last_index)
