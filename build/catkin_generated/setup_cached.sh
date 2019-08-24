@@ -8,4 +8,3 @@
 
 # modified environment variables
 export PWD="/home/nvidia/Neobotix/build"
-export ROS_PACKAGE_PATH="/home/nvidia/Neobotix/src:/home/nvidia/Neobotix_mpo_700/src:/opt/ros/kinetic/share"

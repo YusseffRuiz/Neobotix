@@ -56,8 +56,8 @@
           </material>
         </visual>
         <self_collide>0</self_collide>
-        <enable_wind>0</enable_wind>
         <kinematic>0</kinematic>
+        <gravity>1</gravity>
       </link>
     </model>
     <gravity>0 0 -9.8</gravity>
@@ -73,7 +73,6 @@
       <background>0.7 0.7 0.7 1</background>
       <shadows>0</shadows>
     </scene>
-    <wind/>
     <spherical_coordinates>
       <surface_model>EARTH_WGS84</surface_model>
       <latitude_deg>0</latitude_deg>
@@ -82,28 +81,28 @@
       <heading_deg>0</heading_deg>
     </spherical_coordinates>
     <state world_name='default'>
-      <sim_time>11374 876000000</sim_time>
-      <real_time>1776 984246840</real_time>
-      <wall_time>1561968518 247848437</wall_time>
-      <iterations>176706</iterations>
-      <model name='Construction Cone_clone'>
-        <pose frame=''>-5.09952 -0.976543 -0.00088 -0 -0 -0</pose>
+      <sim_time>11705 546000000</sim_time>
+      <real_time>46 598803572</real_time>
+      <wall_time>1565349920 349560456</wall_time>
+      <iterations>4649</iterations>
+      <model name='Construction Barrel'>
+        <pose frame=''>-3.17804 -4.59808 0 0 -0 0</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose frame=''>-5.09952 -0.976543 -0.00088 -0 -0 -0</pose>
+          <pose frame=''>-3.17804 -4.59808 0 0 -0 0</pose>
           <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 -9.8 0 -0 0</acceleration>
-          <wrench>0 0 -9.8 0 -0 0</wrench>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
         </link>
       </model>
-      <model name='Construction Cone_clone_clone'>
-        <pose frame=''>-3.16254 -4.5019 -0.00088 -0 -0 -0</pose>
+      <model name='Construction Barrel_0'>
+        <pose frame=''>-5.19352 -0.749872 0 0 -0 0</pose>
         <scale>1 1 1</scale>
         <link name='link'>
-          <pose frame=''>-3.16254 -4.5019 -0.00088 -0 -0 -0</pose>
+          <pose frame=''>-5.19352 -0.749872 0 0 -0 0</pose>
           <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 -9.8 0 -0 0</acceleration>
-          <wrench>0 0 -9.8 0 -0 0</wrench>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
         </link>
       </model>
       <model name='cafe_table'>
@@ -188,81 +187,11 @@
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
       </model>
-      <model name='neobotix_wall_stickers_1'>
-        <pose frame=''>-4 4.07 1.25 1.57 -0 0</pose>
-        <scale>1 1 1</scale>
-        <link name='link'>
-          <pose frame=''>-4 4.07 1.25 1.57 -0 0</pose>
-          <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
-        </link>
-      </model>
-      <model name='neobotix_wall_stickers_10'>
-        <pose frame=''>-5.732 -8 1.25 1.57 -0 1.57</pose>
-        <scale>1 1 1</scale>
-        <link name='link'>
-          <pose frame=''>-5.732 -8 1.25 1.57 -0 1.57</pose>
-          <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
-        </link>
-      </model>
-      <model name='neobotix_wall_stickers_11'>
-        <pose frame=''>-0.2 -8 1.25 1.57159 0.001593 -1.57159</pose>
-        <scale>1 1 1</scale>
-        <link name='link'>
-          <pose frame=''>-0.2 -8 1.25 1.57159 0.001593 -1.57159</pose>
-          <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
-        </link>
-      </model>
-      <model name='neobotix_wall_stickers_12'>
-        <pose frame=''>-0.2 -6 1.25 1.57159 0.001593 -1.57159</pose>
-        <scale>1 1 1</scale>
-        <link name='link'>
-          <pose frame=''>-0.2 -6 1.25 1.57159 0.001593 -1.57159</pose>
-          <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
-        </link>
-      </model>
-      <model name='neobotix_wall_stickers_13'>
-        <pose frame=''>-1.7445 -9.89 1.25 1.57159 0.001593 3.14159</pose>
-        <scale>1 1 1</scale>
-        <link name='link'>
-          <pose frame=''>-1.7445 -9.89 1.25 1.57159 0.001593 3.14159</pose>
-          <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
-        </link>
-      </model>
-      <model name='neobotix_wall_stickers_14'>
-        <pose frame=''>-3.489 -9.89 1.25 1.57 -0 -3.14</pose>
-        <scale>1 1 1</scale>
-        <link name='link'>
-          <pose frame=''>-3.489 -9.89 1.25 1.57 -0 -3.14</pose>
-          <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
-        </link>
-      </model>
       <model name='neobotix_wall_stickers_2'>
         <pose frame=''>2 4.07 1.25 1.57 -0 0</pose>
         <scale>1 1 1</scale>
         <link name='link'>
           <pose frame=''>2 4.07 1.25 1.57 -0 0</pose>
-          <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
-        </link>
-      </model>
-      <model name='neobotix_wall_stickers_3'>
-        <pose frame=''>4 4.07 1.25 1.57 -0 0</pose>
-        <scale>1 1 1</scale>
-        <link name='link'>
-          <pose frame=''>4 4.07 1.25 1.57 -0 0</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
@@ -293,36 +222,6 @@
         <scale>1 1 1</scale>
         <link name='link'>
           <pose frame=''>-5.732 -2 1.25 1.57 -0 1.57</pose>
-          <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
-        </link>
-      </model>
-      <model name='neobotix_wall_stickers_7'>
-        <pose frame=''>-5.732 2 1.25 1.57 -0 1.57</pose>
-        <scale>1 1 1</scale>
-        <link name='link'>
-          <pose frame=''>-5.732 2 1.25 1.57 -0 1.57</pose>
-          <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
-        </link>
-      </model>
-      <model name='neobotix_wall_stickers_8'>
-        <pose frame=''>-5.732 -4 1.25 1.57 -0 1.57</pose>
-        <scale>1 1 1</scale>
-        <link name='link'>
-          <pose frame=''>-5.732 -4 1.25 1.57 -0 1.57</pose>
-          <velocity>0 0 0 0 -0 0</velocity>
-          <acceleration>0 0 0 0 -0 0</acceleration>
-          <wrench>0 0 0 0 -0 0</wrench>
-        </link>
-      </model>
-      <model name='neobotix_wall_stickers_9'>
-        <pose frame=''>-5.732 -6 1.25 1.57 -0 1.57</pose>
-        <scale>1 1 1</scale>
-        <link name='link'>
-          <pose frame=''>-5.732 -6 1.25 1.57 -0 1.57</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
@@ -739,7 +638,7 @@
         </link>
       </model>
       <model name='yellow_bin'>
-        <pose frame=''>1.25296 -0.822828 0 0 -0 0</pose>
+        <pose frame=''>1.25296 -0.82283 0 0 -0 0</pose>
         <scale>1 1 1</scale>
         <link name='link_2'>
           <pose frame=''>0.952956 -1.17283 0 0 -0 0</pose>
@@ -760,7 +659,7 @@
     </state>
     <gui fullscreen='0'>
       <camera name='user_camera'>
-        <pose frame=''>13.5137 0.316427 22.0322 0 0.969798 3.07691</pose>
+        <pose frame=''>3.20741 -15.8599 9.75207 0 0.657797 1.96892</pose>
         <view_controller>orbit</view_controller>
         <projection_type>perspective</projection_type>
       </camera>
@@ -809,8 +708,8 @@
           </surface>
         </collision>
         <self_collide>0</self_collide>
-        <enable_wind>0</enable_wind>
         <kinematic>0</kinematic>
+        <gravity>1</gravity>
       </link>
       <static>1</static>
     </model>
@@ -858,8 +757,8 @@
           </surface>
         </collision>
         <self_collide>0</self_collide>
-        <enable_wind>0</enable_wind>
         <kinematic>0</kinematic>
+        <gravity>1</gravity>
       </link>
       <static>1</static>
     </model>
@@ -907,8 +806,8 @@
           </surface>
         </collision>
         <self_collide>0</self_collide>
-        <enable_wind>0</enable_wind>
         <kinematic>0</kinematic>
+        <gravity>1</gravity>
       </link>
       <static>1</static>
     </model>
@@ -956,8 +855,8 @@
           </surface>
         </collision>
         <self_collide>0</self_collide>
-        <enable_wind>0</enable_wind>
         <kinematic>0</kinematic>
+        <gravity>1</gravity>
       </link>
       <static>1</static>
     </model>
@@ -1005,8 +904,8 @@
           </surface>
         </collision>
         <self_collide>0</self_collide>
-        <enable_wind>0</enable_wind>
         <kinematic>0</kinematic>
+        <gravity>1</gravity>
       </link>
       <static>1</static>
     </model>
@@ -1054,8 +953,8 @@
           </surface>
         </collision>
         <self_collide>0</self_collide>
-        <enable_wind>0</enable_wind>
         <kinematic>0</kinematic>
+        <gravity>1</gravity>
       </link>
       <static>1</static>
     </model>
@@ -1103,8 +1002,8 @@
           </surface>
         </collision>
         <self_collide>0</self_collide>
-        <enable_wind>0</enable_wind>
         <kinematic>0</kinematic>
+        <gravity>1</gravity>
       </link>
       <static>1</static>
     </model>
@@ -1152,8 +1051,8 @@
           </surface>
         </collision>
         <self_collide>0</self_collide>
-        <enable_wind>0</enable_wind>
         <kinematic>0</kinematic>
+        <gravity>1</gravity>
       </link>
       <link name='link_2'>
         <visual name='visual'>
@@ -1198,8 +1097,8 @@
           </surface>
         </collision>
         <self_collide>0</self_collide>
-        <enable_wind>0</enable_wind>
         <kinematic>0</kinematic>
+        <gravity>1</gravity>
       </link>
       <static>1</static>
       <allow_auto_disable>1</allow_auto_disable>
@@ -1249,8 +1148,8 @@
           </surface>
         </collision>
         <self_collide>0</self_collide>
-        <enable_wind>0</enable_wind>
         <kinematic>0</kinematic>
+        <gravity>1</gravity>
       </link>
       <link name='link_2'>
         <visual name='visual'>
@@ -1295,8 +1194,8 @@
           </surface>
         </collision>
         <self_collide>0</self_collide>
-        <enable_wind>0</enable_wind>
         <kinematic>0</kinematic>
+        <gravity>1</gravity>
       </link>
       <static>1</static>
       <allow_auto_disable>1</allow_auto_disable>
@@ -1344,8 +1243,8 @@
           </surface>
         </collision>
         <self_collide>0</self_collide>
-        <enable_wind>0</enable_wind>
         <kinematic>0</kinematic>
+        <gravity>1</gravity>
       </link>
       <static>1</static>
       <allow_auto_disable>1</allow_auto_disable>
@@ -1393,8 +1292,8 @@
           </surface>
         </collision>
         <self_collide>0</self_collide>
-        <enable_wind>0</enable_wind>
         <kinematic>0</kinematic>
+        <gravity>1</gravity>
       </link>
       <static>1</static>
       <allow_auto_disable>1</allow_auto_disable>
@@ -1442,8 +1341,8 @@
           </surface>
         </collision>
         <self_collide>0</self_collide>
-        <enable_wind>0</enable_wind>
         <kinematic>0</kinematic>
+        <gravity>1</gravity>
       </link>
       <static>1</static>
       <allow_auto_disable>1</allow_auto_disable>
@@ -1491,8 +1390,8 @@
           </surface>
         </collision>
         <self_collide>0</self_collide>
-        <enable_wind>0</enable_wind>
         <kinematic>0</kinematic>
+        <gravity>1</gravity>
       </link>
       <static>1</static>
       <allow_auto_disable>1</allow_auto_disable>
@@ -1540,8 +1439,8 @@
           </surface>
         </collision>
         <self_collide>0</self_collide>
-        <enable_wind>0</enable_wind>
         <kinematic>0</kinematic>
+        <gravity>1</gravity>
       </link>
       <static>1</static>
       <allow_auto_disable>1</allow_auto_disable>
@@ -1589,8 +1488,8 @@
           </surface>
         </collision>
         <self_collide>0</self_collide>
-        <enable_wind>0</enable_wind>
         <kinematic>0</kinematic>
+        <gravity>1</gravity>
       </link>
       <static>1</static>
       <allow_auto_disable>1</allow_auto_disable>
@@ -1638,8 +1537,8 @@
           </surface>
         </collision>
         <self_collide>0</self_collide>
-        <enable_wind>0</enable_wind>
         <kinematic>0</kinematic>
+        <gravity>1</gravity>
       </link>
       <static>1</static>
       <allow_auto_disable>1</allow_auto_disable>
@@ -1687,8 +1586,8 @@
           </surface>
         </collision>
         <self_collide>0</self_collide>
-        <enable_wind>0</enable_wind>
         <kinematic>0</kinematic>
+        <gravity>1</gravity>
       </link>
       <static>1</static>
       <allow_auto_disable>1</allow_auto_disable>
@@ -1764,12 +1663,13 @@
           <geometry>
             <mesh>
               <uri>model://cafe_table/meshes/cafe_table.dae</uri>
+              <scale>1 1 1</scale>
             </mesh>
           </geometry>
         </visual>
         <self_collide>0</self_collide>
-        <enable_wind>0</enable_wind>
         <kinematic>0</kinematic>
+        <gravity>1</gravity>
       </link>
       <pose frame=''>-3.00924 -4.85648 0 0 -0 0</pose>
     </model>
@@ -1843,12 +1743,13 @@
           <geometry>
             <mesh>
               <uri>model://cafe_table/meshes/cafe_table.dae</uri>
+              <scale>1 1 1</scale>
             </mesh>
           </geometry>
         </visual>
         <self_collide>0</self_collide>
-        <enable_wind>0</enable_wind>
         <kinematic>0</kinematic>
+        <gravity>1</gravity>
       </link>
       <pose frame=''>-4.66843 -4.52931 0 0 -0 0</pose>
     </model>
@@ -1904,8 +1805,8 @@
           </surface>
         </collision>
         <self_collide>0</self_collide>
-        <enable_wind>0</enable_wind>
         <kinematic>0</kinematic>
+        <gravity>1</gravity>
       </link>
       <static>1</static>
       <allow_auto_disable>1</allow_auto_disable>
@@ -1955,8 +1856,8 @@
           </material>
         </visual>
         <self_collide>0</self_collide>
-        <enable_wind>0</enable_wind>
         <kinematic>0</kinematic>
+        <gravity>1</gravity>
       </link>
       <pose frame=''>-3.43929 2.19399 0 0 -0 0</pose>
     </model>
@@ -2004,59 +1905,10 @@
           </material>
         </visual>
         <self_collide>0</self_collide>
-        <enable_wind>0</enable_wind>
         <kinematic>0</kinematic>
+        <gravity>1</gravity>
       </link>
       <pose frame=''>-1.50956 1.34872 0 0 -0 0</pose>
-    </model>
-    <model name='neobotix_wall_stickers_1'>
-      <static>1</static>
-      <link name='link'>
-        <collision name='collision'>
-          <geometry>
-            <plane>
-              <normal>0 0 1</normal>
-              <size>1 1</size>
-            </plane>
-          </geometry>
-          <surface>
-            <friction>
-              <ode>
-                <mu>100</mu>
-                <mu2>50</mu2>
-              </ode>
-              <torsional>
-                <ode/>
-              </torsional>
-            </friction>
-            <contact>
-              <ode/>
-            </contact>
-            <bounce/>
-          </surface>
-          <max_contacts>10</max_contacts>
-        </collision>
-        <visual name='visual'>
-          <cast_shadows>0</cast_shadows>
-          <geometry>
-            <plane>
-              <normal>0 0 1</normal>
-              <size>1 1</size>
-            </plane>
-          </geometry>
-          <material>
-            <script>
-              <uri>model://neobotix_wall_stickers/materials/scripts</uri>
-              <uri>model://neobotix_wall_stickers/materials/textures/</uri>
-              <name>NeobotixGroundPlane/Image</name>
-            </script>
-          </material>
-        </visual>
-        <self_collide>0</self_collide>
-        <enable_wind>0</enable_wind>
-        <kinematic>0</kinematic>
-      </link>
-      <pose frame=''>-3.68821 1.38977 0 0 -0 0</pose>
     </model>
     <model name='neobotix_wall_stickers_2'>
       <static>1</static>
@@ -2102,59 +1954,10 @@
           </material>
         </visual>
         <self_collide>0</self_collide>
-        <enable_wind>0</enable_wind>
         <kinematic>0</kinematic>
+        <gravity>1</gravity>
       </link>
       <pose frame=''>2.45718 1.3819 0 0 -0 0</pose>
-    </model>
-    <model name='neobotix_wall_stickers_3'>
-      <static>1</static>
-      <link name='link'>
-        <collision name='collision'>
-          <geometry>
-            <plane>
-              <normal>0 0 1</normal>
-              <size>1 1</size>
-            </plane>
-          </geometry>
-          <surface>
-            <friction>
-              <ode>
-                <mu>100</mu>
-                <mu2>50</mu2>
-              </ode>
-              <torsional>
-                <ode/>
-              </torsional>
-            </friction>
-            <contact>
-              <ode/>
-            </contact>
-            <bounce/>
-          </surface>
-          <max_contacts>10</max_contacts>
-        </collision>
-        <visual name='visual'>
-          <cast_shadows>0</cast_shadows>
-          <geometry>
-            <plane>
-              <normal>0 0 1</normal>
-              <size>1 1</size>
-            </plane>
-          </geometry>
-          <material>
-            <script>
-              <uri>model://neobotix_wall_stickers/materials/scripts</uri>
-              <uri>model://neobotix_wall_stickers/materials/textures/</uri>
-              <name>NeobotixGroundPlane/Image</name>
-            </script>
-          </material>
-        </visual>
-        <self_collide>0</self_collide>
-        <enable_wind>0</enable_wind>
-        <kinematic>0</kinematic>
-      </link>
-      <pose frame=''>4.40795 1.31376 0 0 -0 0</pose>
     </model>
     <model name='neobotix_wall_stickers_4'>
       <static>1</static>
@@ -2200,8 +2003,8 @@
           </material>
         </visual>
         <self_collide>0</self_collide>
-        <enable_wind>0</enable_wind>
         <kinematic>0</kinematic>
+        <gravity>1</gravity>
       </link>
       <pose frame=''>2.7442 -2.66893 0 0 -0 0</pose>
     </model>
@@ -2249,8 +2052,8 @@
           </material>
         </visual>
         <self_collide>0</self_collide>
-        <enable_wind>0</enable_wind>
         <kinematic>0</kinematic>
+        <gravity>1</gravity>
       </link>
       <pose frame=''>-3.92705 -2.24459 0 0 -0 0</pose>
     </model>
@@ -2298,402 +2101,10 @@
           </material>
         </visual>
         <self_collide>0</self_collide>
-        <enable_wind>0</enable_wind>
         <kinematic>0</kinematic>
+        <gravity>1</gravity>
       </link>
       <pose frame=''>-4.21819 -0.569653 0 0 -0 0</pose>
-    </model>
-    <model name='neobotix_wall_stickers_7'>
-      <static>1</static>
-      <link name='link'>
-        <collision name='collision'>
-          <geometry>
-            <plane>
-              <normal>0 0 1</normal>
-              <size>1 1</size>
-            </plane>
-          </geometry>
-          <surface>
-            <friction>
-              <ode>
-                <mu>100</mu>
-                <mu2>50</mu2>
-              </ode>
-              <torsional>
-                <ode/>
-              </torsional>
-            </friction>
-            <contact>
-              <ode/>
-            </contact>
-            <bounce/>
-          </surface>
-          <max_contacts>10</max_contacts>
-        </collision>
-        <visual name='visual'>
-          <cast_shadows>0</cast_shadows>
-          <geometry>
-            <plane>
-              <normal>0 0 1</normal>
-              <size>1 1</size>
-            </plane>
-          </geometry>
-          <material>
-            <script>
-              <uri>model://neobotix_wall_stickers/materials/scripts</uri>
-              <uri>model://neobotix_wall_stickers/materials/textures/</uri>
-              <name>NeobotixGroundPlane/Image</name>
-            </script>
-          </material>
-        </visual>
-        <self_collide>0</self_collide>
-        <enable_wind>0</enable_wind>
-        <kinematic>0</kinematic>
-      </link>
-      <pose frame=''>-4.28332 2.1574 0 0 -0 0</pose>
-    </model>
-    <model name='neobotix_wall_stickers_8'>
-      <static>1</static>
-      <link name='link'>
-        <collision name='collision'>
-          <geometry>
-            <plane>
-              <normal>0 0 1</normal>
-              <size>1 1</size>
-            </plane>
-          </geometry>
-          <surface>
-            <friction>
-              <ode>
-                <mu>100</mu>
-                <mu2>50</mu2>
-              </ode>
-              <torsional>
-                <ode/>
-              </torsional>
-            </friction>
-            <contact>
-              <ode/>
-            </contact>
-            <bounce/>
-          </surface>
-          <max_contacts>10</max_contacts>
-        </collision>
-        <visual name='visual'>
-          <cast_shadows>0</cast_shadows>
-          <geometry>
-            <plane>
-              <normal>0 0 1</normal>
-              <size>1 1</size>
-            </plane>
-          </geometry>
-          <material>
-            <script>
-              <uri>model://neobotix_wall_stickers/materials/scripts</uri>
-              <uri>model://neobotix_wall_stickers/materials/textures/</uri>
-              <name>NeobotixGroundPlane/Image</name>
-            </script>
-          </material>
-        </visual>
-        <self_collide>0</self_collide>
-        <enable_wind>0</enable_wind>
-        <kinematic>0</kinematic>
-      </link>
-      <pose frame=''>-4.94353 -3.4126 0 0 -0 0</pose>
-    </model>
-    <model name='neobotix_wall_stickers_9'>
-      <static>1</static>
-      <link name='link'>
-        <collision name='collision'>
-          <geometry>
-            <plane>
-              <normal>0 0 1</normal>
-              <size>1 1</size>
-            </plane>
-          </geometry>
-          <surface>
-            <friction>
-              <ode>
-                <mu>100</mu>
-                <mu2>50</mu2>
-              </ode>
-              <torsional>
-                <ode/>
-              </torsional>
-            </friction>
-            <contact>
-              <ode/>
-            </contact>
-            <bounce/>
-          </surface>
-          <max_contacts>10</max_contacts>
-        </collision>
-        <visual name='visual'>
-          <cast_shadows>0</cast_shadows>
-          <geometry>
-            <plane>
-              <normal>0 0 1</normal>
-              <size>1 1</size>
-            </plane>
-          </geometry>
-          <material>
-            <script>
-              <uri>model://neobotix_wall_stickers/materials/scripts</uri>
-              <uri>model://neobotix_wall_stickers/materials/textures/</uri>
-              <name>NeobotixGroundPlane/Image</name>
-            </script>
-          </material>
-        </visual>
-        <self_collide>0</self_collide>
-        <enable_wind>0</enable_wind>
-        <kinematic>0</kinematic>
-      </link>
-      <pose frame=''>-4.84572 -5.9304 0 0 -0 0</pose>
-    </model>
-    <model name='neobotix_wall_stickers_10'>
-      <static>1</static>
-      <link name='link'>
-        <collision name='collision'>
-          <geometry>
-            <plane>
-              <normal>0 0 1</normal>
-              <size>1 1</size>
-            </plane>
-          </geometry>
-          <surface>
-            <friction>
-              <ode>
-                <mu>100</mu>
-                <mu2>50</mu2>
-              </ode>
-              <torsional>
-                <ode/>
-              </torsional>
-            </friction>
-            <contact>
-              <ode/>
-            </contact>
-            <bounce/>
-          </surface>
-          <max_contacts>10</max_contacts>
-        </collision>
-        <visual name='visual'>
-          <cast_shadows>0</cast_shadows>
-          <geometry>
-            <plane>
-              <normal>0 0 1</normal>
-              <size>1 1</size>
-            </plane>
-          </geometry>
-          <material>
-            <script>
-              <uri>model://neobotix_wall_stickers/materials/scripts</uri>
-              <uri>model://neobotix_wall_stickers/materials/textures/</uri>
-              <name>NeobotixGroundPlane/Image</name>
-            </script>
-          </material>
-        </visual>
-        <self_collide>0</self_collide>
-        <enable_wind>0</enable_wind>
-        <kinematic>0</kinematic>
-      </link>
-      <pose frame=''>-4.76682 -8.18954 0 0 -0 0</pose>
-    </model>
-    <model name='neobotix_wall_stickers_11'>
-      <static>1</static>
-      <link name='link'>
-        <collision name='collision'>
-          <geometry>
-            <plane>
-              <normal>0 0 1</normal>
-              <size>1 1</size>
-            </plane>
-          </geometry>
-          <surface>
-            <friction>
-              <ode>
-                <mu>100</mu>
-                <mu2>50</mu2>
-              </ode>
-              <torsional>
-                <ode/>
-              </torsional>
-            </friction>
-            <contact>
-              <ode/>
-            </contact>
-            <bounce/>
-          </surface>
-          <max_contacts>10</max_contacts>
-        </collision>
-        <visual name='visual'>
-          <cast_shadows>0</cast_shadows>
-          <geometry>
-            <plane>
-              <normal>0 0 1</normal>
-              <size>1 1</size>
-            </plane>
-          </geometry>
-          <material>
-            <script>
-              <uri>model://neobotix_wall_stickers/materials/scripts</uri>
-              <uri>model://neobotix_wall_stickers/materials/textures/</uri>
-              <name>NeobotixGroundPlane/Image</name>
-            </script>
-          </material>
-        </visual>
-        <self_collide>0</self_collide>
-        <enable_wind>0</enable_wind>
-        <kinematic>0</kinematic>
-      </link>
-      <pose frame=''>-0.936656 -7.97907 0 0 -0 0</pose>
-    </model>
-    <model name='neobotix_wall_stickers_12'>
-      <static>1</static>
-      <link name='link'>
-        <collision name='collision'>
-          <geometry>
-            <plane>
-              <normal>0 0 1</normal>
-              <size>1 1</size>
-            </plane>
-          </geometry>
-          <surface>
-            <friction>
-              <ode>
-                <mu>100</mu>
-                <mu2>50</mu2>
-              </ode>
-              <torsional>
-                <ode/>
-              </torsional>
-            </friction>
-            <contact>
-              <ode/>
-            </contact>
-            <bounce/>
-          </surface>
-          <max_contacts>10</max_contacts>
-        </collision>
-        <visual name='visual'>
-          <cast_shadows>0</cast_shadows>
-          <geometry>
-            <plane>
-              <normal>0 0 1</normal>
-              <size>1 1</size>
-            </plane>
-          </geometry>
-          <material>
-            <script>
-              <uri>model://neobotix_wall_stickers/materials/scripts</uri>
-              <uri>model://neobotix_wall_stickers/materials/textures/</uri>
-              <name>NeobotixGroundPlane/Image</name>
-            </script>
-          </material>
-        </visual>
-        <self_collide>0</self_collide>
-        <enable_wind>0</enable_wind>
-        <kinematic>0</kinematic>
-      </link>
-      <pose frame=''>-0.928623 -5.83983 0 0 -0 0</pose>
-    </model>
-    <model name='neobotix_wall_stickers_13'>
-      <static>1</static>
-      <link name='link'>
-        <collision name='collision'>
-          <geometry>
-            <plane>
-              <normal>0 0 1</normal>
-              <size>1 1</size>
-            </plane>
-          </geometry>
-          <surface>
-            <friction>
-              <ode>
-                <mu>100</mu>
-                <mu2>50</mu2>
-              </ode>
-              <torsional>
-                <ode/>
-              </torsional>
-            </friction>
-            <contact>
-              <ode/>
-            </contact>
-            <bounce/>
-          </surface>
-          <max_contacts>10</max_contacts>
-        </collision>
-        <visual name='visual'>
-          <cast_shadows>0</cast_shadows>
-          <geometry>
-            <plane>
-              <normal>0 0 1</normal>
-              <size>1 1</size>
-            </plane>
-          </geometry>
-          <material>
-            <script>
-              <uri>model://neobotix_wall_stickers/materials/scripts</uri>
-              <uri>model://neobotix_wall_stickers/materials/textures/</uri>
-              <name>NeobotixGroundPlane/Image</name>
-            </script>
-          </material>
-        </visual>
-        <self_collide>0</self_collide>
-        <enable_wind>0</enable_wind>
-        <kinematic>0</kinematic>
-      </link>
-      <pose frame=''>-1.7445 -8.79993 0 0 -0 0</pose>
-    </model>
-    <model name='neobotix_wall_stickers_14'>
-      <static>1</static>
-      <link name='link'>
-        <collision name='collision'>
-          <geometry>
-            <plane>
-              <normal>0 0 1</normal>
-              <size>1 1</size>
-            </plane>
-          </geometry>
-          <surface>
-            <friction>
-              <ode>
-                <mu>100</mu>
-                <mu2>50</mu2>
-              </ode>
-              <torsional>
-                <ode/>
-              </torsional>
-            </friction>
-            <contact>
-              <ode/>
-            </contact>
-            <bounce/>
-          </surface>
-          <max_contacts>10</max_contacts>
-        </collision>
-        <visual name='visual'>
-          <cast_shadows>0</cast_shadows>
-          <geometry>
-            <plane>
-              <normal>0 0 1</normal>
-              <size>1 1</size>
-            </plane>
-          </geometry>
-          <material>
-            <script>
-              <uri>model://neobotix_wall_stickers/materials/scripts</uri>
-              <uri>model://neobotix_wall_stickers/materials/textures/</uri>
-              <name>NeobotixGroundPlane/Image</name>
-            </script>
-          </material>
-        </visual>
-        <self_collide>0</self_collide>
-        <enable_wind>0</enable_wind>
-        <kinematic>0</kinematic>
-      </link>
-      <pose frame=''>-4.53794 -8.68902 0 0 -0 0</pose>
     </model>
     <light name='user_point_light_0' type='point'>
       <pose frame=''>3.54976 1.43038 1 0 -0 0</pose>
@@ -2755,8 +2166,8 @@
           </geometry>
         </visual>
         <self_collide>0</self_collide>
-        <enable_wind>0</enable_wind>
         <kinematic>0</kinematic>
+        <gravity>1</gravity>
       </link>
       <pose frame=''>-0.862896 -2.58584 0 0 -0 0</pose>
     </model>
@@ -2794,8 +2205,8 @@
           </geometry>
         </visual>
         <self_collide>0</self_collide>
-        <enable_wind>0</enable_wind>
         <kinematic>0</kinematic>
+        <gravity>1</gravity>
       </link>
       <pose frame=''>0.313355 -2.57733 0 0 -0 0</pose>
     </model>
@@ -2833,8 +2244,8 @@
           </geometry>
         </visual>
         <self_collide>0</self_collide>
-        <enable_wind>0</enable_wind>
         <kinematic>0</kinematic>
+        <gravity>1</gravity>
       </link>
       <pose frame=''>3.40217 -2.58609 0 0 -0 0</pose>
     </model>
@@ -2872,8 +2283,8 @@
           </geometry>
         </visual>
         <self_collide>0</self_collide>
-        <enable_wind>0</enable_wind>
         <kinematic>0</kinematic>
+        <gravity>1</gravity>
       </link>
       <pose frame=''>-1.39857 -2.593 0 0 -0 0</pose>
     </model>
@@ -2911,8 +2322,8 @@
           </geometry>
         </visual>
         <self_collide>0</self_collide>
-        <enable_wind>0</enable_wind>
         <kinematic>0</kinematic>
+        <gravity>1</gravity>
       </link>
       <pose frame=''>-2.56972 -2.59304 0 0 -0 0</pose>
     </model>
@@ -2950,8 +2361,8 @@
           </geometry>
         </visual>
         <self_collide>0</self_collide>
-        <enable_wind>0</enable_wind>
         <kinematic>0</kinematic>
+        <gravity>1</gravity>
       </link>
       <pose frame=''>-3.40383 -1 0 0 -0 0</pose>
     </model>
@@ -2989,8 +2400,8 @@
           </geometry>
         </visual>
         <self_collide>0</self_collide>
-        <enable_wind>0</enable_wind>
         <kinematic>0</kinematic>
+        <gravity>1</gravity>
       </link>
       <pose frame=''>-2.58634 -0.200327 0 0 -0 1.57</pose>
     </model>
@@ -3028,8 +2439,8 @@
           </geometry>
         </visual>
         <self_collide>0</self_collide>
-        <enable_wind>0</enable_wind>
         <kinematic>0</kinematic>
+        <gravity>1</gravity>
       </link>
       <pose frame=''>-2.59526 0.954426 0 0 -0 1.57</pose>
     </model>
@@ -3067,8 +2478,8 @@
           </geometry>
         </visual>
         <self_collide>0</self_collide>
-        <enable_wind>0</enable_wind>
         <kinematic>0</kinematic>
+        <gravity>1</gravity>
       </link>
       <pose frame=''>-2.47671 0.928921 0 0 -0 0</pose>
     </model>
@@ -3106,8 +2517,8 @@
           </geometry>
         </visual>
         <self_collide>0</self_collide>
-        <enable_wind>0</enable_wind>
         <kinematic>0</kinematic>
+        <gravity>1</gravity>
       </link>
       <pose frame=''>-0.143601 0.947548 0 0 -0 0</pose>
     </model>
@@ -3145,8 +2556,8 @@
           </geometry>
         </visual>
         <self_collide>0</self_collide>
-        <enable_wind>0</enable_wind>
         <kinematic>0</kinematic>
+        <gravity>1</gravity>
       </link>
       <pose frame=''>1.07085 0.947474 0 0 -0 0</pose>
     </model>
@@ -3184,8 +2595,8 @@
           </geometry>
         </visual>
         <self_collide>0</self_collide>
-        <enable_wind>0</enable_wind>
         <kinematic>0</kinematic>
+        <gravity>1</gravity>
       </link>
       <pose frame=''>1.58544 -1.05645 0 0 -0 1.57</pose>
     </model>
@@ -3223,8 +2634,8 @@
           </geometry>
         </visual>
         <self_collide>0</self_collide>
-        <enable_wind>0</enable_wind>
         <kinematic>0</kinematic>
+        <gravity>1</gravity>
       </link>
       <pose frame=''>1.58298 0.195139 0 0 -0 1.57</pose>
     </model>
@@ -3262,8 +2673,8 @@
           </geometry>
         </visual>
         <self_collide>0</self_collide>
-        <enable_wind>0</enable_wind>
         <kinematic>0</kinematic>
+        <gravity>1</gravity>
       </link>
       <pose frame=''>4.14213 -0.209573 0 0 -0 1.57</pose>
     </model>
@@ -3301,8 +2712,8 @@
           </geometry>
         </visual>
         <self_collide>0</self_collide>
-        <enable_wind>0</enable_wind>
         <kinematic>0</kinematic>
+        <gravity>1</gravity>
       </link>
       <pose frame=''>4.13385 0.996253 0 0 -0 1.57</pose>
     </model>
@@ -3340,8 +2751,8 @@
           </geometry>
         </visual>
         <self_collide>0</self_collide>
-        <enable_wind>0</enable_wind>
         <kinematic>0</kinematic>
+        <gravity>1</gravity>
       </link>
       <pose frame=''>-3.98064 3.39716 0 0 -0 1.57</pose>
     </model>
@@ -3379,8 +2790,8 @@
           </geometry>
         </visual>
         <self_collide>0</self_collide>
-        <enable_wind>0</enable_wind>
         <kinematic>0</kinematic>
+        <gravity>1</gravity>
       </link>
       <pose frame=''>-3.98689 2.18471 0 0 -0 1.57</pose>
     </model>
@@ -3418,8 +2829,8 @@
           </geometry>
         </visual>
         <self_collide>0</self_collide>
-        <enable_wind>0</enable_wind>
         <kinematic>0</kinematic>
+        <gravity>1</gravity>
       </link>
       <pose frame=''>-3.99288 0.963938 0 0 -0 1.57</pose>
     </model>
@@ -3457,108 +2868,10 @@
           </geometry>
         </visual>
         <self_collide>0</self_collide>
-        <enable_wind>0</enable_wind>
         <kinematic>0</kinematic>
+        <gravity>1</gravity>
       </link>
       <pose frame=''>-3.98929 -0.2816 0 0 -0 1.57</pose>
-    </model>
-    <model name='Construction Cone_clone'>
-      <link name='link'>
-        <collision name='collision'>
-          <geometry>
-            <mesh>
-              <scale>10 10 10</scale>
-              <uri>model://construction_cone/meshes/construction_cone.dae</uri>
-            </mesh>
-          </geometry>
-          <max_contacts>10</max_contacts>
-          <surface>
-            <contact>
-              <ode/>
-            </contact>
-            <bounce/>
-            <friction>
-              <torsional>
-                <ode/>
-              </torsional>
-              <ode/>
-            </friction>
-          </surface>
-        </collision>
-        <visual name='visual'>
-          <geometry>
-            <mesh>
-              <scale>10 10 10</scale>
-              <uri>model://construction_cone/meshes/construction_cone.dae</uri>
-            </mesh>
-          </geometry>
-        </visual>
-        <self_collide>0</self_collide>
-        <inertial>
-          <pose frame=''>0 0 0 0 -0 0</pose>
-          <inertia>
-            <ixx>1</ixx>
-            <ixy>0</ixy>
-            <ixz>0</ixz>
-            <iyy>1</iyy>
-            <iyz>0</iyz>
-            <izz>1</izz>
-          </inertia>
-          <mass>1</mass>
-        </inertial>
-        <enable_wind>0</enable_wind>
-        <kinematic>0</kinematic>
-      </link>
-      <pose frame=''>-4.94039 -1.19168 0 0 -0 0</pose>
-    </model>
-    <model name='Construction Cone_clone_clone'>
-      <link name='link'>
-        <collision name='collision'>
-          <geometry>
-            <mesh>
-              <scale>10 10 10</scale>
-              <uri>model://construction_cone/meshes/construction_cone.dae</uri>
-            </mesh>
-          </geometry>
-          <max_contacts>10</max_contacts>
-          <surface>
-            <contact>
-              <ode/>
-            </contact>
-            <bounce/>
-            <friction>
-              <torsional>
-                <ode/>
-              </torsional>
-              <ode/>
-            </friction>
-          </surface>
-        </collision>
-        <visual name='visual'>
-          <geometry>
-            <mesh>
-              <scale>10 10 10</scale>
-              <uri>model://construction_cone/meshes/construction_cone.dae</uri>
-            </mesh>
-          </geometry>
-        </visual>
-        <self_collide>0</self_collide>
-        <inertial>
-          <pose frame=''>0 0 0 0 -0 0</pose>
-          <inertia>
-            <ixx>1</ixx>
-            <ixy>0</ixy>
-            <ixz>0</ixz>
-            <iyy>1</iyy>
-            <iyz>0</iyz>
-            <izz>1</izz>
-          </inertia>
-          <mass>1</mass>
-        </inertial>
-        <enable_wind>0</enable_wind>
-        <kinematic>0</kinematic>
-      </link>
-      <pose frame=''>-3.16254 -4.5019 -0.00088 0 -0 0</pose>
     </model>
     <model name='nist_maze_wall_120_clone_clone_clone_0_clone_0'>
       <static>1</static>
@@ -3594,8 +2907,8 @@
           </geometry>
         </visual>
         <self_collide>0</self_collide>
-        <enable_wind>0</enable_wind>
         <kinematic>0</kinematic>
+        <gravity>1</gravity>
       </link>
       <pose frame=''>3.62136 0.990252 -0 0 -0 1.57</pose>
     </model>
@@ -3633,8 +2946,8 @@
           </geometry>
         </visual>
         <self_collide>0</self_collide>
-        <enable_wind>0</enable_wind>
         <kinematic>0</kinematic>
+        <gravity>1</gravity>
       </link>
       <pose frame=''>4.79885 0.988479 -0 0 -0 1.57</pose>
     </model>
@@ -3672,8 +2985,8 @@
           </geometry>
         </visual>
         <self_collide>0</self_collide>
-        <enable_wind>0</enable_wind>
         <kinematic>0</kinematic>
+        <gravity>1</gravity>
       </link>
       <pose frame=''>3.60849 1.10851 0 0 -0 0</pose>
     </model>
@@ -3711,8 +3024,8 @@
           </geometry>
         </visual>
         <self_collide>0</self_collide>
-        <enable_wind>0</enable_wind>
         <kinematic>0</kinematic>
+        <gravity>1</gravity>
       </link>
       <pose frame=''>3.61851 -2.64345 0 0 -0 0</pose>
     </model>
@@ -3750,8 +3063,8 @@
           </geometry>
         </visual>
         <self_collide>0</self_collide>
-        <enable_wind>0</enable_wind>
         <kinematic>0</kinematic>
+        <gravity>1</gravity>
       </link>
       <pose frame=''>1.30591 0.962094 0 0 -0 1.57</pose>
     </model>
@@ -3789,8 +3102,8 @@
           </geometry>
         </visual>
         <self_collide>0</self_collide>
-        <enable_wind>0</enable_wind>
         <kinematic>0</kinematic>
+        <gravity>1</gravity>
       </link>
       <pose frame=''>3.34322 -2.61805 0 0 -0 0</pose>
     </model>
@@ -3828,10 +3141,110 @@
           </geometry>
         </visual>
         <self_collide>0</self_collide>
-        <enable_wind>0</enable_wind>
         <kinematic>0</kinematic>
+        <gravity>1</gravity>
       </link>
       <pose frame=''>3.28846 1.02772 0 0 -0 0</pose>
+    </model>
+    <model name='Construction Barrel'>
+      <static>1</static>
+      <link name='link'>
+        <inertial>
+          <pose frame=''>0 0 0.4 0 -0 0</pose>
+          <mass>500</mass>
+          <inertia>
+            <ixx>51.2096</ixx>
+            <iyy>51.2096</iyy>
+            <izz>25</izz>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyz>0</iyz>
+          </inertia>
+        </inertial>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>model://construction_barrel/meshes/construction_barrel.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://construction_barrel/meshes/construction_barrel.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+      <pose frame=''>-3.17804 -4.59808 0 0 -0 0</pose>
+    </model>
+    <model name='Construction Barrel_0'>
+      <static>1</static>
+      <link name='link'>
+        <inertial>
+          <pose frame=''>0 0 0.4 0 -0 0</pose>
+          <mass>500</mass>
+          <inertia>
+            <ixx>51.2096</ixx>
+            <iyy>51.2096</iyy>
+            <izz>25</izz>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyz>0</iyz>
+          </inertia>
+        </inertial>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>model://construction_barrel/meshes/construction_barrel.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://construction_barrel/meshes/construction_barrel.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+      <pose frame=''>-5.19352 -0.749872 0 0 -0 0</pose>
     </model>
   </world>
 </sdf>

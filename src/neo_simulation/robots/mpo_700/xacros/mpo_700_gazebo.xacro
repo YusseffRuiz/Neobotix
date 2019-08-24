@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <robot name="mpo_700" xmlns:xacro="http://www.ros.org/wiki/xacro">
-<xacro:arg name="laser_visual"  default="true"/>
+
 
    <gazebo reference="base_link">
     <gravity>true</gravity>
@@ -16,7 +16,7 @@
           <ray>
             <scan>
               <horizontal>
-                <samples>28</samples> <!--720 original -->
+                <samples>720</samples>
                 <resolution>1</resolution>
                 <min_angle>-1.48</min_angle>
                 <max_angle>1.48</max_angle>
@@ -52,7 +52,7 @@
           <ray>
             <scan>
               <horizontal>
-                <samples>28</samples><!--726 original -->
+                <samples>720</samples>
                 <resolution>1</resolution>
                 <min_angle>-1.48</min_angle>
                 <max_angle>1.48</max_angle>
