@@ -50,7 +50,7 @@ if __name__ == '__main__':
 
     # robotActions.resetWorld()
 
-    agent = ReinforceAgent(state_size, action_size, True, 1)
+    agent = ReinforceAgent(state_size, action_size, True, 110)
     scores, episodes = [], []
     global_step = 0
     calibrate.calibration()
@@ -82,7 +82,7 @@ if __name__ == '__main__':
             get_action.data = [action, score, reward]
             pub_get_action.publish(get_action)
 
-            if t > 500:
+            if t > 2000:
                 rospy.loginfo("Time out.")
                 done = True
 

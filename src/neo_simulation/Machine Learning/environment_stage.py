@@ -21,7 +21,7 @@ class Env():
         self.action_size = action_size
         self.initGoal = True
         self.get_goalbox = False
-        self.position = PoseWithCovarianceStamped().pose.pose  ##Pose()
+        self.position = PoseWithCovarianceStamped().pose.pose.position  ##Pose()
         self.pub_cmd_vel = rospy.Publisher('cmd_vel', Twist, queue_size=5)
 
         # self.sub_odom = rospy.Subscriber("/odom", Odometry, self.getOdometry) ##Training Stage
@@ -35,8 +35,8 @@ class Env():
         self.respawn_goal = Respawn() ## substitute
         self.vel_cmd = Twist()
 
-        self.initPoint.pose.pose.position.x = -9
-        self.initPoint.pose.pose.position.y = 9
+        self.initPoint.pose.pose.position.x = -8.0
+        self.initPoint.pose.pose.position.y = -7.0
         [x, y, z, w] = quaternion_from_euler(0.0, 0.0, 0.0)
         self.initPoint.pose.pose.orientation.x = x
         self.initPoint.pose.pose.orientation.y = y

@@ -29,7 +29,9 @@
     <!--To launch scan unifier set the value to true-->
     <arg name="scanunifier" value="true"/>
     <!--Modify depending on the Map // Turn off loading map-->
-    <arg name="env_map" value="true"/>
+    <arg name="env_map" value="false"/>
+    <!-- value for rviz navigation-->
+    <arg name="rviz_config" value="mapping"/>
 
 
 
@@ -38,7 +40,7 @@
 
   <node name="mpo_700_spawn" pkg="gazebo_ros" type="spawn_model" output="screen"
   args="-urdf -param robot_description -model mpo_700 -x $(arg x_pos) -y $(arg y_pos) -z $(arg z_pos) -Y $(arg yaw)" />
-  
+
   <!--To publish Joint and Robot state-->
   <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher">
 	<param name="rate" value="20.0"/>
@@ -62,7 +64,7 @@
   <!-- MAP SERVER -->
 <!--if arg env_map is set to true-->
   <group if="$(arg env_map)">
-  <node name="map_server" pkg="map_server" type="map_server" args="$(find neo_simulation)/maps/singleHallMap.yaml">
+  <node name="map_server" pkg="map_server" type="map_server" args="$(find neo_simulation)/maps/mazeTrial.yaml">
   </node>
 
   <node pkg="amcl" type="amcl" name="amcl">
@@ -71,4 +73,9 @@
   </node>
    </group>
 
-</launch>
+<!--=================================================================================================================================================================-->
+<!-- Launch RVIZ -->
+	<arg name="rvizconfig" default="$(find neo_simulation)/config/mpo_700/rviz/$(arg rviz_config)_config.rviz" />
+	<node name="rviz" pkg="rviz" type="rviz" args="-d $(arg rvizconfig)" required="true"/>
+
+    </launch>
