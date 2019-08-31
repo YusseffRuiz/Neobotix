@@ -1,22 +1,25 @@
 #!/usr/bin/env python
 
 
-import rospy
-import os
 import json
-import numpy as np
-import time
+import os
 import sys
+import time
+
+import numpy as np
+import rospy
+
 # from gym import wrappers
 sys.path.append(os.path.dirname(os.path.abspath(os.path.dirname(__file__))))
 from std_msgs.msg import Float32MultiArray
 from dqn_stage import ReinforceAgent
 from scripts.calibratePosition import Calibration
+# from scripts.mpo_700_actions import RobotActions
 from environment_stage import Env
 # from liveplot import LivePlot
 
 
-EPISODES = 4000
+EPISODES = 6000
 
 def render(x):
     render_skip = 0
@@ -39,10 +42,10 @@ if __name__ == '__main__':
     state_size = 32
     action_size = 4
 
-    # robotActions = RobotActions()
     calibrate = Calibration()
+    # robotActions = RobotActions()
     env = Env(action_size)
-    env.reset()
+    state = env.reset()
     # outdir = '/tmp/gazebo_gym_experiments'
 
     # env = wrappers.Monitor(env, outdir, force=True)
@@ -50,16 +53,18 @@ if __name__ == '__main__':
 
     # robotActions.resetWorld()
 
-    agent = ReinforceAgent(state_size, action_size, True, 110)
+    agent = ReinforceAgent(state_size, action_size, True, 350)
     scores, episodes = [], []
     global_step = 0
-    calibrate.calibration()
+    # calibrate.calibration()
     start_time = time.time()
+    crash = False
+    done = False
 
 
     for e in range(agent.load_episode + 1, EPISODES):
+
         done = False
-        state = env.reset()
         # calibrate.calibration() not required, only used for troubleshooting
         score = 0
 
@@ -67,7 +72,7 @@ if __name__ == '__main__':
         for t in range(agent.episode_step):
             action = agent.getAction(state)
 
-            next_state, reward, done = env.step(action)
+            next_state, reward, done, crash = env.step(action)
 
             agent.appendMemory(state, action, reward, next_state, done)
 
@@ -77,14 +82,17 @@ if __name__ == '__main__':
                 else:
                     agent.trainModel(True)
 
-            score += reward
+            score = score + reward
             state = next_state
             get_action.data = [action, score, reward]
             pub_get_action.publish(get_action)
 
-            if t > 2000:
+            if t > 50:
                 rospy.loginfo("Time out.")
                 done = True
+                crash = False
+                score -=100
+
 
             if e % 10 == 0:
                 agent.model.save(agent.dirPath + str(e) + '.h5')
@@ -105,7 +113,15 @@ if __name__ == '__main__':
                 param_keys = ['epsilon']
                 param_values = [agent.epsilon]
                 param_dictionary = dict(zip(param_keys, param_values))
-                break
+                if not crash:
+                    state = env.reset()
+                    rospy.loginfo("Reset")
+                    break
+                else:
+                    # robotActions.moveBack()
+                    crash = False
+                    # rospy.loginfo("Crashed")
+
 
             global_step += 1
             if global_step % agent.target_update == 0:

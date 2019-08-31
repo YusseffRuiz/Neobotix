@@ -14,6 +14,7 @@
 
   <xacro:include filename="$(find neo_simulation)/robots/mpo_700/xacros/mpo_700_wheel.xacro" />
 
+
   <!-- Base Macro-->
   <xacro:mpo_700_base name="base_link">
   </xacro:mpo_700_base>

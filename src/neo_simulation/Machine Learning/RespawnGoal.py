@@ -80,6 +80,10 @@ class Respawn():
                 goal_x = random.randrange(-9, 9) / 1.0 ##variate depending on the map
                 goal_y = random.randrange(1, 7) / -1.0
 
+                if(goal_x <=-4 and goal_y>=-4):
+                    goal_x = random.randrange(-4, 9) / 1.0  ##variate depending on the map
+                    goal_y = random.randrange(4, 7) / -1.0
+
 
                 if abs(goal_x - self.obstacle_1[0]) <= 0.4 and abs(goal_y - self.obstacle_1[1]) <= 0.4:
                     position_check = True

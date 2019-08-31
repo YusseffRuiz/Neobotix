@@ -29,7 +29,7 @@ class ReinforceAgent():
         self.load_episode = load_episode
         self.state_size = state_size
         self.action_size = action_size
-        self.episode_step = 3000
+        self.episode_step = EPISODES
         self.target_update = 2000
         self.discount_factor = 0.99
         self.learning_rate = 0.00025

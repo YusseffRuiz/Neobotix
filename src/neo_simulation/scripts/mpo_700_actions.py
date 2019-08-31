@@ -1,13 +1,13 @@
 #! /usr/bin/env python
 
-import rospy
 import math
-from geometry_msgs.msg import PoseWithCovarianceStamped
-from tf.transformations import euler_from_quaternion
-from geometry_msgs.msg import Point, Twist
-from std_srvs.srv import Empty
 import time
 
+import rospy
+from geometry_msgs.msg import Point, Twist
+from geometry_msgs.msg import PoseWithCovarianceStamped
+from std_srvs.srv import Empty
+from tf.transformations import euler_from_quaternion
 
 
 class RobotActions:
@@ -21,13 +21,13 @@ class RobotActions:
         # rospy.init_node("robotActions", anonymous=True)
         # Publisher which will publish to the topic '/cmd_vel'.
         self.pose_subscriber = rospy.Subscriber("/amcl_pose", PoseWithCovarianceStamped, self.getPosition)
-        self.velocity_publisher = rospy.Publisher("/cmd_vel", Twist, queue_size=1)
+        self.velocity_publisher = rospy.Publisher("/cmd_vel", Twist, queue_size=5)
         # A subscriber to the topic '/amcl_pose'. self.update_pose is called
         # when a message of type Pose is received.
         self.r = rospy.Rate(10)
         self.speed = Twist()
         self.myPose = Point()
-        self.moveDistance = 1.0
+        self.moveDistance = 1
         self.moveAngle = (2 * math.pi) / 36
 
 

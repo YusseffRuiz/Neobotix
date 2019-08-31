@@ -4,6 +4,7 @@
 import rospy
 import numpy as np
 import math
+import random
 from math import pi
 from geometry_msgs.msg import Twist #, Point, Pose
 from sensor_msgs.msg import LaserScan
@@ -12,6 +13,8 @@ from nav_msgs.msg import Odometry
 from std_srvs.srv import Empty
 from tf.transformations import euler_from_quaternion, quaternion_from_euler
 from RespawnGoal import Respawn  ### Done maybe check
+# from scripts.mpo_700_actions import RobotActions
+
 
 class Env():
     def __init__(self, action_size):
@@ -22,7 +25,7 @@ class Env():
         self.initGoal = True
         self.get_goalbox = False
         self.position = PoseWithCovarianceStamped().pose.pose.position  ##Pose()
-        self.pub_cmd_vel = rospy.Publisher('cmd_vel', Twist, queue_size=5)
+        self.pub_cmd_vel = rospy.Publisher('cmd_vel', Twist, queue_size=2)
 
         # self.sub_odom = rospy.Subscriber("/odom", Odometry, self.getOdometry) ##Training Stage
         self.pub_init = rospy.Publisher("/initialpose", PoseWithCovarianceStamped, queue_size = 10)
@@ -34,14 +37,18 @@ class Env():
         # self.pause_proxy = rospy.ServiceProxy('gazebo/pause_physics', Empty)
         self.respawn_goal = Respawn() ## substitute
         self.vel_cmd = Twist()
+        self.vel_cmd.linear.x = 0.0
+        self.pub_cmd_vel.publish(self.vel_cmd)
 
-        self.initPoint.pose.pose.position.x = -8.0
+        self.initPoint.pose.pose.position.x = -6.0
         self.initPoint.pose.pose.position.y = -7.0
         [x, y, z, w] = quaternion_from_euler(0.0, 0.0, 0.0)
         self.initPoint.pose.pose.orientation.x = x
         self.initPoint.pose.pose.orientation.y = y
         self.initPoint.pose.pose.orientation.z = z
         self.initPoint.pose.pose.orientation.w = w
+        # self.robotActions = RobotActions()
+        self.r = rospy.Rate(10)
 
 
     def getGoalDistace(self):
@@ -74,6 +81,7 @@ class Env():
         heading = self.heading
         min_range = 0.25 #### change to detect collision
         done = False
+        crash = False
 
         for i in range(len(scanF.ranges)):
             if scanF.ranges[i] == float('Inf'):
@@ -97,42 +105,61 @@ class Env():
         vel_temp = self.vel_cmd
 
 
-        if (min_range+0.2) > min(scanF_range) > 0:
-            vel_temp.linear.x = vel_temp.linear.x - 0.3
+        if (min_range+0.5) > min(scanF_range) > 0:
+            vel_temp.linear.x = vel_temp.linear.x - (min(scanF_range))
             self.pub_cmd_vel.publish(vel_temp)
+            self.vel_cmd = vel_temp
         else:
             vel_temp.linear.x = self.calculateVelocity()
             self.pub_cmd_vel.publish(vel_temp)
 
-        if min_range > min(scanF_range) > 0 or (min_range-0.1) > min(scanB_range) > 0:
+        if min_range > min(scanF_range) > 0:
             done = True
+            crash = True
+            vel_temp.linear.x = -1.0
+            vel_temp.angular.z = (((self.action_size - 1) / 2 - random.randint(1,self.action_size)) * 1.0 * 0.5)
+            self.pub_cmd_vel.publish(vel_temp)
+            self.vel_cmd = vel_temp
+            self.r.sleep()
+        if (min_range+0.1) > min(scanB_range) > 0:
+            done = True
+            crash = True
         current_distance = round(math.hypot(self.goal_x - self.position.x, self.goal_y - self.position.y), 2)
         if current_distance < 0.5:
             self.get_goalbox = True
         # rospy.loginfo('Goal Distance: %d', current_distance)
-        return scanF_range + [heading, current_distance, obstacle_min_range, obstacle_angle], done
+        return scanF_range + [heading, current_distance, obstacle_min_range, obstacle_angle], done, crash
 
-    def setReward(self, state, done, action):
+    def setReward(self, state, done, crash, action):
         yaw_reward = []
         current_distance = state[-3]
         heading = state[-4]
+        reward = 100
 
-        for i in range(5):
+        for i in range(self.action_size):
+            # angle = math.atan2(self.goal_y - self.position.y, self.goal_x - self.position.x)
             angle = -pi / 4 + heading + (pi / 8 * i) + pi / 2
-            tr = 1 - 4 * math.fabs(0.5 - math.modf(0.25 + 0.5 * angle % (2 * math.pi) / math.pi)[0])
-            yaw_reward.append(tr)
+            # tr = 1 - 4 * math.fabs(0.5 - math.modf(0.25 + 0.5 * angle % (2 * math.pi) / math.pi)[0])
+            yaw_reward.append(angle)
 
-        distance_rate = 2 ** (current_distance / self.goal_distance)
-        reward = ((round(yaw_reward[action] * 5, 2)) * distance_rate)
+        # distance_rate = 2 ** (current_distance / self.goal_distance)
+        # reward = ((round(yaw_reward[action] * 5, 2)) * distance_rate)
+        distance_rate = abs(self.goal_distance - current_distance)
+        reward -= abs(distance_rate*yaw_reward[action])
 
         if done:
-            rospy.loginfo("Collision!!")
-            reward = -3000
-            self.pub_cmd_vel.publish(Twist())##implement go Back
+            if crash:
+                rospy.loginfo("Collision!!")
+                reward -= 300
+            else:
+                reward -= 20
+                rospy.loginfo("Done, not crash")
+                self.pub_cmd_vel.publish(Twist())##implement go Back
+
 
         if self.get_goalbox:
             rospy.loginfo("Goal!!")
-            reward = 400
+            reward += 300
             self.pub_cmd_vel.publish(Twist())
             self.goal_x, self.goal_y = self.respawn_goal.getPosition(True, delete=True)
             self.goal_distance = self.getGoalDistace()
@@ -150,7 +177,7 @@ class Env():
         return vel_temp
 
     def step(self, action):
-        max_angular_vel = 1.5
+        max_angular_vel = 1.0
         ang_vel = ((self.action_size - 1)/2 - action) * max_angular_vel * 0.5
         vel_temp = self.calculateVelocity()
 
@@ -174,10 +201,10 @@ class Env():
             except:
                 pass
 
-        state, done = self.getState(dataF, dataB)
-        reward = self.setReward(state, done, action)
+        state, done, crash = self.getState(dataF, dataB)
+        reward = self.setReward(state, done, crash, action)
 
-        return np.asarray(state), reward, done
+        return np.asarray(state), reward, done, crash
 
     def reset(self):
         # rospy.wait_for_service('gazebo/reset_simulation')
@@ -207,6 +234,6 @@ class Env():
             self.initGoal = False
 
         self.goal_distance = self.getGoalDistace()
-        state, done = self.getState(dataF, dataB)
+        state, done, crash = self.getState(dataF, dataB)
 
         return np.asarray(state)
