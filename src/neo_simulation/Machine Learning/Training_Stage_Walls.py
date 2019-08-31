@@ -19,7 +19,7 @@ from environment_stage import Env
 # from liveplot import LivePlot
 
 
-EPISODES = 6000
+EPISODES = 8000
 
 def render(x):
     render_skip = 0
@@ -53,7 +53,7 @@ if __name__ == '__main__':
 
     # robotActions.resetWorld()
 
-    agent = ReinforceAgent(state_size, action_size, True, 350)
+    agent = ReinforceAgent(state_size, action_size, True, 4490)
     scores, episodes = [], []
     global_step = 0
     # calibrate.calibration()

@@ -3,11 +3,11 @@
 <!--Load Map-->
 
   <include file="$(find gazebo_ros)/launch/empty_world.launch">
-    <arg name="world_name" value="$(find neo_simulation)/worlds/singleHallMap.world"/>
+    <arg name="world_name" value="$(find neo_simulation)/worlds/neo_track1.world"/>
     <arg name="paused" value="false"/>
     <arg name="use_sim_time" value="true"/>
     <arg name="gui" value="True"/>
-    <arg name="headless" value="false"/>
+    <arg name="headless" value="false"/>  <!-- If you don't want to see the Graphics-->
     <arg name="debug" value="false"/>
   </include>
 
@@ -30,6 +30,7 @@
     <arg name="scanunifier" value="true"/>
     <!--Modify depending on the Map // Turn off loading map-->
     <arg name="env_map" value="true"/>
+    <arg name="map_name" value="neo_track1"/>
 
 
 
@@ -62,7 +63,7 @@
   <!-- MAP SERVER -->
 <!--if arg env_map is set to true-->
   <group if="$(arg env_map)">
-  <node name="map_server" pkg="map_server" type="map_server" args="$(find neo_simulation)/maps/singleHallMap.yaml">
+  <node name="map_server" pkg="map_server" type="map_server" args="$(find neo_simulation)/maps/$(arg map_name).yaml">
   </node>
 
   <node pkg="amcl" type="amcl" name="amcl">
