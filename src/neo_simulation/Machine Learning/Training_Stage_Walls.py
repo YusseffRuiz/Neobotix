@@ -45,7 +45,8 @@ if __name__ == '__main__':
     calibrate = Calibration()
     # robotActions = RobotActions()
     env = Env(action_size)
-    state = env.reset()
+    # time.sleep(4)
+
     # outdir = '/tmp/gazebo_gym_experiments'
 
     # env = wrappers.Monitor(env, outdir, force=True)
@@ -56,11 +57,13 @@ if __name__ == '__main__':
     agent = ReinforceAgent(state_size, action_size, True, 4490)
     scores, episodes = [], []
     global_step = 0
-    # calibrate.calibration()
+
     start_time = time.time()
     crash = False
     done = False
-
+    env.reset()
+    # calibrate.calibration()
+    state = env.reset()
 
     for e in range(agent.load_episode + 1, EPISODES):
 
@@ -87,7 +90,7 @@ if __name__ == '__main__':
             get_action.data = [action, score, reward]
             pub_get_action.publish(get_action)
 
-            if t > 50:
+            if t > 100:
                 rospy.loginfo("Time out.")
                 done = True
                 crash = False
