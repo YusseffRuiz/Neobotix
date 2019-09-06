@@ -3,7 +3,7 @@
 <!--Load Map-->
 
   <include file="$(find gazebo_ros)/launch/empty_world.launch">
-    <arg name="world_name" value="$(find neo_simulation)/worlds/SimpleRoom.world"/>
+    <arg name="world_name" value="$(find neo_simulation)/worlds/U_Hall.world"/>
     <arg name="paused" value="false"/>
     <arg name="use_sim_time" value="true"/>
     <arg name="gui" value="true"/>
@@ -15,8 +15,8 @@
 
 
 <!--Initial Position-->
-    <arg name="x_pos" default="-8.0"/>
-    <arg name="y_pos" default="-7.0"/>
+    <arg name="x_pos" default="0.0"/>
+    <arg name="y_pos" default="0.0"/>
     <arg name="z_pos" default="0.0"/>
     <arg name="roll" default="0.0"/>
     <arg name="pitch" default="0.0"/>

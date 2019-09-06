@@ -54,7 +54,7 @@ if __name__ == '__main__':
 
     # robotActions.resetWorld()
 
-    agent = ReinforceAgent(state_size, action_size, True, 4490)
+    agent = ReinforceAgent(state_size, action_size, True, 6060)
     scores, episodes = [], []
     global_step = 0
 

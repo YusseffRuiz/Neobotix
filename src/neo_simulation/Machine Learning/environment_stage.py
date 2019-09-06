@@ -13,7 +13,7 @@ from geometry_msgs.msg import PoseWithCovarianceStamped
 from nav_msgs.msg import Odometry
 from std_srvs.srv import Empty
 from tf.transformations import euler_from_quaternion, quaternion_from_euler
-from RespawnGoal import Respawn  ### Done maybe check
+from RespawnGoalSimple import Respawn  ### Done maybe check
 # from scripts.mpo_700_actions import RobotActions
 
 
@@ -53,7 +53,7 @@ class Env():
 
         self.initPoint.pose.pose.position.x = 0.0
         self.initPoint.pose.pose.position.y = 0.0
-        [x, y, z, w] = quaternion_from_euler(0.0, 0.0, 0.0)
+        [x, y, z, w] = quaternion_from_euler(0.0, 0.0, 3.1416)
         self.initPoint.pose.pose.orientation.x = x
         self.initPoint.pose.pose.orientation.y = y
         self.initPoint.pose.pose.orientation.z = z
@@ -109,6 +109,7 @@ class Env():
 
     def setReward(self, state, done, crash, action):
         yaw_reward = []
+        goal = False
         current_distance = state[-3]
         heading = state[-4]
 
@@ -129,7 +130,7 @@ class Env():
         if done:
             if crash:
                 rospy.loginfo("Collision!!")
-                reward -= 100
+                reward -= 200
             else:
                 reward -= 20
                 rospy.loginfo("Done, not crash")
@@ -141,22 +142,50 @@ class Env():
             self.goal_x, self.goal_y = self.respawn_goal.getPosition(True, delete=True)
             self.goal_distance = self.getGoalDistace()
             self.get_goalbox = False
+            goal = True
 
-        return reward
+        return reward, goal
 
-    def calculateVelocity(self, obstacleDistance):
+    def calculateVelocity(self, obstacleDistance, action):
+        max_angular_vel = 1.0
+        min_range = 1
         dist_temp = (round(math.hypot(self.goal_x - self.position.x, self.goal_y - self.position.y), 2))
-        if (dist_temp > 5):
-            dist_temp = 5
-        vel_temp = dist_temp * 1.5 / 5
+        ang_vel = ((self.action_size - 1) / 2 - action) * max_angular_vel * 0.5
 
-        if obstacleDistance < 1:
-            vel_temp = vel_temp - 2*obstacleDistance
+        if (self.heading < 0.5 and self.heading > -0.5):
 
-        if vel_temp<=0.4:
-            vel_temp = 0.5
+            if (dist_temp > 5):
+                dist_temp = 5
+            vel_temp = dist_temp * 1.5 / 5
 
-        return vel_temp
+            if vel_temp <= 0.4:
+                vel_temp = 0.5
+
+            if obstacleDistance < min_range:
+                vel_temp = (obstacleDistance)
+                # if obstacleDistance < 0.5:
+                #     vel_temp = 0.4-2*obstacleDistance
+
+
+        else:
+
+            if self.heading <= (pi/2) and self.heading >= (-pi/2):
+                # rospy.loginfo("Angle: %d", self.heading)
+                vel_temp = 0.4
+                if ang_vel == 1:
+                    ang_vel = max_angular_vel
+                else:
+                    if ang_vel == -1:
+                        ang_vel = -max_angular_vel
+                    else:
+                        vel_temp = dist_temp * 1.5 / 5
+            else:
+                vel_temp = 0.0
+
+
+
+
+        return vel_temp, ang_vel
 
 
     def readScanners(self):
@@ -206,16 +235,10 @@ class Env():
 
     def step(self, action):
         min_range = 1
-        max_angular_vel = 1.0
-
-
-
         dataF, dataB = self.readScanners()
         obstacle_angle, minB_range, minF_range, scanRangeF = self.getObstacles(dataF, dataB)
 
-
-        ang_vel = ((self.action_size - 1) / 2 - action) * max_angular_vel * 0.5
-        vel_temp = self.calculateVelocity(minF_range)
+        vel_temp, ang_vel = self.calculateVelocity(minF_range, action)
 
         # vel_cmd = Twist()
         self.vel_cmd.linear.x = vel_temp
@@ -225,25 +248,25 @@ class Env():
 
         state, done, crash = self.getState(dataF, dataB)
 
-        if crash:
-            if min_range-0.75 > minF_range > 0:
-                self.vel_cmd.linear.x = -0.6
-                if(obstacle_angle>14):
-                    self.vel_cmd.angular.z = 0.7
-                    self.pub_cmd_vel.publish(self.vel_cmd)
-                    time.sleep(1)
-                else:
-                    self.vel_cmd.angular.z = -0.7
-                    self.pub_cmd_vel.publish(self.vel_cmd)
-                    time.sleep(1)
+        # if crash:
+        #     if min_range-0.75 > minF_range > 0:
+        #         self.vel_cmd.linear.x = -0.6
+        #         if(obstacle_angle>14):
+        #             self.vel_cmd.angular.z = 0.7
+        #             self.pub_cmd_vel.publish(self.vel_cmd)
+        #             time.sleep(1)
+        #         else:
+        #             self.vel_cmd.angular.z = -0.7
+        #             self.pub_cmd_vel.publish(self.vel_cmd)
+        #             time.sleep(1)
 
 
 
-        reward = self.setReward(state, done, crash, action)
+        reward, goal = self.setReward(state, done, crash, action)
 
 
 
-        return np.asarray(state), reward, done, crash
+        return np.asarray(state), reward, done, crash, goal
 
     def reset(self):
 
