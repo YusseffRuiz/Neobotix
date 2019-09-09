@@ -2,34 +2,16 @@
 <launch>
 <!--Load Map-->
 
-  <include file="$(find gazebo_ros)/launch/empty_world.launch">
-    <arg name="world_name" value="$(find neo_simulation)/worlds/ClosedWorld.world"/>
-    <arg name="paused" value="false"/>
-    <arg name="use_sim_time" value="true"/>
-    <arg name="gui" value="true"/>
-    <arg name="headless" value="false"/>
-    <arg name="debug" value="false"/>
-  </include>
 
 <!--Load Map-->
 
-
-<!--Initial Position-->
-    <arg name="x_pos" default="-1.0"/>
-    <arg name="y_pos" default="-0.5"/>
-    <arg name="z_pos" default="0.0"/>
-    <arg name="roll" default="0.0"/>
-    <arg name="pitch" default="0.0"/>
-    <arg name="yaw" default="0.0"/> <!-- 1.578 for PI // in BRL | 3.1416 for Obstacle World | non for regular -->
 
 <!--Initial Position in Neo tracks
     <arg name="x_pos" default="0.0"/>
     <arg name="y_pos" default="0.0"/>
     <arg name="z_pos" default="0.0"/>-->
     <!--To launch scan unifier set the value to true-->
-    <arg name="scanunifier" value="true"/>
     <!--Modify depending on the Map // Turn off loading map-->
-    <arg name="env_map" value="false"/>
     <!-- value for rviz navigation-->
     <arg name="rviz_config" value="mapping"/>
 
@@ -38,8 +20,6 @@
 <!--Robot description to param server-->
   <param name="robot_description" command="$(find xacro)/xacro.py '$(find neo_simulation)/robots/mpo_700/mpo_700.urdf.xacro'"/>
 
-  <node name="mpo_700_spawn" pkg="gazebo_ros" type="spawn_model" output="screen"
-  args="-urdf -param robot_description -model mpo_700 -x $(arg x_pos) -y $(arg y_pos) -z $(arg z_pos) -Y $(arg yaw)" />
 
   <!--To publish Joint and Robot state-->
   <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher">
@@ -52,28 +32,9 @@
 
 <!---=================================================================================================================================================================-->
 
-  <!--if arg scan-unifier is set to true-->
-
- <group if="$(arg scanunifier)">
- 	<include file="$(find neo_simulation)/config/mpo_700/scan_unifier/mpo_700_scan_unifier.launch"/>
- </group>
-
 
 <!---=================================================================================================================================================================-->
-
-  <!-- MAP SERVER -->
-<!--if arg env_map is set to true-->
-  <group if="$(arg env_map)">
-  <node name="map_server" pkg="map_server" type="map_server" args="$(find neo_simulation)/maps/mazeTrial.yaml">
-  </node>
-
-  <node pkg="amcl" type="amcl" name="amcl">
-  	<remap from="scan" to="/cob_scan_unifier/scan_unified"/>
-  	<rosparam file="$(find neo_simulation)/config/mpo_700/amcl/amcl_config.yaml" command="load" />
-  </node>
-   </group>
-
-<!--=================================================================================================================================================================-->
+=======================================================================================================================================================-->
 <!-- Launch RVIZ -->
 	<arg name="rvizconfig" default="$(find neo_simulation)/config/mpo_700/rviz/$(arg rviz_config)_config.rviz" />
 	<node name="rviz" pkg="rviz" type="rviz" args="-d $(arg rvizconfig)" required="true"/>
