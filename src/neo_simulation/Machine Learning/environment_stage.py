@@ -13,7 +13,9 @@ from geometry_msgs.msg import PoseWithCovarianceStamped
 from nav_msgs.msg import Odometry
 from std_srvs.srv import Empty
 from tf.transformations import euler_from_quaternion, quaternion_from_euler
-from RespawnGoalSimple import Respawn  ### Done maybe check
+# from RespawnGoal import Respawn  ### Done maybe check
+from RespawnNewGoal import Respawn  ### Done maybe check
+
 # from scripts.mpo_700_actions import RobotActions
 
 
@@ -51,9 +53,9 @@ class Env():
         self.pub_cmd_vel.publish(self.vel_cmd)
         # rospy.loginfo("Publishing 0 speed")
 
-        self.initPoint.pose.pose.position.x = -9.0
-        self.initPoint.pose.pose.position.y = -9.0
-        [x, y, z, w] = quaternion_from_euler(0.0, 0.0, math.pi/2)
+        self.initPoint.pose.pose.position.x = -8.0
+        self.initPoint.pose.pose.position.y = -6.0
+        [x, y, z, w] = quaternion_from_euler(0.0, 0.0, 0.0)
         self.initPoint.pose.pose.orientation.x = x
         self.initPoint.pose.pose.orientation.y = y
         self.initPoint.pose.pose.orientation.z = z

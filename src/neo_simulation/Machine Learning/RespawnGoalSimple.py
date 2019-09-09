@@ -19,8 +19,8 @@ class Respawn():
         self.model = self.f.read()
         self.stage = rospy.get_param('/stage_number')
         self.goal_position = PoseStamped()
-        self.init_goal_x = -9.0
-        self.init_goal_y = -5.0
+        self.init_goal_x = -6.0
+        self.init_goal_y = -6.0
         self.goal_position.pose.position.x = self.init_goal_x
         self.goal_position.pose.position.y = self.init_goal_y
         self.modelName = 'goal'

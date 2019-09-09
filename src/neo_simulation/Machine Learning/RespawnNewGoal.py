@@ -77,8 +77,8 @@ class Respawn():
 
         if self.stage != 4:
             while position_check:
-                goal_x = random.randrange(-7, 7) / 1.0 ##variate depending on the map
-                goal_y = random.randrange(-8, 6) / 1.0
+                goal_x = input("Give me X coordinate: ")
+                goal_y = input("Give me Y coordinate: ")
 
                 # if(goal_x <=-4 and goal_y>=-4):
                 #     goal_x = random.randrange(-4, 9) / 1.0  ##variate depending on the map
