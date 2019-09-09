@@ -3,7 +3,7 @@
 <!--Load Map-->
 
   <include file="$(find gazebo_ros)/launch/empty_world.launch">
-    <arg name="world_name" value="$(find neo_simulation)/worlds/U_Hall.world"/>
+    <arg name="world_name" value="$(find neo_simulation)/worlds/mazeTrial.world"/>
     <arg name="paused" value="false"/>
     <arg name="use_sim_time" value="true"/>
     <arg name="gui" value="True"/><!-- If you don't want to see the Graphics-->
@@ -15,12 +15,12 @@
 
 
 <!--Initial Position-->
-    <arg name="x_pos" default="0.0"/>
-    <arg name="y_pos" default="0.0"/>
+    <arg name="x_pos" default="-9.0"/>
+    <arg name="y_pos" default="-9.0"/>
     <arg name="z_pos" default="0.0"/>
     <arg name="roll" default="0.0"/>
     <arg name="pitch" default="0.0"/>
-    <arg name="yaw" default="3.1416"/> <!-- 1.578 for PI // in BRL | 3.1416 for Obstacle World | non for regular -->
+    <arg name="yaw" default="1.578"/> <!-- 1.578 for PI // in BRL | 3.1416 for Obstacle World | non for regular -->
 
 <!--Initial Position in Neo tracks
     <arg name="x_pos" default="0.0"/>
@@ -30,7 +30,7 @@
     <arg name="scanunifier" value="true"/>
     <!--Modify depending on the Map // Turn off loading map-->
     <arg name="env_map" value="true"/>
-    <arg name="map_name" value="U_Hall"/>
+    <arg name="map_name" value="mazeTrial"/>
 
 
 

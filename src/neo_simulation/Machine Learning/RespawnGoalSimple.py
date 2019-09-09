@@ -19,15 +19,15 @@ class Respawn():
         self.model = self.f.read()
         self.stage = rospy.get_param('/stage_number')
         self.goal_position = PoseStamped()
-        self.init_goal_x = -2.0
-        self.init_goal_y = 0.0
+        self.init_goal_x = -9.0
+        self.init_goal_y = -5.0
         self.goal_position.pose.position.x = self.init_goal_x
         self.goal_position.pose.position.y = self.init_goal_y
         self.modelName = 'goal'
-        self.obstacle_1 = 0.6, 0.6
-        self.obstacle_2 = 0.6, -0.6
-        self.obstacle_3 = -0.6, 0.6
-        self.obstacle_4 = -0.6, -0.6
+        self.obstacle_1 = 0.7, 0.7
+        self.obstacle_2 = 0.7, -0.7
+        self.obstacle_3 = -0.7, 0.7
+        self.obstacle_4 = -0.7, -0.7
         self.last_goal_x = self.init_goal_x
         self.last_goal_y = self.init_goal_y
         self.last_index = 0
@@ -77,24 +77,27 @@ class Respawn():
 
         if self.stage != 4:
             while position_check:
-                define_goal = random.randrange(1, 3)/1.0
-
-                if define_goal == 1:
-                    goal_x = random.randrange(0, 5) / -1.0  ##variate depending on the map
-                    goal_y = 0
-                elif define_goal == 2:
-                    goal_y = random.randrange(0, 9) / 1.0 ##variate depending on the map
-                    goal_x = -5
-                else:
-                    goal_y = random.randrange(0, 9) / 1.0  ##variate depending on the map
-                    goal_x = -5
-
-
-
+                # define_goal = random.randrange(1, 3)/1.0
                 #
-                # if (goal_x <=1 and goal_x >= -4) and (goal_y == -3 or goal_y == -4):
-                #     goal_x = random.randrange(-4, 9) / 1.0  ##variate depending on the map
-                #     goal_y = random.randrange(4, 7) / -1.0
+                # if define_goal == 1:
+                #     goal_x = random.randrange(0, 5) / -1.0  ##variate depending on the map
+                #     goal_y = 0
+                # elif define_goal == 2:
+                #     goal_y = random.randrange(0, 9) / 1.0 ##variate depending on the map
+                #     goal_x = -5
+                # else:
+                #     goal_y = random.randrange(0, 9) / 1.0  ##variate depending on the map
+                #     goal_x = -5
+
+                goal_x = random.randrange(-9, 9) / 1.0  ##variate depending on the map
+                goal_y = random.randrange(-9, 9) / 1.0
+
+                if goal_x == -4 or goal_x == 2:# or goal_x == -1:
+                    goal_x += 1
+                #
+                # if (goal_x <=1 and goal_x >= -3) and (goal_y == -3 or goal_y == -4):
+                #     goal_x = random.randrange(-4, 7) / 1.0  ##variate depending on the map
+                #     goal_y = random.randrange(-2, 5) / 1.0
 
 
                 if abs(goal_x - self.obstacle_1[0]) <= 0.6 and abs(goal_y - self.obstacle_1[1]) <= 0.6:

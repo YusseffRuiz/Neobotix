@@ -51,9 +51,9 @@ class Env():
         self.pub_cmd_vel.publish(self.vel_cmd)
         # rospy.loginfo("Publishing 0 speed")
 
-        self.initPoint.pose.pose.position.x = 0.0
-        self.initPoint.pose.pose.position.y = 0.0
-        [x, y, z, w] = quaternion_from_euler(0.0, 0.0, 3.1416)
+        self.initPoint.pose.pose.position.x = -9.0
+        self.initPoint.pose.pose.position.y = -9.0
+        [x, y, z, w] = quaternion_from_euler(0.0, 0.0, math.pi/2)
         self.initPoint.pose.pose.orientation.x = x
         self.initPoint.pose.pose.orientation.y = y
         self.initPoint.pose.pose.orientation.z = z
@@ -102,7 +102,7 @@ class Env():
             done = True
             crash = True
         current_distance = round(math.hypot(self.goal_x - self.position.x, self.goal_y - self.position.y), 2)
-        if current_distance < 0.5:
+        if current_distance < 1:
             self.get_goalbox = True
         # rospy.loginfo('Goal Distance: %d', current_distance)
         return scanF_range + [heading, current_distance, minF_range, obstacle_angle], done, crash
@@ -130,7 +130,7 @@ class Env():
         if done:
             if crash:
                 rospy.loginfo("Collision!!")
-                reward -= 200
+                reward -= 50
             else:
                 reward -= 20
                 rospy.loginfo("Done, not crash")
@@ -181,6 +181,14 @@ class Env():
                         vel_temp = dist_temp * 1.5 / 5
             else:
                 vel_temp = 0.0
+                if ang_vel == 0:
+                    ang_vel = max_angular_vel
+                else:
+                    if ang_vel == -1:
+                        ang_vel = -max_angular_vel
+                    else:
+                        vel_temp = -0.6
+
 
 
 
@@ -248,17 +256,17 @@ class Env():
 
         state, done, crash = self.getState(dataF, dataB)
 
-        # if crash:
-        #     if min_range-0.75 > minF_range > 0:
-        #         self.vel_cmd.linear.x = -0.6
-        #         if(obstacle_angle>14):
-        #             self.vel_cmd.angular.z = 0.7
-        #             self.pub_cmd_vel.publish(self.vel_cmd)
-        #             time.sleep(1)
-        #         else:
-        #             self.vel_cmd.angular.z = -0.7
-        #             self.pub_cmd_vel.publish(self.vel_cmd)
-        #             time.sleep(1)
+        if crash: ## comment if you want to reset after crash
+            if min_range-0.75 > minF_range > 0:
+                self.vel_cmd.linear.x = -0.6
+                if(obstacle_angle>14):
+                    self.vel_cmd.angular.z = 0.7
+                    self.pub_cmd_vel.publish(self.vel_cmd)
+                    time.sleep(1)
+                else:
+                    self.vel_cmd.angular.z = -0.7
+                    self.pub_cmd_vel.publish(self.vel_cmd)
+                    time.sleep(1)
 
 
 

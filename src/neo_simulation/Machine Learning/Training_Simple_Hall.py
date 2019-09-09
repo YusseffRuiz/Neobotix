@@ -54,7 +54,7 @@ if __name__ == '__main__':
 
     # robotActions.resetWorld()
 
-    agent = ReinforceAgent(state_size, action_size, True, 1)
+    agent = ReinforceAgent(state_size, action_size, True, 70)
     scores, episodes = [], []
     global_step = 0
 
@@ -64,7 +64,8 @@ if __name__ == '__main__':
     env.reset()
     # calibrate.calibration()
     state = env.reset()
-
+    crashcount = 0
+    goalCount = 0
     for e in range(agent.load_episode + 1, EPISODES):
 
         done = False
@@ -105,7 +106,8 @@ if __name__ == '__main__':
                     json.dump(param_dictionary, outfile)
 
             if goal:
-                done = True
+                goalCount+=1
+
 
             if done:
                 result.data = [score, np.max(agent.q_value)]
@@ -116,8 +118,8 @@ if __name__ == '__main__':
                 m, s = divmod(int(time.time() - start_time), 60)
                 h, m = divmod(m, 60)
 
-                rospy.loginfo('Ep: %d score: %.2f memory: %d epsilon: %.2f time: %d:%02d:%02d',
-                              e, score, len(agent.memory), agent.epsilon, h, m, s)
+                rospy.loginfo('Ep: %d score: %.2f memory: %d epsilon: %.2f time: %d:%02d:%02d goalCount: %d',
+                              e, score, len(agent.memory), agent.epsilon, h, m, s, goalCount)
                 param_keys = ['epsilon']
                 param_values = [agent.epsilon]
                 param_dictionary = dict(zip(param_keys, param_values))
@@ -128,10 +130,14 @@ if __name__ == '__main__':
                 else:
                     # robotActions.moveBack()
                     crash = False
-                    state = env.reset()
+                    crashcount+=1
+                    if crashcount >=8:
+                        state = env.reset()
+                        crashcount = 0
+                        break
                     # rospy.loginfo("Reset")
-                    rospy.loginfo("Crashed")
-                    break
+                    # rospy.loginfo("Crashed")
+                    # break
 
 
             global_step += 1

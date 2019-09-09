@@ -22,7 +22,7 @@ class ReinforceAgent():
     def __init__(self, state_size, action_size, loadModel, load_episode):
         self.pub_result = rospy.Publisher('result', Float32MultiArray, queue_size=5)
         self.dirPath = os.path.dirname(os.path.realpath(__file__))
-        self.dirPath = self.dirPath.replace('neo_simulation/Machine Learning', 'neo_simulation/save_model/TurnRight/stage_1_')
+        self.dirPath = self.dirPath.replace('neo_simulation/Machine Learning', 'neo_simulation/save_model/Maze/stage_1_')
         self.result = Float32MultiArray()
 
         self.load_model = loadModel
