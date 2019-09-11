@@ -62,7 +62,7 @@ class DQNSolver():
             self.q_value = np.zeros(self.action_size)
             return random.randrange(self.action_size)
         else:
-            rospy.loginfo("State: %d", len(state))
+
             q_value = self.model.predict(state.reshape(1, len(state)))
             self.q_value = q_value
             return np.argmax(q_value[0])
@@ -95,7 +95,7 @@ class DQNSolver():
 
         while not rospy.is_shutdown():
             action = self.getAction(state)
-            next_state, reward, done, crash = env.step(action)
+            next_state, reward, done, crash, goal = env.step(action)
             state = next_state
 
 

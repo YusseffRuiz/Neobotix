@@ -2,12 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="77466e0b-a72e-4865-b448-a9bf00d7a28f" name="Default Changelist" comment="Creating file to add new Goals manually.">
-      <change afterPath="$PROJECT_DIR$/Pictures/StartingPoint_BRL.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/neo_simulation/Machine Learning/RespawnNewGoal.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/neo_simulation/Machine Learning/RespawnNewGoal.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/neo_simulation/Machine Learning/RespawnNewGoal.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/neo_simulation/Machine Learning/Run_Stage.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/neo_simulation/Machine Learning/Run_Stage.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/neo_simulation/Machine Learning/environment_stage.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/neo_simulation/Machine Learning/environment_stage.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/neo_simulation/launch/mpo_700/mpo_700_getRobotReady.launch" beforeDir="false" afterPath="$PROJECT_DIR$/src/neo_simulation/launch/mpo_700/mpo_700_getRobotReady.launch" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />

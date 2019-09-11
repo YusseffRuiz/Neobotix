@@ -35,14 +35,14 @@ class Env():
         # rospy.loginfo("Finishing speed the environment")
 
         # self.sub_odom = rospy.Subscriber("/odom", Odometry, self.getOdometry) ##Training Stage
-        # self.pub_init = rospy.Publisher("/initialpose", PoseWithCovarianceStamped, queue_size = 10)
+        self.pub_init = rospy.Publisher("/initialpose", PoseWithCovarianceStamped, queue_size = 10)
         self.sub_odom = rospy.Subscriber("/amcl_pose", PoseWithCovarianceStamped, self.getOdometry) ## Running Stage
-        # self.initPoint = PoseWithCovarianceStamped()
+        self.initPoint = PoseWithCovarianceStamped()
         # rospy.loginfo("Finishing publishers")
         # time.sleep(4)
         # self.unpause_proxy = rospy.ServiceProxy('gazebo/unpause_physics', Empty)
         # self.pause_proxy = rospy.ServiceProxy('gazebo/pause_physics', Empty)
-        self.respawn_goal = Respawn() ## substitute
+        self.respawn_goal = Respawn() #rospy.loginfo("State: %d", len(dataF.ranges))# substitute
         # rospy.loginfo("Reset World")
         # time.sleep(4)
         self.vel_cmd = Twist()
@@ -51,13 +51,13 @@ class Env():
         self.pub_cmd_vel.publish(self.vel_cmd)
         # rospy.loginfo("Publishing 0 speed")
 
-        # self.initPoint.pose.pose.position.x = 0.0
-        # self.initPoint.pose.pose.position.y = 0.0
-        # [x, y, z, w] = quaternion_from_euler(0.0, 0.0, 0.0)
-        # self.initPoint.pose.pose.orientation.x = x
-        # self.initPoint.pose.pose.orientation.y = y
-        # self.initPoint.pose.pose.orientation.z = z
-        # self.initPoint.pose.pose.orientation.w = w
+        self.initPoint.pose.pose.position.x = 0.254
+        self.initPoint.pose.pose.position.y = -13.540357265
+        [x, y, z, w] = quaternion_from_euler(0.0, 0.0, 0.0)
+        self.initPoint.pose.pose.orientation.x = x
+        self.initPoint.pose.pose.orientation.y = y
+        self.initPoint.pose.pose.orientation.z = z
+        self.initPoint.pose.pose.orientation.w = w
         # self.robotActions = RobotActions()
 
 
@@ -88,7 +88,7 @@ class Env():
 
     def getState(self, scanF, scanB): ### needs to modify it
         heading = self.heading
-        min_range = 0.25 #### change to detect collision
+        min_range = 0.9 #### change to detect collision
         done = False
         crash = False
 
@@ -105,6 +105,7 @@ class Env():
         if current_distance < 1:
             self.get_goalbox = True
         # rospy.loginfo('Goal Distance: %d', current_distance)
+
         return scanF_range + [heading, current_distance, minF_range, obstacle_angle], done, crash
 
     def setReward(self, state, done, crash, action):
@@ -148,7 +149,7 @@ class Env():
 
     def calculateVelocity(self, obstacleDistance, action):
         max_angular_vel = 1.0
-        min_range = 1
+        min_range = 2
         dist_temp = (round(math.hypot(self.goal_x - self.position.x, self.goal_y - self.position.y), 2))
         ang_vel = ((self.action_size - 1) / 2 - action) * max_angular_vel * 0.5
 
@@ -156,14 +157,14 @@ class Env():
 
             if (dist_temp > 5):
                 dist_temp = 5
-            vel_temp = dist_temp * 1.5 / 5
+            vel_temp = dist_temp * 1.0 / 5
 
             if vel_temp <= 0.4:
                 vel_temp = 0.5
 
             if obstacleDistance < min_range:
                 vel_temp = (obstacleDistance)
-                if obstacleDistance < 0.5:
+                if obstacleDistance < 1:
                     vel_temp = 0.4-2*obstacleDistance
 
 
@@ -178,7 +179,7 @@ class Env():
                     if ang_vel == -1:
                         ang_vel = -max_angular_vel
                     else:
-                        vel_temp = dist_temp * 1.5 / 5
+                        vel_temp = dist_temp * 1.0 / 5
             else:
                 vel_temp = 0.0
                 if ang_vel == 0:
@@ -218,6 +219,7 @@ class Env():
     def getObstacles(self, dataF, dataB):
         scanF_range = []
         scanB_range = []
+
         for i in range(len(dataF.ranges)):
             if dataF.ranges[i] == float('Inf'):
                 scanF_range.append(3.5)
@@ -236,13 +238,14 @@ class Env():
 
         obstacle_min_rangeF = round(min(scanF_range), 2)
         obstacle_min_rangeB = round(min(scanB_range), 2)
+        scanF_range = scanF_range[0:28]
         obstacle_angle = np.argmin(scanF_range)
         return obstacle_angle, obstacle_min_rangeB, obstacle_min_rangeF, scanF_range
 
 
 
     def step(self, action):
-        min_range = 1
+        min_range = 1.5
         dataF, dataB = self.readScanners()
         obstacle_angle, minB_range, minF_range, scanRangeF = self.getObstacles(dataF, dataB)
 
@@ -257,7 +260,7 @@ class Env():
         state, done, crash = self.getState(dataF, dataB)
 
         if crash: ## comment if you want to reset after crash
-            if min_range-0.75 > minF_range > 0:
+            if min_range > minF_range > 0:
                 self.vel_cmd.linear.x = -0.5
                 if(obstacle_angle>14):
                     self.vel_cmd.angular.z = 0.7
