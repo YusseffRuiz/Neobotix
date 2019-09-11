@@ -19,8 +19,8 @@ class Respawn():
         self.model = self.f.read()
         self.stage = rospy.get_param('/stage_number')
         self.goal_position = PoseStamped()
-        self.init_goal_x = -6.0
-        self.init_goal_y = -6.0
+        self.init_goal_x = 0.0
+        self.init_goal_y = 5.0
         self.goal_position.pose.position.x = self.init_goal_x
         self.goal_position.pose.position.y = self.init_goal_y
         self.modelName = 'goal'
@@ -89,11 +89,12 @@ class Respawn():
                 #     goal_y = random.randrange(0, 9) / 1.0  ##variate depending on the map
                 #     goal_x = -5
 
-                goal_x = random.randrange(-9, 9) / 1.0  ##variate depending on the map
-                goal_y = random.randrange(-9, 9) / 1.0
+                goal_x = random.randrange(-7, 7) / 1.0  ##variate depending on the map
+                goal_y = random.randrange(-6, 6) / 1.0
 
-                if goal_x == -4 or goal_x == 2:# or goal_x == -1:
-                    goal_x += 1
+                if ((goal_x >= -4 and goal_x <= 5) and (goal_y >= -4 and goal_y <= 3)):
+                    goal_x = 7  ##variate depending on the map
+                    goal_y = random.randrange(-6, 6) / 61.0
                 #
                 # if (goal_x <=1 and goal_x >= -3) and (goal_y == -3 or goal_y == -4):
                 #     goal_x = random.randrange(-4, 7) / 1.0  ##variate depending on the map
