@@ -22,6 +22,8 @@
     <!--Modify depending on the Map // Turn off loading map-->
     <arg name="env_map" value="true"/>
     <arg name="map_name" value="BRLMap1"/>
+    <arg name="rviz_config" value="mapping"/>
+
 
 
 
@@ -39,7 +41,9 @@
   </node>
 
 <!---=================================================================================================================================================================-->
-
+<!-- Launch RVIZ -->
+	<arg name="rvizconfig" default="$(find neo_simulation)/config/mpo_700/rviz/$(arg rviz_config)_config.rviz" />
+	<node name="rviz" pkg="rviz" type="rviz" args="-d $(arg rvizconfig)" required="true"/>
 
 <!---=================================================================================================================================================================-->
 

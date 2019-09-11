@@ -13,7 +13,7 @@ from geometry_msgs.msg import PoseWithCovarianceStamped
 from nav_msgs.msg import Odometry
 from std_srvs.srv import Empty
 from tf.transformations import euler_from_quaternion, quaternion_from_euler
-from RespawnGoalSimple import Respawn  ### Done maybe check
+from RespawnNewGoal import Respawn  ### Done maybe check
 # from scripts.mpo_700_actions import RobotActions
 
 
@@ -35,9 +35,9 @@ class Env():
         # rospy.loginfo("Finishing speed the environment")
 
         # self.sub_odom = rospy.Subscriber("/odom", Odometry, self.getOdometry) ##Training Stage
-        self.pub_init = rospy.Publisher("/initialpose", PoseWithCovarianceStamped, queue_size = 10)
+        # self.pub_init = rospy.Publisher("/initialpose", PoseWithCovarianceStamped, queue_size = 10)
         self.sub_odom = rospy.Subscriber("/amcl_pose", PoseWithCovarianceStamped, self.getOdometry) ## Running Stage
-        self.initPoint = PoseWithCovarianceStamped()
+        # self.initPoint = PoseWithCovarianceStamped()
         # rospy.loginfo("Finishing publishers")
         # time.sleep(4)
         # self.unpause_proxy = rospy.ServiceProxy('gazebo/unpause_physics', Empty)
@@ -51,13 +51,13 @@ class Env():
         self.pub_cmd_vel.publish(self.vel_cmd)
         # rospy.loginfo("Publishing 0 speed")
 
-        self.initPoint.pose.pose.position.x = -9.0
-        self.initPoint.pose.pose.position.y = -9.0
-        [x, y, z, w] = quaternion_from_euler(0.0, 0.0, math.pi/2)
-        self.initPoint.pose.pose.orientation.x = x
-        self.initPoint.pose.pose.orientation.y = y
-        self.initPoint.pose.pose.orientation.z = z
-        self.initPoint.pose.pose.orientation.w = w
+        # self.initPoint.pose.pose.position.x = 0.0
+        # self.initPoint.pose.pose.position.y = 0.0
+        # [x, y, z, w] = quaternion_from_euler(0.0, 0.0, 0.0)
+        # self.initPoint.pose.pose.orientation.x = x
+        # self.initPoint.pose.pose.orientation.y = y
+        # self.initPoint.pose.pose.orientation.z = z
+        # self.initPoint.pose.pose.orientation.w = w
         # self.robotActions = RobotActions()
 
 
@@ -163,8 +163,8 @@ class Env():
 
             if obstacleDistance < min_range:
                 vel_temp = (obstacleDistance)
-                # if obstacleDistance < 0.5:
-                #     vel_temp = 0.4-2*obstacleDistance
+                if obstacleDistance < 0.5:
+                    vel_temp = 0.4-2*obstacleDistance
 
 
         else:
@@ -203,13 +203,13 @@ class Env():
 
         while dataF is None:
             try:
-                dataF = rospy.wait_for_message('/sick_front/scan', LaserScan, timeout=5)
+                dataF = rospy.wait_for_message('/sick_s300_front/scan_filtered', LaserScan, timeout=5)
             except:
                 pass
 
         while dataB is None:
             try:
-                dataB = rospy.wait_for_message('/sick_back/scan', LaserScan, timeout=5)
+                dataB = rospy.wait_for_message('/sick_s300_back/scan_filtered', LaserScan, timeout=5)
             except:
                 pass
 
@@ -258,15 +258,15 @@ class Env():
 
         if crash: ## comment if you want to reset after crash
             if min_range-0.75 > minF_range > 0:
-                self.vel_cmd.linear.x = -0.6
+                self.vel_cmd.linear.x = -0.5
                 if(obstacle_angle>14):
                     self.vel_cmd.angular.z = 0.7
                     self.pub_cmd_vel.publish(self.vel_cmd)
-                    time.sleep(1)
+                    time.sleep(0.5)
                 else:
                     self.vel_cmd.angular.z = -0.7
                     self.pub_cmd_vel.publish(self.vel_cmd)
-                    time.sleep(1)
+                    time.sleep(0.5)
 
 
 
@@ -281,21 +281,27 @@ class Env():
         self.vel_cmd.linear.x = 0
         self.vel_cmd.angular.z = 0
         self.pub_cmd_vel.publish(self.vel_cmd)
+        # rospy.loginfo("First speed published")
         # rospy.wait_for_service('gazebo/reset_simulation')
-        rospy.wait_for_service('/gazebo/reset_world')
-        try:
-            reset_world = rospy.ServiceProxy('/gazebo/reset_world', Empty)
-            reset_world()
-        except (rospy.ServiceException) as e:
-            print("gazebo/reset_simulation service call failed")
+        # rospy.wait_for_service('/gazebo/reset_world')
+        # try:
+        #     reset_world = rospy.ServiceProxy('/gazebo/reset_world', Empty)
+        #     reset_world()
+        # except (rospy.ServiceException) as e:
+        #     print("gazebo/reset_simulation service call failed")
 
         dataF, dataB = self.readScanners()
-        self.pub_init.publish(self.initPoint)
+
+        # rospy.loginfo("Scanners Done")
+        # self.pub_init.publish(self.initPoint)
 
         if self.initGoal:
             self.goal_x, self.goal_y = self.respawn_goal.getPosition()
             self.initGoal = False
+        # rospy.loginfo("Goal obtained")
         self.goal_distance = self.getGoalDistace()
+        # rospy.loginfo("Calculated Distance")
         state, done, crash = self.getState(dataF, dataB)
+        # rospy.loginfo("First state complete")
 
         return np.asarray(state)

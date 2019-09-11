@@ -62,9 +62,12 @@ class DQNSolver():
             self.q_value = np.zeros(self.action_size)
             return random.randrange(self.action_size)
         else:
+            rospy.loginfo("State: %d", len(state))
             q_value = self.model.predict(state.reshape(1, len(state)))
             self.q_value = q_value
             return np.argmax(q_value[0])
+
+
 
     def load(self, nameOfFile):
         # load previously created json and model
@@ -82,22 +85,17 @@ class DQNSolver():
         with open(nameOfJson) as outfile:
             param = json.load(outfile)
             self.epsilon = param.get('epsilon')
-        # json_file = open(nameOfJson, 'r')
-        # loaded_model_json = json_file.read()
-        # json_file.close()
-        # loaded_model = model_from_json(loaded_model_json)
-        # load weights into new model
         print("Loaded model from disk")
 
 
-    def run(self, env, calibrate):
+    def run(self, env):
         rate = rospy.Rate(30)
         state = env.reset()
-        calibrate.calibration()
+        # calibrate.calibration()
 
         while not rospy.is_shutdown():
             action = self.getAction(state)
-            next_state, reward, done = env.step(action)
+            next_state, reward, done, crash = env.step(action)
             state = next_state
 
 
@@ -110,9 +108,8 @@ if __name__ == '__main__':
 
     state_size = 32
     action_size = 4
-
-    newDQN = DQNSolver(state_size,action_size, 'stage_1_1')
+    newDQN = DQNSolver(state_size, action_size, 'stage_1_1')
     env = Env(action_size)
-    calibrate = Calibration()
+    # calibrate = Calibration()
 
-    newDQN.run(env, calibrate)
+    newDQN.run(env)
