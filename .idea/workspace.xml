@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="77466e0b-a72e-4865-b448-a9bf00d7a28f" name="Default Changelist" comment="Modifying Reward System and not reset">
-      <change afterPath="$PROJECT_DIR$/Pictures/AMCL_Map_BRL.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/neo_simulation/maps/BRLMap1.pgm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/neo_simulation/maps/BRLMap1.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/neo_simulation/launch/mpo_700/mpo_700_getRobotReady.launch" beforeDir="false" afterPath="$PROJECT_DIR$/src/neo_simulation/launch/mpo_700/mpo_700_getRobotReady.launch" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/neo_simulation/Machine Learning/Run_Stage.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/neo_simulation/Machine Learning/Run_Stage.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />

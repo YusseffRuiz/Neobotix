@@ -71,7 +71,7 @@ class DQNSolver():
 
         rospack = rospkg.RosPack()
         pkg_path = rospack.get_path("neo_simulation") ## Modify Path according to needs
-        models_dir_path = pkg_path + "/save_model/No_Obstacles"
+        models_dir_path = pkg_path + "/save_model/Final"
 
         # pkg_path = 'neo_simulation/save_model/' ## Modify Path according to needs
         nameOfJson = os.path.join(models_dir_path, (nameOfFile + '.json'))
@@ -111,7 +111,7 @@ if __name__ == '__main__':
     state_size = 32
     action_size = 4
 
-    newDQN = DQNSolver(state_size,action_size, 'stage_1_4500')
+    newDQN = DQNSolver(state_size,action_size, 'stage_1_1')
     env = Env(action_size)
     calibrate = Calibration()
 
