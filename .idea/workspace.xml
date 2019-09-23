@@ -2,10 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="77466e0b-a72e-4865-b448-a9bf00d7a28f" name="Default Changelist" comment="Creating file to add new Goals manually.">
+      <change afterPath="$PROJECT_DIR$/src/neo_simulation/scripts/ReadingLidar.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/neo_simulation/Machine Learning/RespawnNewGoal.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/neo_simulation/Machine Learning/RespawnNewGoal.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/neo_simulation/Machine Learning/Run_Stage.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/neo_simulation/Machine Learning/Run_Stage.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/neo_simulation/Machine Learning/environment_stage.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/neo_simulation/Machine Learning/environment_stage.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/neo_simulation/launch/mpo_700/mpo_700_get_position.launch" beforeDir="false" afterPath="$PROJECT_DIR$/src/neo_simulation/launch/mpo_700/mpo_700_readScanner.launch" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -35,10 +36,13 @@
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Documents/Augmented Random Search/OwnCode/ars.py" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/neo_simulation/scripts" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/neo_simulation/scripts" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/neo_simulation/Machine Learning" />
       <recent name="$PROJECT_DIR$/src/neo_simulation/scripts" />
@@ -217,7 +221,14 @@
       <option name="project" value="LOCAL" />
       <updated>1567775523084</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="Creating file to add new Goals manually.">
+      <created>1568222273214</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1568222273214</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -258,7 +269,8 @@
     <MESSAGE value="Modifying Reward System and not reset" />
     <MESSAGE value="Modifying Reward System, steps and making new functions for easier control. Also adding a new empty map for training." />
     <MESSAGE value="Make new training sets and new maps. Changing most of the model." />
-    <option name="LAST_COMMIT_MESSAGE" value="Make new training sets and new maps. Changing most of the model." />
+    <MESSAGE value="Creating file to add new Goals manually." />
+    <option name="LAST_COMMIT_MESSAGE" value="Creating file to add new Goals manually." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

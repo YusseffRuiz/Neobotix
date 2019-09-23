@@ -51,13 +51,13 @@ class Env():
         self.pub_cmd_vel.publish(self.vel_cmd)
         # rospy.loginfo("Publishing 0 speed")
 
-        self.initPoint.pose.pose.position.x = 0.254
-        self.initPoint.pose.pose.position.y = -13.540357265
-        [x, y, z, w] = quaternion_from_euler(0.0, 0.0, 0.0)
-        self.initPoint.pose.pose.orientation.x = x
-        self.initPoint.pose.pose.orientation.y = y
-        self.initPoint.pose.pose.orientation.z = z
-        self.initPoint.pose.pose.orientation.w = w
+        # self.initPoint.pose.pose.position.x = 0.254
+        # self.initPoint.pose.pose.position.y = -13.540357265
+        # [x, y, z, w] = quaternion_from_euler(0.0, 0.0, 0.0)
+        # self.initPoint.pose.pose.orientation.x = x
+        # self.initPoint.pose.pose.orientation.y = y
+        # self.initPoint.pose.pose.orientation.z = z
+        # self.initPoint.pose.pose.orientation.w = w
         # self.robotActions = RobotActions()
 
 
@@ -88,7 +88,7 @@ class Env():
 
     def getState(self, scanF, scanB): ### needs to modify it
         heading = self.heading
-        min_range = 0.9 #### change to detect collision
+        min_range = 0.5 #### change to detect collision
         done = False
         crash = False
 
@@ -204,13 +204,13 @@ class Env():
 
         while dataF is None:
             try:
-                dataF = rospy.wait_for_message('/sick_s300_front/scan_filtered', LaserScan, timeout=5)
+                dataF = rospy.wait_for_message('/sick_s300_front/scan', LaserScan, timeout=5)
             except:
                 pass
 
         while dataB is None:
             try:
-                dataB = rospy.wait_for_message('/sick_s300_back/scan_filtered', LaserScan, timeout=5)
+                dataB = rospy.wait_for_message('/sick_s300_back/scan', LaserScan, timeout=5)
             except:
                 pass
 
@@ -219,26 +219,34 @@ class Env():
     def getObstacles(self, dataF, dataB):
         scanF_range = []
         scanB_range = []
+        numberOfReadings = round(len(dataF.ranges)/28)
+
+        auxCont = 0
 
         for i in range(len(dataF.ranges)):
-            if dataF.ranges[i] == float('Inf'):
-                scanF_range.append(3.5)
-            elif np.isnan(dataF.ranges[i]):
-                scanF_range.append(0)
-            else:
-                scanF_range.append(dataF.ranges[i])
-
+            if (i % numberOfReadings == 0):
+                auxCont += 1
+                if(auxCont > 1):
+                    if dataF.ranges[i] == float('Inf'):
+                        scanF_range.append(3.5)
+                    elif np.isnan(dataF.ranges[i]):
+                        scanF_range.append(0)
+                    else:
+                        scanF_range.append(dataF.ranges[i])
+        auxCont = 0
         for i in range(len(dataB.ranges)):
-            if dataB.ranges[i] == float('Inf'):
-                scanB_range.append(3.5)
-            elif np.isnan(dataB.ranges[i]):
-                scanB_range.append(0)
-            else:
-                scanB_range.append(dataB.ranges[i])
+            if (i % numberOfReadings == 0):
+                auxCont+=1
+                if auxCont > 1:
+                    if dataB.ranges[i] == float('Inf'):
+                        scanB_range.append(3.5)
+                    elif np.isnan(dataB.ranges[i]):
+                        scanF_range.append(0)
+                    else:
+                        scanB_range.append(dataB.ranges[i])
 
         obstacle_min_rangeF = round(min(scanF_range), 2)
         obstacle_min_rangeB = round(min(scanB_range), 2)
-        scanF_range = scanF_range[0:28]
         obstacle_angle = np.argmin(scanF_range)
         return obstacle_angle, obstacle_min_rangeB, obstacle_min_rangeF, scanF_range
 
@@ -260,7 +268,7 @@ class Env():
         state, done, crash = self.getState(dataF, dataB)
 
         if crash: ## comment if you want to reset after crash
-            if min_range > minF_range > 0:
+            if min_range > minF_range > 0.4:
                 self.vel_cmd.linear.x = -0.5
                 if(obstacle_angle>14):
                     self.vel_cmd.angular.z = 0.7
