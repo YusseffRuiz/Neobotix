@@ -2,4 +2,4 @@
 source_root_dir = "/home/yusseff/Neobotix/src"
 whitelisted_packages = "".split(';') if "" != "" else []
 blacklisted_packages = "".split(';') if "" != "" else []
-underlay_workspaces = "/home/yusseff/Neobotix/devel;/home/yusseff/catkin_ws/devel;/opt/ros/melodic".split(';') if "/home/yusseff/Neobotix/devel;/home/yusseff/catkin_ws/devel;/opt/ros/melodic" != "" else []
+underlay_workspaces = "/home/yusseff/camera_workspace/devel;/home/yusseff/Neobotix/devel;/home/yusseff/catkin_ws/devel;/opt/ros/melodic".split(';') if "/home/yusseff/camera_workspace/devel;/home/yusseff/Neobotix/devel;/home/yusseff/catkin_ws/devel;/opt/ros/melodic" != "" else []

@@ -7,5 +7,4 @@
 # new environment variables
 
 # modified environment variables
-export PATH="/opt/ros/melodic/bin:/home/yusseff/anaconda3/bin:/home/yusseff/anaconda3/condabin:/home/yusseff/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin"
 export PWD="/home/yusseff/Neobotix/build"

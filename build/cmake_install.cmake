@@ -132,6 +132,7 @@ if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
   include("/home/yusseff/Neobotix/build/gtest/cmake_install.cmake")
   include("/home/yusseff/Neobotix/build/neo_simulation/cmake_install.cmake")
+  include("/home/yusseff/Neobotix/build/rplidar_ros/cmake_install.cmake")
   include("/home/yusseff/Neobotix/build/cob_scan_unifier/cmake_install.cmake")
 
 endif()
