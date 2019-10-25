@@ -2,37 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="77466e0b-a72e-4865-b448-a9bf00d7a28f" name="Default Changelist" comment="adding calibration Launch file">
-      <change afterPath="$PROJECT_DIR$/src/rplidar_ros/launch/rplidar_obstacles.launch" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/rplidar_ros/scripts/obstacle_distance.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/CMakeCache.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/Makefile.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/build/CMakeFiles/Makefile.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/Makefile2" beforeDir="false" afterPath="$PROJECT_DIR$/build/CMakeFiles/Makefile2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/TargetDirectories.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/CMakeFiles/TargetDirectories.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/progress.marks" beforeDir="false" afterPath="$PROJECT_DIR$/build/CMakeFiles/progress.marks" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/CTestTestfile.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/build/CTestTestfile.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/build/Makefile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/atomic_configure/_setup_util.py" beforeDir="false" afterPath="$PROJECT_DIR$/build/atomic_configure/_setup_util.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/catkin_generated/generate_cached_setup.py" beforeDir="false" afterPath="$PROJECT_DIR$/build/catkin_generated/generate_cached_setup.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/catkin_generated/installspace/_setup_util.py" beforeDir="false" afterPath="$PROJECT_DIR$/build/catkin_generated/installspace/_setup_util.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/catkin_generated/order_packages.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/build/catkin_generated/order_packages.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/catkin_generated/order_packages.py" beforeDir="false" afterPath="$PROJECT_DIR$/build/catkin_generated/order_packages.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/catkin_generated/setup_cached.sh" beforeDir="false" afterPath="$PROJECT_DIR$/build/catkin_generated/setup_cached.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/catkin_generated/stamps/Project/_setup_util.py.stamp" beforeDir="false" afterPath="$PROJECT_DIR$/build/catkin_generated/stamps/Project/_setup_util.py.stamp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/catkin_make.cache" beforeDir="false" afterPath="$PROJECT_DIR$/build/catkin_make.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/cmake_install.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/build/cmake_install.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/cob_scan_unifier/CMakeFiles/scan_unifier_node.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/build/cob_scan_unifier/CMakeFiles/scan_unifier_node.dir/progress.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/cob_scan_unifier/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/build/cob_scan_unifier/Makefile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/cob_scan_unifier/catkin_generated/installspace/cob_scan_unifierConfig.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/build/cob_scan_unifier/catkin_generated/installspace/cob_scan_unifierConfig.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/gtest/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/build/gtest/Makefile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/gtest/googlemock/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/build/gtest/googlemock/Makefile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/gtest/googlemock/gtest/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/build/gtest/googlemock/gtest/Makefile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/neo_simulation/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/build/neo_simulation/Makefile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/neo_simulation/catkin_generated/installspace/neo_simulationConfig.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/build/neo_simulation/catkin_generated/installspace/neo_simulationConfig.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/devel/_setup_util.py" beforeDir="false" afterPath="$PROJECT_DIR$/devel/_setup_util.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/devel/share/cob_scan_unifier/cmake/cob_scan_unifierConfig.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/devel/share/cob_scan_unifier/cmake/cob_scan_unifierConfig.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/devel/share/neo_simulation/cmake/neo_simulationConfig.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/devel/share/neo_simulation/cmake/neo_simulationConfig.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/rplidar_ros" beforeDir="false" afterPath="$PROJECT_DIR$/src/rplidar_ros" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -106,7 +76,14 @@
       <option name="project" value="LOCAL" />
       <updated>1562339633744</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="adding calibration Launch file">
+      <created>1572004037727</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1572004037727</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
