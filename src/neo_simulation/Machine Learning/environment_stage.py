@@ -219,7 +219,7 @@ class Env():
     def getObstacles(self, dataF, dataB):
         scanF_range = []
         scanB_range = []
-        numberOfReadings = round(len(dataF.ranges)/28)
+        numberOfReadings = round(len(dataF.ranges))
 
         auxCont = 0
 
