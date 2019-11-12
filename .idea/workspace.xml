@@ -2,7 +2,49 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="77466e0b-a72e-4865-b448-a9bf00d7a28f" name="Default Changelist" comment="adding calibration Launch file">
+      <change afterPath="$PROJECT_DIR$/src/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/rplidar_ros/CameraFiles/CameraRiskDetection.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/rplidar_ros/CameraFiles/CameraSetup.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/rplidar_ros/CameraFiles/MobileNet-SSD/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/rplidar_ros/CameraFiles/MobileNet-SSD/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/rplidar_ros/CameraFiles/MobileNet-SSD/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/rplidar_ros/CameraFiles/MobileNet-SSD/demo.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/rplidar_ros/CameraFiles/MobileNet-SSD/deploy.prototxt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/rplidar_ros/CameraFiles/MobileNet-SSD/gen.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/rplidar_ros/CameraFiles/MobileNet-SSD/gen_model.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/rplidar_ros/CameraFiles/MobileNet-SSD/images/000001.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/rplidar_ros/CameraFiles/MobileNet-SSD/images/000067.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/rplidar_ros/CameraFiles/MobileNet-SSD/images/000456.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/rplidar_ros/CameraFiles/MobileNet-SSD/images/000542.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/rplidar_ros/CameraFiles/MobileNet-SSD/images/001150.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/rplidar_ros/CameraFiles/MobileNet-SSD/images/001763.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/rplidar_ros/CameraFiles/MobileNet-SSD/images/004545.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/rplidar_ros/CameraFiles/MobileNet-SSD/merge_bn.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/rplidar_ros/CameraFiles/MobileNet-SSD/mobilenet_iter_73000.caffemodel" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/rplidar_ros/CameraFiles/MobileNet-SSD/solver_test.prototxt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/rplidar_ros/CameraFiles/MobileNet-SSD/solver_train.prototxt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/rplidar_ros/CameraFiles/MobileNet-SSD/template/MobileNetSSD_deploy_template.prototxt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/rplidar_ros/CameraFiles/MobileNet-SSD/template/MobileNetSSD_test_template.prototxt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/rplidar_ros/CameraFiles/MobileNet-SSD/template/MobileNetSSD_train_template.prototxt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/rplidar_ros/CameraFiles/MobileNet-SSD/test.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/rplidar_ros/CameraFiles/MobileNet-SSD/train.prototxt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/rplidar_ros/CameraFiles/MobileNet-SSD/train.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/rplidar_ros/CameraFiles/MobileNet-SSD/train_voc.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/rplidar_ros/CameraFiles/MobileNet-SSD/voc/MobileNetSSD_deploy.prototxt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/rplidar_ros/CameraFiles/MobileNet-SSD/voc/MobileNetSSD_test.prototxt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/rplidar_ros/CameraFiles/MobileNet-SSD/voc/MobileNetSSD_train.prototxt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/rplidar_ros/CameraFiles/MobileNet-SSD/voc/solver.prototxt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/rplidar_ros/CameraFiles/RiskCalculation.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/rplidar_ros/CameraFiles/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/rplidar_ros/CameraFiles/obstacle_distance.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/rplidar_ros/CameraFiles/realsense-hello.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/rplidar_ros/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/rplidar_ros/launch/rs_cameraLaunch.launch" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/rplidar_ros/scripts/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/rplidar_ros" beforeDir="false" afterPath="$PROJECT_DIR$/src/rplidar_ros" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/rplidar_ros/scripts/obstacle_distance.py" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -26,11 +68,22 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/src/rplidar_ros" />
   </component>
   <component name="ProjectId" id="1SWKsvJxOdfeJY2lIq37URAzhrT" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="settings.github" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/rplidar_ros/scripts" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/rplidar_ros/scripts" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/rplidar_ros/CameraFiles" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -100,8 +153,10 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <ignored-roots>
       <path value="$PROJECT_DIR$/src/neo_simulation" />
+      <path value="$PROJECT_DIR$/src/rplidar_ros/MobileNet-SSD" />
     </ignored-roots>
     <MESSAGE value="adding calibration python File" />
     <MESSAGE value="adding calibration Launch file" />
