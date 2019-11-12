@@ -1,13 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="77466e0b-a72e-4865-b448-a9bf00d7a28f" name="Default Changelist" comment="adding calibration Launch file">
-      <change afterPath="$PROJECT_DIR$/src/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/rplidar_ros/CameraFiles/CameraRiskDetection.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/rplidar_ros/CameraFiles/CameraSetup.py" afterDir="false" />
+    <list default="true" id="77466e0b-a72e-4865-b448-a9bf00d7a28f" name="Default Changelist" comment="">
       <change afterPath="$PROJECT_DIR$/src/rplidar_ros/CameraFiles/MobileNet-SSD/LICENSE" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/rplidar_ros/CameraFiles/MobileNet-SSD/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/rplidar_ros/CameraFiles/MobileNet-SSD/__init__.py" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/rplidar_ros/CameraFiles/MobileNet-SSD/demo.py" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/rplidar_ros/CameraFiles/MobileNet-SSD/deploy.prototxt" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/rplidar_ros/CameraFiles/MobileNet-SSD/gen.py" afterDir="false" />
@@ -34,17 +30,7 @@
       <change afterPath="$PROJECT_DIR$/src/rplidar_ros/CameraFiles/MobileNet-SSD/voc/MobileNetSSD_test.prototxt" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/rplidar_ros/CameraFiles/MobileNet-SSD/voc/MobileNetSSD_train.prototxt" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/rplidar_ros/CameraFiles/MobileNet-SSD/voc/solver.prototxt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/rplidar_ros/CameraFiles/RiskCalculation.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/rplidar_ros/CameraFiles/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/rplidar_ros/CameraFiles/obstacle_distance.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/rplidar_ros/CameraFiles/realsense-hello.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/rplidar_ros/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/rplidar_ros/launch/rs_cameraLaunch.launch" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/rplidar_ros/scripts/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/rplidar_ros" beforeDir="false" afterPath="$PROJECT_DIR$/src/rplidar_ros" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/rplidar_ros/scripts/obstacle_distance.py" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -136,7 +122,14 @@
       <option name="project" value="LOCAL" />
       <updated>1572004037727</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Adding Camera and Lider Modules&#10;Added Risk Analysis Functionality&#10;Adding Launch files">
+      <created>1573601630829</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1573601630829</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -160,6 +153,7 @@
     </ignored-roots>
     <MESSAGE value="adding calibration python File" />
     <MESSAGE value="adding calibration Launch file" />
-    <option name="LAST_COMMIT_MESSAGE" value="adding calibration Launch file" />
+    <MESSAGE value="Adding Camera and Lider Modules&#10;Added Risk Analysis Functionality&#10;Adding Launch files" />
+    <option name="LAST_COMMIT_MESSAGE" value="Adding Camera and Lider Modules&#10;Added Risk Analysis Functionality&#10;Adding Launch files" />
   </component>
 </project>
