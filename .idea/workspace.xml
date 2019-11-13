@@ -1,47 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="77466e0b-a72e-4865-b448-a9bf00d7a28f" name="Default Changelist" comment="Adding Camera and Lider Modules&#10;Added Risk Analysis Functionality&#10;Adding Launch files">
-      <change afterPath="$PROJECT_DIR$/Pictures/Screenshot from 2019-11-13 13-35-54.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pictures/Screenshot from 2019-11-13 13-39-22.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pictures/Screenshot from 2019-11-13 14-27-38.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pictures/wall.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/rplidar_ros/CameraFiles/MobileNet-SSD/LICENSE" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/rplidar_ros/CameraFiles/MobileNet-SSD/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/rplidar_ros/CameraFiles/MobileNet-SSD/demo.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/rplidar_ros/CameraFiles/MobileNet-SSD/deploy.prototxt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/rplidar_ros/CameraFiles/MobileNet-SSD/gen.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/rplidar_ros/CameraFiles/MobileNet-SSD/gen_model.sh" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/rplidar_ros/CameraFiles/MobileNet-SSD/images/000001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/rplidar_ros/CameraFiles/MobileNet-SSD/images/000067.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/rplidar_ros/CameraFiles/MobileNet-SSD/images/000456.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/rplidar_ros/CameraFiles/MobileNet-SSD/images/000542.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/rplidar_ros/CameraFiles/MobileNet-SSD/images/001150.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/rplidar_ros/CameraFiles/MobileNet-SSD/images/001763.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/rplidar_ros/CameraFiles/MobileNet-SSD/images/004545.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/rplidar_ros/CameraFiles/MobileNet-SSD/merge_bn.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/rplidar_ros/CameraFiles/MobileNet-SSD/mobilenet_iter_73000.caffemodel" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/rplidar_ros/CameraFiles/MobileNet-SSD/solver_test.prototxt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/rplidar_ros/CameraFiles/MobileNet-SSD/solver_train.prototxt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/rplidar_ros/CameraFiles/MobileNet-SSD/template/MobileNetSSD_deploy_template.prototxt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/rplidar_ros/CameraFiles/MobileNet-SSD/template/MobileNetSSD_test_template.prototxt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/rplidar_ros/CameraFiles/MobileNet-SSD/template/MobileNetSSD_train_template.prototxt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/rplidar_ros/CameraFiles/MobileNet-SSD/test.sh" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/rplidar_ros/CameraFiles/MobileNet-SSD/train.prototxt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/rplidar_ros/CameraFiles/MobileNet-SSD/train.sh" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/rplidar_ros/CameraFiles/MobileNet-SSD/train_voc.sh" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/rplidar_ros/CameraFiles/MobileNet-SSD/voc/MobileNetSSD_deploy.prototxt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/rplidar_ros/CameraFiles/MobileNet-SSD/voc/MobileNetSSD_test.prototxt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/rplidar_ros/CameraFiles/MobileNet-SSD/voc/MobileNetSSD_train.prototxt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/rplidar_ros/CameraFiles/MobileNet-SSD/voc/solver.prototxt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/rplidar_ros" beforeDir="false" afterPath="$PROJECT_DIR$/src/rplidar_ros" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/rplidar_ros/CameraFiles/CameraRiskDetection.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/rplidar_ros/CameraFiles/CameraRiskDetection.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/rplidar_ros/CameraFiles/CameraSetup.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/rplidar_ros/CameraFiles/CameraSetup.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/rplidar_ros/CameraFiles/RiskCalculation.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/rplidar_ros/CameraFiles/RiskCalculation.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/rplidar_ros/CameraFiles/obstacle_distance.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/rplidar_ros/CameraFiles/obstacle_distance.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/rplidar_ros/launch/rs_cameraLaunch.launch" beforeDir="false" afterPath="$PROJECT_DIR$/src/rplidar_ros/launch/rs_cameraLaunch.launch" afterDir="false" />
-    </list>
+    <list default="true" id="77466e0b-a72e-4865-b448-a9bf00d7a28f" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -164,6 +124,7 @@
     <MESSAGE value="adding calibration python File" />
     <MESSAGE value="adding calibration Launch file" />
     <MESSAGE value="Adding Camera and Lider Modules&#10;Added Risk Analysis Functionality&#10;Adding Launch files" />
-    <option name="LAST_COMMIT_MESSAGE" value="Adding Camera and Lider Modules&#10;Added Risk Analysis Functionality&#10;Adding Launch files" />
+    <MESSAGE value="Modify Risk percentages&#10;Added Prospect theory with correct values" />
+    <option name="LAST_COMMIT_MESSAGE" value="Modify Risk percentages&#10;Added Prospect theory with correct values" />
   </component>
 </project>
