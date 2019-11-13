@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="77466e0b-a72e-4865-b448-a9bf00d7a28f" name="Default Changelist" comment="">
+    <list default="true" id="77466e0b-a72e-4865-b448-a9bf00d7a28f" name="Default Changelist" comment="Adding Camera and Lider Modules&#10;Added Risk Analysis Functionality&#10;Adding Launch files">
+      <change afterPath="$PROJECT_DIR$/Pictures/Screenshot from 2019-11-13 13-35-54.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Pictures/Screenshot from 2019-11-13 13-39-22.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Pictures/Screenshot from 2019-11-13 14-27-38.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Pictures/wall.png" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/rplidar_ros/CameraFiles/MobileNet-SSD/LICENSE" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/rplidar_ros/CameraFiles/MobileNet-SSD/README.md" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/rplidar_ros/CameraFiles/MobileNet-SSD/demo.py" afterDir="false" />
@@ -30,7 +34,13 @@
       <change afterPath="$PROJECT_DIR$/src/rplidar_ros/CameraFiles/MobileNet-SSD/voc/MobileNetSSD_test.prototxt" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/rplidar_ros/CameraFiles/MobileNet-SSD/voc/MobileNetSSD_train.prototxt" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/rplidar_ros/CameraFiles/MobileNet-SSD/voc/solver.prototxt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/rplidar_ros" beforeDir="false" afterPath="$PROJECT_DIR$/src/rplidar_ros" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/rplidar_ros/CameraFiles/CameraRiskDetection.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/rplidar_ros/CameraFiles/CameraRiskDetection.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/rplidar_ros/CameraFiles/CameraSetup.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/rplidar_ros/CameraFiles/CameraSetup.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/rplidar_ros/CameraFiles/RiskCalculation.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/rplidar_ros/CameraFiles/RiskCalculation.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/rplidar_ros/CameraFiles/obstacle_distance.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/rplidar_ros/CameraFiles/obstacle_distance.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/rplidar_ros/launch/rs_cameraLaunch.launch" beforeDir="false" afterPath="$PROJECT_DIR$/src/rplidar_ros/launch/rs_cameraLaunch.launch" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
