@@ -1,0 +1,4 @@
+0000000000000000000000000000000000000000 95d935f2edfda6c4be3e1d767caf54195f13166c YusseffRuiz <zeiverking@gmail.com> 1567089156 +0100	clone: from https://github.com/Slamtec/rplidar_ros.git
+95d935f2edfda6c4be3e1d767caf54195f13166c 1d2e26c7e76c5048698869695da355e70288f410 YusseffRuiz <zeiverking@gmail.com> 1572004037 +0100	commit: adding calibration Launch file
+1d2e26c7e76c5048698869695da355e70288f410 30da3d0dfe70e3ea4f576c972ed7d073f0c369aa YusseffRuiz <zeiverking@gmail.com> 1573601630 +0000	commit: Adding Camera and Lider Modules
+30da3d0dfe70e3ea4f576c972ed7d073f0c369aa c7ef57f53bd602dd2295681c164d420b800c3099 YusseffRuiz <zeiverking@gmail.com> 1573657158 +0000	commit: Modify Risk percentages
